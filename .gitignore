@@ -1,7 +1,2 @@
-# Created by .ignore support plugin (hsz.mobi)
-.gitignore
-.idea/
-springboot-event-driven/src/main/java/
-springboot-event-driven/src/test/
-springboot-outside-config/target/
 /springboot-event-driven/target
+/springboot-outside-config/target
