@@ -31,6 +31,7 @@ public class OutsideConfigAppliation implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println(author);
-        log.info("name:{}---authorUrl:{}",name,authorUrl);
+        log.info("name:{}---authorUrl:{}---nickName:{}",name,authorUrl,author.getNickName());
+
     }
 }
