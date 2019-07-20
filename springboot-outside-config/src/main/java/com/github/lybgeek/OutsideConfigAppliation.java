@@ -1,6 +1,7 @@
 package com.github.lybgeek;
 
 import com.github.lybgeek.model.Author;
+import com.github.lybgeek.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +17,9 @@ public class OutsideConfigAppliation implements ApplicationRunner {
 
     @Autowired
     private Author author;
+
+    @Autowired
+    private User user;
 
     @Value("#{author.name}")
     private String name;
@@ -36,6 +40,7 @@ public class OutsideConfigAppliation implements ApplicationRunner {
         System.out.println(author);
         log.info("name:{}---authorUrl:{}---nickName:{}",name,authorUrl,author.getNickName());
         System.out.println(authorHobby);
+        System.out.println(user);
 
     }
 }
