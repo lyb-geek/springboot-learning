@@ -43,11 +43,11 @@ public enum CacheJdbcConfigUtil {
             cacheJdbcConfig.setDriverClassName(jdbcConfig.getDriverClassName());
         }
 
-        String beanId = JdbcConfig.class.getSimpleName();
-        if(atomicInteger.getAndIncrement() > 0){
-            SpringBeanUtil.unregisterBean(beanId);
-        }
-        SpringBeanUtil.registerBean(beanId,JdbcConfig.class.getName());
+//        String beanId = JdbcConfig.class.getSimpleName();
+//        if(atomicInteger.getAndIncrement() > 0){
+//            SpringBeanUtil.unregisterBean(beanId);
+//        }
+//        SpringBeanUtil.registerBean(beanId,JdbcConfig.class.getName());
 
         return getjdbcConfig();
 

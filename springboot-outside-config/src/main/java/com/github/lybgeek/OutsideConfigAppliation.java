@@ -22,6 +22,9 @@ public class OutsideConfigAppliation implements ApplicationRunner {
 
     @Value("${author.url}")
     private String authorUrl;
+
+    @Value("${author.hobby}")
+    private String authorHobby;
     public static void main( String[] args )
     {
         SpringApplication.run(OutsideConfigAppliation.class,args);
@@ -32,6 +35,7 @@ public class OutsideConfigAppliation implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         System.out.println(author);
         log.info("name:{}---authorUrl:{}---nickName:{}",name,authorUrl,author.getNickName());
+        System.out.println(authorHobby);
 
     }
 }
