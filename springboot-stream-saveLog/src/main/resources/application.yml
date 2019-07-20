@@ -1,0 +1,8 @@
+spring:
+  rabbitmq:
+    host: 124.238.240.172
+    username: admin
+    password: 123456
+    port: 5672
+server:
+  port: 8081

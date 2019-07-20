@@ -1,0 +1,2 @@
+本例主要演示了当数据库配置信息变更，通过springboot-stream进行变更通知推送，并动态切换数据源，如果配置数据库url发生变更，同时记录变更日志到数据库。
+该模块主要实现推送配置变更到springboot-stream-saveLog

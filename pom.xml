@@ -6,6 +6,8 @@
     <modules>
         <module>springboot-outside-config</module>
         <module>springboot-event-driven</module>
+        <module>springboot-stream-changeDbInfo</module>
+        <module>springboot-stream-saveLog</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,6 +26,11 @@
         <yaml.version>1.24</yaml.version>
         <lang3.version>3.9</lang3.version>
         <dozer.version>6.5.0</dozer.version>
+        <druid.version>1.1.19</druid.version>
+        <dbutils.version>1.7</dbutils.version>
+        <mysql.version>8.0.16</mysql.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <stream.version>2.2.0.RELEASE</stream.version>
     </properties>
 
     <dependencyManagement>
@@ -44,6 +51,32 @@
                 <groupId>com.github.dozermapper</groupId>
                 <artifactId>dozer-core</artifactId>
                 <version>${dozer.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-dbutils</groupId>
+                <artifactId>commons-dbutils</artifactId>
+                <version>${dbutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+                <version>${stream.version}</version>
             </dependency>
 
         </dependencies>
