@@ -14,14 +14,14 @@ import java.util.Properties;
 public class YamlPropertySourceFactory implements PropertySourceFactory {
     @Override
     public PropertySource<?> createPropertySource(String sourceName, EncodedResource resource) throws IOException {
-        Properties propertiesFromYaml = loadYamlIntoProperties(resource);
+        Properties propertiesFromYaml = loadYaml(resource);
         if(StringUtils.isBlank(sourceName)){
-            sourceName =   resource.getResource().getFilename();;
+            sourceName =  resource.getResource().getFilename();;
         }
 
         return new PropertiesPropertySource(sourceName, propertiesFromYaml);
     }
-    private Properties loadYamlIntoProperties(EncodedResource resource) throws FileNotFoundException {
+    private Properties loadYaml(EncodedResource resource) throws FileNotFoundException {
         try {
             YamlPropertiesFactoryBean factory = new YamlPropertiesFactoryBean();
             factory.setResources(resource.getResource());
