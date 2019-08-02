@@ -1,0 +1,1 @@
+该demo主要演示spring自定义注解自动扫描注入自定义bean，通过自定义注解来@BingLogService来实现日志写入

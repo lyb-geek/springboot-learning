@@ -8,6 +8,7 @@
         <module>springboot-event-driven</module>
         <module>springboot-stream-changeDbInfo</module>
         <module>springboot-stream-saveLog</module>
+        <module>springboot-scan-annotation</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,6 +32,7 @@
         <mysql.version>8.0.16</mysql.version>
         <fastjson.version>1.2.58</fastjson.version>
         <stream.version>2.2.0.RELEASE</stream.version>
+        <cglib.version>3.2.12</cglib.version>
     </properties>
 
     <dependencyManagement>
@@ -77,6 +79,11 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
                 <version>${stream.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
             </dependency>
 
         </dependencies>
