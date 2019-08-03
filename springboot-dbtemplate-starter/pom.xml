@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>springboot-learning</artifactId>
+        <groupId>com.github.lybgeek</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>springboot-dbtemplate-starter</artifactId>
+
+    <name>springboot-dbtemplate-starter</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+   <dependencies>
+       <dependency>
+           <groupId>com.github.lybgeek</groupId>
+           <artifactId>springboot-dbtemplate-autoconfigure</artifactId>
+           <version>0.0.1-SNAPSHOT</version>
+       </dependency>
+
+       <dependency>
+           <groupId>com.github.lybgeek</groupId>
+           <artifactId>springboot-dbtemplate</artifactId>
+           <version>0.0.1-SNAPSHOT</version>
+       </dependency>
+   </dependencies>
+</project>
