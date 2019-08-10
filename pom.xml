@@ -13,6 +13,7 @@
         <module>springboot-dbtemplate</module>
         <module>springboot-dbtemplate-starter</module>
         <module>springboot-dbtemplate-test</module>
+        <module>springboot-mongodb</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -37,6 +38,7 @@
         <fastjson.version>1.2.58</fastjson.version>
         <stream.version>2.2.0.RELEASE</stream.version>
         <cglib.version>3.2.12</cglib.version>
+        <modelmapper.version>2.3.0</modelmapper.version>
     </properties>
 
     <dependencyManagement>
@@ -88,6 +90,11 @@
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
                 <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.modelmapper</groupId>
+              <artifactId>modelmapper</artifactId>
+              <version>${modelmapper.version}</version>
             </dependency>
 
         </dependencies>

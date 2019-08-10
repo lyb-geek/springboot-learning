@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:123456@localhost:27017,localhost:27018,localhost:27019
+      database: springboot-learning
+      authentication-database: admin
+      transactionEnabled: true
+      #field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
