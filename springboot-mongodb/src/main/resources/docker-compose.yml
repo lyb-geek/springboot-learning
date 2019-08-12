@@ -1,0 +1,32 @@
+version: '2.1'
+services:
+  master:
+    image: docker.io/mongo
+    container_name: master
+    restart: always
+    privileged: true
+    ports:
+    - 27017:27017
+    volumes:
+    - ./data/master:/data/db
+    command: mongod --dbpath /data/db --replSet rs --oplogSize 128
+  slave1:
+    image: docker.io/mongo
+    container_name: slave
+    restart: always
+    privileged: true
+    ports:
+    - 27018:27017
+    volumes:
+    - ./data/slave1:/data/db
+    command: mongod --dbpath /data/db --replSet rs --oplogSize 128
+  slave2:
+    image: docker.io/mongo
+    container_name: slave1
+    restart: always
+    privileged: true
+    ports:
+    - 27019:27017
+    volumes:
+    - ./data/slave2:/data/db
+    command: mongod --dbpath /data/db --replSet rs --oplogSize 128
