@@ -45,6 +45,8 @@
         <mybatisPlus.version>3.1.2</mybatisPlus.version>
         <flyway.version>5.2.4</flyway.version>
         <freemarker.version>2.3.28</freemarker.version>
+        <mybatis.boot.version>2.1.0</mybatis.boot.version>
+        <pagehelper.boot.version>1.2.12</pagehelper.boot.version>
     </properties>
 
     <dependencyManagement>
@@ -131,6 +133,16 @@
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
             </dependency>
 
         </dependencies>

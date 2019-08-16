@@ -12,6 +12,8 @@
   - mybatisplus 分页
 
 > 3、与mybatis集成的功能点如下
+  - 通过mybatis-generator-maven-plugin和generatorConfig.xml配合自动生成model、dao、mapper.xml模板代码
+  - mybaits分页
 
 > 4、其他
   - druid 连接池密码加密，可以利用本例代码中的com.github.lybgeek.orm.common.util.DruidEncryptPwdUtil进行加密

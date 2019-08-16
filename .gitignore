@@ -1,2 +1,5 @@
 /springboot-event-driven/target
 /springboot-outside-config/target
+/springboot-mongodb/target
+/springboot-orm/target
+/.idea

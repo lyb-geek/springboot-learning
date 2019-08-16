@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"com.github.lybgeek.orm.jpa.repository"},repositoryBaseClass = CustomSimpleJpaRepository.class)
-@MapperScan(basePackages = {"com.github.lybgeek.orm.mybatisplus.dao"})
+@MapperScan(basePackages = {"com.github.lybgeek.orm.mybatisplus.dao","com.github.lybgeek.orm.mybatis.dao"})
 public class OrmApplication {
     public static void main( String[] args ) {
 
