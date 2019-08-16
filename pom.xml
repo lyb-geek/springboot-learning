@@ -14,6 +14,7 @@
         <module>springboot-dbtemplate-starter</module>
         <module>springboot-dbtemplate-test</module>
         <module>springboot-mongodb</module>
+        <module>springboot-orm</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -39,6 +40,11 @@
         <stream.version>2.2.0.RELEASE</stream.version>
         <cglib.version>3.2.12</cglib.version>
         <modelmapper.version>2.3.0</modelmapper.version>
+        <druid.boot.version>1.1.18</druid.boot.version>
+        <log4j-over-slf4j.version>1.7.26</log4j-over-slf4j.version>
+        <mybatisPlus.version>3.1.2</mybatisPlus.version>
+        <flyway.version>5.2.4</flyway.version>
+        <freemarker.version>2.3.28</freemarker.version>
     </properties>
 
     <dependencyManagement>
@@ -95,6 +101,36 @@
               <groupId>org.modelmapper</groupId>
               <artifactId>modelmapper</artifactId>
               <version>${modelmapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${log4j-over-slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisPlus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatisPlus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
             </dependency>
 
         </dependencies>
