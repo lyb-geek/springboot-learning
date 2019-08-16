@@ -28,7 +28,7 @@
 		</javaModelGenerator>
 
 		<!--自动生成的*Mapper.xml文件存放路径 -->
-		<sqlMapGenerator targetPackage="mapper/mybatis/bookorder"
+		<sqlMapGenerator targetPackage="mapper/mybatis/bookorderitem"
 			targetProject="src/main/resources">
 			<property name="enableSubPackages" value="true" />
 
