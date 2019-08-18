@@ -2,15 +2,11 @@ package com.github.lybgeek.orm.jpa.model;
 
 import com.github.lybgeek.orm.common.model.BaseEntity;
 import com.github.lybgeek.orm.jpa.common.annotation.IgnoreNullValue;
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Entity
 @Table(name="order_log")
@@ -31,5 +27,6 @@ public class OrderLog extends BaseEntity {
 
   @Column(name="order_name")
   private String orderName;
+
 
 }

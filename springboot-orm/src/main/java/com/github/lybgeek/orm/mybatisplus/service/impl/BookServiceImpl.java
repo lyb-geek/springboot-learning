@@ -4,25 +4,27 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.dozermapper.core.Mapper;
+import com.github.lybgeek.orm.common.exception.BizException;
 import com.github.lybgeek.orm.common.model.PageQuery;
 import com.github.lybgeek.orm.common.model.PageResult;
 import com.github.lybgeek.orm.common.util.BeanMapperUtils;
 import com.github.lybgeek.orm.common.util.PageUtil;
+import com.github.lybgeek.orm.mybatisplus.dao.BookMapper;
 import com.github.lybgeek.orm.mybatisplus.dto.BookDTO;
 import com.github.lybgeek.orm.mybatisplus.model.Book;
-import com.github.lybgeek.orm.mybatisplus.dao.BookMapper;
 import com.github.lybgeek.orm.mybatisplus.service.BookService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -45,6 +47,10 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
   @Transactional
   public BookDTO addBook(BookDTO bookDTO) {
     Book book = dozerMapper.map(bookDTO,Book.class);
+    boolean isExitBookByName = ObjectUtils.isNotEmpty(getBookByName(bookDTO.getBookName()));
+    if(isExitBookByName){
+      throw new BizException("书名已经存在");
+    }
     book.setCreateDate(new Date());
     book.setUpdateDate(new Date());
     baseMapper.insert(book);
@@ -115,6 +121,17 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
   public int updateStockById(Long id, Integer count) {
 
     return bookMapper.updateStockById(id,count);
+  }
+
+  @Override
+  public BookDTO getBookByName(String bookName) {
+    Wrapper<Book> wrapper = new QueryWrapper<>();
+    ((QueryWrapper<Book>) wrapper).eq("book_name", bookName);
+    Book book = bookMapper.selectOne(wrapper);
+    if(ObjectUtils.isNotEmpty(book)){
+      return dozerMapper.map(book,BookDTO.class);
+    }
+    return null;
   }
 
   private Wrapper<Book> wrapperQueryCondition(BookDTO bookDTO){

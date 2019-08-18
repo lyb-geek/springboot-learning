@@ -31,4 +31,6 @@ public interface BookService extends IService<Book> {
 
   int updateStockById(Long id,Integer count);
 
+  BookDTO getBookByName(String bookName);
+
 }

@@ -2,8 +2,9 @@ package com.github.lybgeek.orm.common.util;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.lybgeek.orm.common.model.PageResult;
-import java.util.List;
 import org.springframework.data.domain.Page;
+
+import java.util.List;
 
 public enum  PageUtil {
   INSTANCE;
@@ -38,6 +39,16 @@ public enum  PageUtil {
     PageResult<T> pageResult = new PageResult<>();
     pageResult.setList(list);
     setPageResult(page, pageResult);
+    return pageResult;
+  }
+
+  public <T> PageResult<T> getPage(com.github.pagehelper.Page page, List<T> list){
+    PageResult<T> pageResult = new PageResult<>();
+    pageResult.setList(list);
+    pageResult.setPageNo(page.getPageNum());
+    pageResult.setPageSize(page.getPageSize());
+    pageResult.setTotal(page.getTotal());
+    pageResult.setTotalPages(page.getPages());
     return pageResult;
   }
 }

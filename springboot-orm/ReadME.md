@@ -14,6 +14,7 @@
 > 3、与mybatis集成的功能点如下
   - 通过mybatis-generator-maven-plugin和generatorConfig.xml配合自动生成model、dao、mapper.xml模板代码
   - mybaits分页
+  - mybatis 插入或者更新时，通过自定义注解@CreateDate和@UpdateDate实现创建时间或者更新时间自动填充，而无需采用setCreateDate或者setUpdateDate的方式
 
 > 4、其他
   - druid 连接池密码加密，可以利用本例代码中的com.github.lybgeek.orm.common.util.DruidEncryptPwdUtil进行加密

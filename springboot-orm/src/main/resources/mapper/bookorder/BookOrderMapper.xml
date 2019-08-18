@@ -9,6 +9,10 @@
     <result column="consumer" jdbcType="VARCHAR" property="consumer" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+
+    <!--使用collection这个标签可以建立关联属性。一对多关系映射，column：order_id为selectOrderWithItems查询中的order_id-->
+    <collection property="bookOrderItems" ofType="com.github.lybgeek.orm.mybatis.model.BookOrderItem" column="order_id" resultMap="com.github.lybgeek.orm.mybatis.dao.BookOrderItemMapper.BaseResultMap">
+    </collection>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -241,4 +245,51 @@
       create_date = #{createDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectOrderWithItems" parameterType="com.github.lybgeek.orm.mybatis.model.BookOrder" resultMap="BaseResultMap">
+        select
+          bo.id,
+          bo.order_name,
+          bo.total,
+          bo.order_no,
+          bo.consumer,
+          bo.update_date,
+          bo.create_date,
+          boi.id,
+          boi.item_name,
+          boi.price,
+          boi.detail,
+          boi.order_id,
+          boi.create_date,
+          boi.update_date
+        from
+          book_order bo left join book_order_item boi on bo.id = boi.order_id
+        where
+         1=1
+     <if test="orderName != null">
+       and bo.order_name like CONCAT('%',#{orderName},'%')
+     </if>
+    <if test="orderNo != null">
+      and bo.order_no like CONCAT('%',#{orderNo},'%')
+    </if>
+    <if test="consumer != null">
+      and bo.consumer like CONCAT('%',#{consumer},'%')
+    </if>
+    <if test="id != null">
+      and bo.id = #{id}
+    </if>
+    <if test="startDate !=null and startDate !='' ">
+      <![CDATA[ and bo.create_date  >=  #{startDate}  ]]>
+    </if>
+    <if test="endDate !=null and endDate!='' "  >
+      <![CDATA[ and bo.create_date <=  #{endDate}  ]]>
+    </if>
+  <!--  <if test="bookOrderItems!=null and bookOrderItems.size() > 0">
+      AND boi.id in
+      <foreach collection="bookOrderItems" item="item"
+               index="index" open="(" close=")" separator=",">
+        #{item.id}
+      </foreach>
+    </if>-->
+  </select>
 </mapper>

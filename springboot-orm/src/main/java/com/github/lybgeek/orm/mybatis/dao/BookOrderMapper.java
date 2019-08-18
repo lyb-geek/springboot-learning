@@ -2,8 +2,9 @@ package com.github.lybgeek.orm.mybatis.dao;
 
 import com.github.lybgeek.orm.mybatis.model.BookOrder;
 import com.github.lybgeek.orm.mybatis.model.BookOrderExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface BookOrderMapper {
     long countByExample(BookOrderExample example);
@@ -27,4 +28,6 @@ public interface BookOrderMapper {
     int updateByPrimaryKeySelective(BookOrder record);
 
     int updateByPrimaryKey(BookOrder record);
+
+    List<BookOrder> selectOrderWithItems(BookOrder record);
 }

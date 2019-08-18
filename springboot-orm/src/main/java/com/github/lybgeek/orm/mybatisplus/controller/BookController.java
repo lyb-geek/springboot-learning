@@ -7,16 +7,16 @@ import com.github.lybgeek.orm.common.model.Result;
 import com.github.lybgeek.orm.common.util.ResultUtil;
 import com.github.lybgeek.orm.mybatisplus.dto.BookDTO;
 import com.github.lybgeek.orm.mybatisplus.service.BookService;
-import java.util.List;
-import javax.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+import java.util.List;
 
 /**
  * <p>
@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/book")
+@Slf4j
 public class BookController {
 
   @Autowired
@@ -40,8 +41,14 @@ public class BookController {
     if (bindingResult.hasErrors()){
       return ResultUtil.INSTANCE.getFailResult(bindingResult, result);
     }
-    BookDTO book = bookService.addBook(bookDTO);
-    result.setData(book);
+    try {
+      BookDTO book = bookService.addBook(bookDTO);
+      result.setData(book);
+    } catch (Exception e) {
+      log.error("addBook error:"+e.getMessage(),e);
+      result.setStatus(Result.fail);
+      result.setMessage(e.getMessage());
+    }
 
     return result;
 

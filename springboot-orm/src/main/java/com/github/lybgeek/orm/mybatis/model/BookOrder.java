@@ -1,10 +1,25 @@
 package com.github.lybgeek.orm.mybatis.model;
 
+import com.github.lybgeek.orm.mybatis.annotation.CreateDate;
+import com.github.lybgeek.orm.mybatis.annotation.UpdateDate;
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
-public class BookOrder {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString(callSuper = true)
+public class BookOrder{
     private Long id;
+
+    @CreateDate
+    private Date createDate;
+    @UpdateDate
+    private Date updateDate;
 
     private String orderName;
 
@@ -14,63 +29,11 @@ public class BookOrder {
 
     private String consumer;
 
-    private Date updateDate;
+    private List<BookOrderItem> bookOrderItems;
 
-    private Date createDate;
+    private transient String startDate;
 
-    public Long getId() {
-        return id;
-    }
+    private transient String endDate;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public String getOrderName() {
-        return orderName;
-    }
-
-    public void setOrderName(String orderName) {
-        this.orderName = orderName == null ? null : orderName.trim();
-    }
-
-    public BigDecimal getTotal() {
-        return total;
-    }
-
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
-
-    public String getOrderNo() {
-        return orderNo;
-    }
-
-    public void setOrderNo(String orderNo) {
-        this.orderNo = orderNo == null ? null : orderNo.trim();
-    }
-
-    public String getConsumer() {
-        return consumer;
-    }
-
-    public void setConsumer(String consumer) {
-        this.consumer = consumer == null ? null : consumer.trim();
-    }
-
-    public Date getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
 }
