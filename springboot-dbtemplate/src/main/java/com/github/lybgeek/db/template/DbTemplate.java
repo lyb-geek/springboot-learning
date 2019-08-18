@@ -1,7 +1,5 @@
 package com.github.lybgeek.db.template;
 
-import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.druid.pool.DruidDataSourceFactory;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -9,12 +7,10 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 
 import javax.sql.DataSource;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
 import java.util.TreeMap;
 
 @Slf4j
@@ -24,7 +20,7 @@ public class DbTemplate {
 
 
   private QueryRunner run;
-  private DruidDataSource ds;
+  private DataSource ds;
 
   // 只放进行事务的 Connection
   private static ThreadLocal<Connection> conn = new ThreadLocal<>();
@@ -33,35 +29,14 @@ public class DbTemplate {
 
   }
 
-  public DbTemplate(QueryRunner run) {
-    this.run = run;
-    this.ds = getDefaultDs();
-  }
 
-  public DbTemplate(QueryRunner run, DruidDataSource ds) {
+  public DbTemplate(QueryRunner run, DataSource ds) {
 
     this.run = run;
     this.ds = ds;
   }
 
 
-  private DruidDataSource getDefaultDs(){
-    try {
-      Properties pro = new Properties();
-      pro.load(DbTemplate.class.getClassLoader().getResourceAsStream("druid.properties"));
-
-      DataSource ds = DruidDataSourceFactory.createDataSource(pro);
-
-      return (DruidDataSource) ds;
-
-    } catch (IOException e) {
-      log.error(e.getMessage(), e);
-    } catch (Exception e) {
-      log.error(e.getMessage(), e);
-    }
-
-    return null;
-  }
 
   /**
    * 通过 DruidDataSource 得到 Connection
@@ -155,8 +130,13 @@ public class DbTemplate {
   public  void closeDataSource() {
 
     if (null != ds) {
-      ds.close();
-      conn.remove();
+      try {
+        ds.getConnection().close();
+        conn.remove();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+
     }
   }
 
