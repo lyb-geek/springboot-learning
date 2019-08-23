@@ -15,6 +15,7 @@
         <module>springboot-dbtemplate-test</module>
         <module>springboot-mongodb</module>
         <module>springboot-orm</module>
+        <module>springboot-dynamic-datasource</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -47,6 +48,7 @@
         <freemarker.version>2.3.28</freemarker.version>
         <mybatis.boot.version>2.1.0</mybatis.boot.version>
         <pagehelper.boot.version>1.2.12</pagehelper.boot.version>
+        <mybatisPlus.dynamic.datasource.version>2.5.5</mybatisPlus.dynamic.datasource.version>
     </properties>
 
     <dependencyManagement>
@@ -123,6 +125,11 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatisPlus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${mybatisPlus.dynamic.datasource.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.flywaydb</groupId>
