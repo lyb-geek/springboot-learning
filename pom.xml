@@ -49,6 +49,7 @@
         <mybatis.boot.version>2.1.0</mybatis.boot.version>
         <pagehelper.boot.version>1.2.12</pagehelper.boot.version>
         <mybatisPlus.dynamic.datasource.version>2.5.5</mybatisPlus.dynamic.datasource.version>
+        <sharding.boot.version>3.1.0</sharding.boot.version>
     </properties>
 
     <dependencyManagement>
@@ -150,6 +151,11 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding.boot.version}</version>
             </dependency>
 
         </dependencies>

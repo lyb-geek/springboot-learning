@@ -1,6 +1,5 @@
 package com.github.lybgeek.dynamic.service.impl;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -13,20 +12,19 @@ import com.github.lybgeek.common.model.PageResult;
 import com.github.lybgeek.common.util.BeanMapperUtils;
 import com.github.lybgeek.common.util.PageUtil;
 import com.github.lybgeek.dynamic.dao.BookMapper;
-import com.github.lybgeek.dynamic.datasource.custom.DataSourceName;
-import com.github.lybgeek.dynamic.datasource.custom.annotation.DataSource;
 import com.github.lybgeek.dynamic.dto.BookDTO;
 import com.github.lybgeek.dynamic.model.Book;
 import com.github.lybgeek.dynamic.service.BookService;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -47,7 +45,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
   @Override
   @Transactional
- // @DS("follow")
+  //@DS("follow")
   public BookDTO addBook(BookDTO bookDTO) {
     Book book = dozerMapper.map(bookDTO,Book.class);
     boolean isExitBookByName = ObjectUtils.isNotEmpty(getBookByName(bookDTO.getBookName()));
@@ -100,7 +98,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
   }
 
   @Override
-  @DataSource(name = DataSourceName.SLAVE)
+  //@DataSource(name = DataSourceName.SLAVE)
   public List<BookDTO> listBooks(BookDTO bookDTO) {
     Wrapper<Book> wrapper = wrapperQueryCondition(bookDTO);
 
