@@ -16,6 +16,7 @@
         <module>springboot-mongodb</module>
         <module>springboot-orm</module>
         <module>springboot-dynamic-datasource</module>
+        <module>springboot-split-table</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
