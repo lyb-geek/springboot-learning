@@ -1,0 +1,26 @@
+sharding:
+  jdbc:
+    datasource:
+      names: master-ds
+      # 数据源master-ds
+      master-ds:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/springboot-learning?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&serverTimezone=UTC
+        username: root
+        password: 123456
+    config:
+      sharding:
+        props:
+          sql.show: true
+        tables:
+          book:  #逻辑表名
+            key-generator-column-name: id  #主键
+            actual-data-nodes: master-ds.book_${0..1}   #物理表数据节点,均匀分布
+            table-strategy:  #分表策略
+              inline: #行表达式
+                sharding-column: id
+                algorithm-expression: book_${id % 2}  #按id模运算分配
+spring:
+  main:
+    allow-bean-definition-overriding: true

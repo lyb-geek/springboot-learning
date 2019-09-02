@@ -28,4 +28,4 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 spring:
   profiles:
-    active: sharding
+    active: subdbandtable

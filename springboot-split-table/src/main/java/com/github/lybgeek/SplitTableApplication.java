@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableTransactionManagement
-@MapperScan(basePackages = {"com.github.lybgeek.dynamic.dao"})
+@MapperScan(basePackages = {"com.github.lybgeek.spilt.dao"})
 public class SplitTableApplication
 {
     public static void main( String[] args )

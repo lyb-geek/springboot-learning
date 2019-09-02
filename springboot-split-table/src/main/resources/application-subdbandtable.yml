@@ -2,14 +2,14 @@ sharding:
   jdbc:
     datasource:
       #Canonical names should be kebab-case ('-' separated), lowercase alpha-numeric characters and must start with a letter
-      names: master-ds,slave-ds
-      master-ds:
+      names: ds0,ds1
+      ds0:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://localhost:3306/boot-learning?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&serverTimezone=UTC
         username: root
         password: 123456
-      slave-ds:
+      ds1:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://localhost:3306/springboot-learning?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&serverTimezone=UTC
@@ -19,13 +19,19 @@ sharding:
       sharding:
         props:
           sql.show: true
-      masterslave:
-        load-balance-algorithm-type: round_robin
-        name: dataSource
-        master-data-source-name: master-ds
-        slave-data-source-names: slave-ds
+        tables:
+         book:
+            key-generator-column-name: id  #主键
+            actual-data-nodes: ds${0..1}.book_${0..1}    #数据节点,均匀分布
+            database-strategy:   #分库策略
+              inline: #行表达式
+                sharding-column: id        #列名称，多个列以逗号分隔
+                algorithm-expression: ds${id % 2}    #按id模运算分配
+            table-strategy:  #分表策略
+              inline: #行表达式
+                sharding-column: stock
+                algorithm-expression: book_${stock % 2}
+
 spring:
-  autoconfigure:
-    exclude: com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration,com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
   main:
     allow-bean-definition-overriding: true
