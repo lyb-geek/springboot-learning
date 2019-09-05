@@ -17,6 +17,7 @@
         <module>springboot-orm</module>
         <module>springboot-dynamic-datasource</module>
         <module>springboot-split-table</module>
+        <module>springboot-redis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,6 +52,7 @@
         <pagehelper.boot.version>1.2.12</pagehelper.boot.version>
         <mybatisPlus.dynamic.datasource.version>2.5.5</mybatisPlus.dynamic.datasource.version>
         <sharding.boot.version>3.1.0</sharding.boot.version>
+        <commons-pool2.version>2.7.0</commons-pool2.version>
     </properties>
 
     <dependencyManagement>
@@ -157,6 +159,11 @@
                 <groupId>io.shardingsphere</groupId>
                 <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
                 <version>${sharding.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
             </dependency>
 
         </dependencies>

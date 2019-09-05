@@ -1,0 +1,14 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 20
+        min-idle: 10
+  cache:
+    redis:
+      cache-null-values: false
+      time-to-live: 30m #redis缓存过期统一配置的时间，但实际情况，我们要按不同业务配置不同的过期时间，因此可以在RedisCacheManager中实现

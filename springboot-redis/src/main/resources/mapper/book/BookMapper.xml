@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.lybgeek.redis.dao.BookMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.github.lybgeek.redis.model.Book">
+    <result column="id" property="id" />
+    <result column="update_date" property="updateDate" />
+    <result column="create_date" property="createDate" />
+        <result column="book_name" property="bookName" />
+        <result column="author" property="author" />
+        <result column="description" property="description" />
+        <result column="price" property="price" />
+        <result column="stock" property="stock" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        update_date,
+        create_date,
+        book_name, author, description, price, stock
+    </sql>
+
+    <update id="updateStockById">
+        update book set stock = stock - #{count} where id = #{id} and stock >= #{count}
+    </update>
+
+</mapper>
