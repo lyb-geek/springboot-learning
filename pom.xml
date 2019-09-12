@@ -18,6 +18,7 @@
         <module>springboot-dynamic-datasource</module>
         <module>springboot-split-table</module>
         <module>springboot-redis</module>
+        <module>springboot-elasticsearch</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
