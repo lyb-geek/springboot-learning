@@ -58,30 +58,30 @@ public enum DecimalFransformUtil {
     }
 
     /**
-     * 初始化 62 进制数据，索引位置代表字符的数值，比如 A代表10，z代表61等
+     * 初始化其他进制数据，索引位置代表字符的数值
      */
     private static String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    private static int scale = 62;
 
     /**
-     * 将数字转为62进制
+     * 将10进制数字转为其他进制
      *
      * @param num    Long 型数字
-     * @param length 转换后的字符串长度，不足则左侧补0
-     * @return 62进制字符串
+     * @param length 转换后的字符串长度，
+     * @param radix  要转换的进制
+     * @return 要转换进制字符串
      */
-    public static String encode(long num, int length) {
+    public static String covertDecimalToOtherRadix(long num, int length,int radix) {
         StringBuilder sb = new StringBuilder();
         int remainder = 0;
 
-        while (num > scale - 1) {
+        while (num > radix - 1) {
             /**
-             * 对 scale 进行求余，然后将余数追加至 sb 中，由于是从末位开始追加的，因此最后需要反转（reverse）字符串
+             * 对 radix 进行求余，然后将余数追加至 sb 中，由于是从末位开始追加的，因此最后需要反转（reverse）字符串
              */
-            remainder = Long.valueOf(num % scale).intValue();
+            remainder = Long.valueOf(num % radix).intValue();
             sb.append(chars.charAt(remainder));
 
-            num = num / scale;
+            num = num / radix;
         }
 
         sb.append(chars.charAt(Long.valueOf(num).intValue()));
@@ -92,10 +92,11 @@ public enum DecimalFransformUtil {
     /**
      * 62进制字符串转为数字
      *
-     * @param str 编码后的62进制字符串
+     * @param str 编码后的被转换进制字符串
+     * @param radix 被转换的进制
      * @return 解码后的 10 进制字符串
      */
-    public static long decode(String str) {
+    public static long convertOtherRadixToDecimal(String str,int radix) {
         /**
          * 将 0 开头的字符串进行替换
          */
@@ -110,7 +111,7 @@ public enum DecimalFransformUtil {
             /**
              * 索引位置代表字符的数值
              */
-            num += (long) (index * (Math.pow(scale, str.length() - i - 1)));
+            num += (long) (index * (Math.pow(radix, str.length() - i - 1)));
         }
 
         return num;
@@ -127,10 +128,10 @@ public enum DecimalFransformUtil {
 //
 //        System.out.println(otherRadix+"从"+radix+"进制转换10进制的值是："+decimal);
 
-        String a = DecimalFransformUtil.encode(1,6);
+        String a = DecimalFransformUtil.covertDecimalToOtherRadix(1000,6,62);
         System.out.println(a);
 
-        long i = DecimalFransformUtil.decode(a);
+        long i = DecimalFransformUtil.convertOtherRadixToDecimal(a,62);
         System.out.println(i);
     }
 
