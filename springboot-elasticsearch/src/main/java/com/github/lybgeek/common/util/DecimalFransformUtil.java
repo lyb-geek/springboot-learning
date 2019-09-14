@@ -90,7 +90,7 @@ public enum DecimalFransformUtil {
     }
 
     /**
-     * 62进制字符串转为数字
+     * 其他进制字符串转为数字
      *
      * @param str 编码后的被转换进制字符串
      * @param radix 被转换的进制
