@@ -54,6 +54,10 @@
         <mybatisPlus.dynamic.datasource.version>2.5.5</mybatisPlus.dynamic.datasource.version>
         <sharding.boot.version>3.1.0</sharding.boot.version>
         <commons-pool2.version>2.7.0</commons-pool2.version>
+        <elasticsearch.version>7.3.1</elasticsearch.version>
+        <spring-data-elasticsearch.version>3.2.0.RC3</spring-data-elasticsearch.version>
+        <reflections.version>0.9.11</reflections.version>
+        <groovy.version>2.5.8</groovy.version>
     </properties>
 
     <dependencyManagement>
@@ -167,6 +171,49 @@
                 <version>${commons-pool2.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>transport</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-elasticsearch</artifactId>
+                <version>${spring-data-elasticsearch.version}</version>
+            </dependency>
+
+            <!-- 可以获取指定包下的类-->
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
+            </dependency>
+
+            <!-- 高性能反射相关工具类-->
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -212,6 +259,11 @@
             <releases>
                 <enabled>true</enabled>
             </releases>
+        </repository>
+        <repository>
+            <id>spring-libs-snapshot</id>
+            <name>Spring Snapshot Repository</name>
+            <url>https://repo.spring.io/libs-milestone</url>
         </repository>
     </repositories>
     <pluginRepositories>

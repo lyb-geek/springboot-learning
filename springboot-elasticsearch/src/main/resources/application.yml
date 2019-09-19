@@ -41,4 +41,8 @@ spring:
   elasticsearch:
     rest:
       uris: ["http://10.35.60.85:9200"]
+      ipAddrs:
+          - 10.35.60.85:9200
+
+
 

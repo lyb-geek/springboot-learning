@@ -3,6 +3,8 @@ package com.github.lybgeek.shorturl.service;
 import com.github.lybgeek.common.model.PageQuery;
 import com.github.lybgeek.common.model.PageResult;
 import com.github.lybgeek.shorturl.dto.ShortUrlDTO;
+import com.github.lybgeek.shorturl.model.ShortUrl;
+import java.util.List;
 
 public interface ShortUrlService {
 
@@ -14,5 +16,11 @@ public interface ShortUrlService {
     String getLongUrlByShortUrl(String shortUrl);
 
     String getLongUrlByRadixStr(String radixStr);
+
+    ShortUrlDTO saveShortUrl(ShortUrlDTO shortUrlDTO);
+
+    boolean deleteShortUrlById(Long id);
+
+    List<ShortUrlDTO> listShortUrls(ShortUrlDTO shortUrlDTO);
 
 }

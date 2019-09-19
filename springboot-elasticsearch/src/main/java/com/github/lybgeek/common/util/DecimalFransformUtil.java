@@ -128,7 +128,7 @@ public enum DecimalFransformUtil {
 //
 //        System.out.println(otherRadix+"从"+radix+"进制转换10进制的值是："+decimal);
 
-        String a = DecimalFransformUtil.covertDecimalToOtherRadix(1000,6,62);
+        String a = DecimalFransformUtil.covertDecimalToOtherRadix(2,6,62);
         System.out.println(a);
 
         long i = DecimalFransformUtil.convertOtherRadixToDecimal(a,62);
