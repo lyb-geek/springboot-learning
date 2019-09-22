@@ -37,12 +37,12 @@ spring:
   data:
     elasticsearch:
       cluster-name: docker-cluster
-      cluster-nodes: 10.35.60.85:9300
+      cluster-nodes: localhost:9300
   elasticsearch:
     rest:
-      uris: ["http://10.35.60.85:9200"]
+      uris: ["http://localhost:9200"]
       ipAddrs:
-          - 10.35.60.85:9200
+          - localhost:9200
 
 
 
