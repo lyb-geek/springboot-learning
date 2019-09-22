@@ -8,6 +8,7 @@ import com.github.lybgeek.elasticsearch.model.ShortUrlVO;
 import com.github.lybgeek.elasticsearch.service.CustomShortUrlEsService;
 import com.github.lybgeek.elasticsearch.service.ShortUrlEsService;
 import com.github.lybgeek.shorturl.dto.ShortUrlDTO;
+import com.github.lybgeek.shorturl.dto.ShortUrlHelperDTO;
 import com.github.lybgeek.shorturl.service.ShortUrlService;
 import java.util.List;
 import org.junit.Assert;
@@ -34,6 +35,7 @@ public class ElasticsearchApplicationTest {
    @Autowired
    private CustomShortUrlEsService customShortUrlEsService;
 
+
    @Test
    public void testSaveAndReturnShortUrl(){
        ShortUrlDTO shortUrlDTO = ShortUrlDTO.builder().longUrl("https://www.baidu.com").urlName("百度").remark("百度一下，你就知道").build();
@@ -52,7 +54,7 @@ public class ElasticsearchApplicationTest {
 
 
    @Test
-   public void testCustomSaveShortUrlEs(){
+   public void testCustomSaveShortUrlEsAndReturnId(){
      ShortUrlDTO shortUrlDTO = ShortUrlDTO.builder().id(20L).longUrl("https://music.wangyiyun.com/").urlName("网易云").remark("网易云音乐").build();
      String id = customShortUrlEsService.save(shortUrlDTO);
      Assert.assertNotNull(id);
@@ -72,11 +74,46 @@ public class ElasticsearchApplicationTest {
      System.out.println(pageResult);
    }
 
+
    @Test
    public void testGetLongUrl(){
        String shortUrl = "http://localhost:8080/w";
        String longUrl = shortUrlService.getLongUrlByShortUrl(shortUrl);
        System.out.println(longUrl);
+   }
+
+
+  @Test
+  public void testCustomSaveShortUrlEs(){
+    ShortUrlDTO shortUrlDTO = ShortUrlDTO.builder().longUrl("https://www.meituan.com").urlName("美团外卖").remark("美团外卖APP").build();
+    boolean isSuccess = customShortUrlEsService.saveShortUrl(shortUrlDTO);
+    Assert.assertTrue(isSuccess);
+  }
+
+
+   @Test
+   public void testListCustomShortUrls(){
+     ShortUrlDTO dto = new ShortUrlDTO();
+     dto.setUrlName("美团");
+   //  dto.setRemark("门户");
+     List<ShortUrlDTO> shortUrlDTOS = customShortUrlEsService.listShortUrls(dto);
+
+     System.out.println(shortUrlDTOS);
+   }
+
+
+   @Test
+   public void testCustomGetShortUrl(){
+     ShortUrlDTO shortUrlDTO = customShortUrlEsService.getShortUrlById(2L);
+     Assert.assertNotNull(shortUrlDTO);
+     System.out.println(shortUrlDTO);
+   }
+
+
+   @Test
+   public void testDeleteCustomShortUrl(){
+     boolean isSuccess = customShortUrlEsService.deleteShortUrlById(2L);
+     Assert.assertTrue(isSuccess);
    }
 
 
@@ -107,7 +144,8 @@ public class ElasticsearchApplicationTest {
   public void testPage(){
     PageQuery pageQuery = new PageQuery<>().setPageNo(1).setPageSize(5);
     ShortUrlDTO dto = new ShortUrlDTO();
-    dto.setUrlName("百度");
+    dto.setUrlName("门户");
+    // dto.setRemark("门户");
     pageQuery.setQueryParams(dto);
 
     PageResult<ShortUrlDTO> pageResult = shortUrlService.pageShortUrl(pageQuery);
@@ -120,7 +158,7 @@ public class ElasticsearchApplicationTest {
   @Test
   public void testListShortUrl(){
     ShortUrlDTO dto = new ShortUrlDTO();
-    dto.setUrlName("百度");
+   // dto.setUrlName("百度");
     List<ShortUrlDTO> shortUrlDTOS = shortUrlService.listShortUrls(dto);
 
     System.out.println(shortUrlDTOS);

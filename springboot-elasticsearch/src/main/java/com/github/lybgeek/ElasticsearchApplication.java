@@ -1,5 +1,6 @@
 package com.github.lybgeek;
 
+import com.github.lybgeek.common.elasticsearch.repository.anntation.EnableCustomElasticsearchRepositories;
 import com.github.lybgeek.common.jpa.repository.CustomSimpleJpaRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication(exclude = ElasticsearchDataAutoConfiguration.class)
 @EnableJpaRepositories(basePackages = "com.github.lybgeek.shorturl.repository",repositoryBaseClass = CustomSimpleJpaRepository.class)
 @EnableElasticsearchRepositories(basePackages = "com.github.lybgeek.elasticsearch.repository")
+@EnableCustomElasticsearchRepositories(basePackages = "com.github.lybgeek.elasticsearch.repository")
 @EnableAsync
 public class ElasticsearchApplication {
 

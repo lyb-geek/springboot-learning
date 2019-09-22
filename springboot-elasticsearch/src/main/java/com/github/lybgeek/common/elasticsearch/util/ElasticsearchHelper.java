@@ -3,11 +3,13 @@ package com.github.lybgeek.common.elasticsearch.util;
 import com.alibaba.fastjson.JSON;
 import com.github.lybgeek.common.elasticsearch.annotation.EsDocument;
 import com.github.lybgeek.common.elasticsearch.annotation.EsField;
+import com.github.lybgeek.common.elasticsearch.annotation.EsId;
 import com.github.lybgeek.common.elasticsearch.model.EsEntity;
 import com.github.lybgeek.common.elasticsearch.model.EsIndex;
 import com.github.lybgeek.common.model.PageResult;
 import com.github.lybgeek.common.util.ReflectionUtil;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -16,6 +18,7 @@ import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.reflect.FieldUtils;
 import org.codehaus.groovy.reflection.CachedClass;
 import org.codehaus.groovy.reflection.CachedField;
 import org.codehaus.groovy.reflection.ReflectionCache;
@@ -63,18 +66,7 @@ public class ElasticsearchHelper {
 
    if(CollectionUtils.isNotEmpty(clzSet)) {
      for (Class<?> clz : clzSet) {
-       CachedClass cachedClass = ReflectionCache.getCachedClass(clz);
-       EsIndex esIndex = convertDocumentToIndexEs(clz);
-       boolean isIndexExist = this.isIndexExist(esIndex.getIndexName());
-       if (!isIndexExist) {
-         CachedField[] fields = cachedClass.getFields();
-         Map<String, Map<String, Object>> properties = ReflectionUtil
-             .covertFieldsIncludeAnnotationValueToMap(fields, EsField.class);
-         boolean isSuccess =  this.createIndex(esIndex,properties);
-         if(isSuccess){
-           log.info("创建{}索引成功",esIndex.getIndexName());
-         }
-       }
+       createIndex(clz);
 
      }
 
@@ -82,7 +74,23 @@ public class ElasticsearchHelper {
 
   }
 
-  private EsIndex convertDocumentToIndexEs(Class<?> clz) {
+  public void createIndex(Class<?> clz) {
+
+    CachedClass cachedClass = ReflectionCache.getCachedClass(clz);
+    EsIndex esIndex = convertDocumentToIndexEs(clz);
+    boolean isIndexExist = this.isIndexExist(esIndex.getIndexName());
+    if (!isIndexExist) {
+      CachedField[] fields = cachedClass.getFields();
+      Map<String, Map<String, Object>> properties = ReflectionUtil
+          .covertFieldsIncludeAnnotationValueToMap(fields, EsField.class);
+      boolean isSuccess =  this.createIndex(esIndex,properties);
+      if(isSuccess){
+        log.info("创建{}索引成功",esIndex.getIndexName());
+      }
+    }
+  }
+
+  public EsIndex convertDocumentToIndexEs(Class<?> clz) {
 
     EsDocument document = clz.getAnnotation(EsDocument.class);
     EsIndex esIndex = new EsIndex();
@@ -91,6 +99,23 @@ public class ElasticsearchHelper {
     esIndex.setReplicas(document.replicas());
     esIndex.setShards(document.shards());
     return esIndex;
+  }
+
+  public Object getEsId(Object retVal) {
+
+    Object id = null;
+
+    List<Field> fields = FieldUtils.getFieldsListWithAnnotation(retVal.getClass(), EsId.class);
+
+    if(CollectionUtils.isNotEmpty(fields)){
+      Field idField = fields.get(0);
+      try {
+        id = FieldUtils.readDeclaredField(retVal,idField.getName(),true);
+      } catch (IllegalAccessException e) {
+        log.error(e.getMessage(),e);
+      }
+    }
+    return id;
   }
 
   /**

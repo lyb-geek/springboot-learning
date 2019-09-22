@@ -1,12 +1,15 @@
 package com.github.lybgeek.elasticsearch.service.impl;
 
 import com.github.lybgeek.common.elasticsearch.model.EsEntity;
+import com.github.lybgeek.common.elasticsearch.repository.CustomSimpleElasticsearchRepository;
 import com.github.lybgeek.common.elasticsearch.util.ElasticsearchHelper;
 import com.github.lybgeek.common.model.PageQuery;
 import com.github.lybgeek.common.model.PageResult;
 import com.github.lybgeek.elasticsearch.constant.ElasticsearchConstant;
+import com.github.lybgeek.elasticsearch.repository.CustomShortUrlEsRepository;
 import com.github.lybgeek.elasticsearch.service.CustomShortUrlEsService;
 import com.github.lybgeek.shorturl.dto.ShortUrlDTO;
+import java.util.List;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -23,6 +26,9 @@ public class CustomShortUrlEsServiceImpl implements CustomShortUrlEsService {
 
   @Autowired
   private ElasticsearchHelper elasticsearchHelper;
+
+  @Autowired
+  private CustomShortUrlEsRepository customShortUrlEsRepository ;
 
 
   @Override
@@ -83,5 +89,51 @@ public class CustomShortUrlEsServiceImpl implements CustomShortUrlEsService {
     PageResult<ShortUrlDTO> pageResult = elasticsearchHelper.pageSearch(ElasticsearchConstant.SHORT_URL_INDEX,searchSourceBuilder,ShortUrlDTO.class);
 
     return pageResult;
+  }
+
+  @Override
+  public boolean saveShortUrl(ShortUrlDTO shortUrlDTO) {
+
+    return customShortUrlEsRepository.save(shortUrlDTO);
+  }
+
+  @Override
+  public boolean deleteShortUrlById(Long id) {
+
+    return customShortUrlEsRepository.deleteById(id);
+  }
+
+  @Override
+  public List<ShortUrlDTO> listShortUrls(ShortUrlDTO shortUrlDTO) {
+    SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+    BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
+    if (StringUtils.isNotBlank(shortUrlDTO.getLongUrl())) {
+      QueryBuilder builder = QueryBuilders.matchQuery("longUrl", shortUrlDTO.getLongUrl());
+      boolBuilder.must(builder);
+
+    }
+
+    if (StringUtils.isNotBlank(shortUrlDTO.getRemark())) {
+      QueryBuilder builder = QueryBuilders.matchQuery("remark", shortUrlDTO.getRemark());
+      boolBuilder.must(builder);
+    }
+
+    if (StringUtils.isNotBlank(shortUrlDTO.getUrlName())) {
+      QueryBuilder builder = QueryBuilders.matchQuery("urlName", shortUrlDTO.getUrlName());
+      boolBuilder.must(builder);
+    }
+
+    searchSourceBuilder.query(boolBuilder);
+
+
+
+
+    return customShortUrlEsRepository.search(searchSourceBuilder);
+  }
+
+  @Override
+  public ShortUrlDTO getShortUrlById(Long id) {
+
+    return customShortUrlEsRepository.getEntityById(id);
   }
 }

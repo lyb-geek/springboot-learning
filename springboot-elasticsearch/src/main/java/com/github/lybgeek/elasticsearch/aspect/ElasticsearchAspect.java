@@ -6,6 +6,7 @@ import com.github.lybgeek.common.elasticsearch.annotation.EsId;
 import com.github.lybgeek.common.elasticsearch.model.EsEntity;
 import com.github.lybgeek.common.elasticsearch.util.ElasticsearchHelper;
 import com.github.lybgeek.common.model.PageQuery;
+import com.github.lybgeek.common.model.PageResult;
 import com.github.lybgeek.elasticsearch.annotation.EsOperate;
 import com.github.lybgeek.elasticsearch.enu.OperateType;
 import java.lang.reflect.Field;
@@ -133,7 +134,10 @@ public class ElasticsearchAspect {
     }
     if(ObjectUtils.isNotEmpty(searchSourceBuilder)){
       searchSourceBuilder.from(from).size(pageSize);
-      return elasticsearchHelper.pageSearch(indexName,searchSourceBuilder,queryParams.getClass());
+      PageResult pageResult = elasticsearchHelper.pageSearch(indexName,searchSourceBuilder,queryParams.getClass());
+      if(CollectionUtils.isEmpty(pageResult.getList())){
+        return null;
+      }
     }
     return null;
   }
@@ -141,16 +145,13 @@ public class ElasticsearchAspect {
   private SearchSourceBuilder getSearchSouceBuilder(Object queryParams) {
 
     Map<String,Object> queryMap = this.getQueryMap(queryParams);
-    if(MapUtils.isNotEmpty(queryMap)){
-      SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-      QueryBuilder queryBuilder = new BoolQueryBuilder();
-      queryMap.forEach((key,value)->{
-        ((BoolQueryBuilder) queryBuilder).must(QueryBuilders.matchQuery(key,value));
-      });
-      searchSourceBuilder.query(queryBuilder);
-      return searchSourceBuilder;
-    }
-    return null;
+    SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+    QueryBuilder queryBuilder = new BoolQueryBuilder();
+    queryMap.forEach((key,value)->{
+      ((BoolQueryBuilder) queryBuilder).must(QueryBuilders.matchQuery(key,value));
+    });
+    searchSourceBuilder.query(queryBuilder);
+    return searchSourceBuilder;
   }
 
   private Map<String,Object> getQueryMap(Object queryParams){
@@ -158,6 +159,7 @@ public class ElasticsearchAspect {
      boolean hasEsDocumentAnnotation = queryParams.getClass().isAnnotationPresent(EsDocument.class);
      if(hasEsDocumentAnnotation){
        ReflectionUtils.doWithFields(queryParams.getClass(),field -> {
+         ReflectionUtils.makeAccessible(field);
           EsField esFieldAnnotation = field.getAnnotation(EsField.class);
           if(ObjectUtils.isNotEmpty(esFieldAnnotation)){
             String key = StringUtils.isNotBlank(esFieldAnnotation.value()) ? esFieldAnnotation.value() : field.getName();
@@ -191,7 +193,7 @@ public class ElasticsearchAspect {
   private void saveOrUpdate(JoinPoint jp,Object retVal, EsOperate operate){
     String methodName  = jp.getSignature().getName();
 
-    Object id = getEsId(retVal);
+    Object id = elasticsearchHelper.getEsId(retVal);
     EsEntity esEntity = new EsEntity();
     esEntity.setData(retVal);
     if(ObjectUtils.isNotEmpty(id)){
@@ -204,21 +206,6 @@ public class ElasticsearchAspect {
 
 
 
-  private Object getEsId(Object retVal) {
 
-    Object id = null;
-
-    List<Field> fields = FieldUtils.getFieldsListWithAnnotation(retVal.getClass(), EsId.class);
-
-    if(CollectionUtils.isNotEmpty(fields)){
-      Field idField = fields.get(0);
-      try {
-        id = FieldUtils.readDeclaredField(retVal,idField.getName(),true);
-      } catch (IllegalAccessException e) {
-        log.error(e.getMessage(),e);
-      }
-    }
-    return id;
-  }
 
 }
