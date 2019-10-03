@@ -19,6 +19,7 @@
         <module>springboot-split-table</module>
         <module>springboot-redis</module>
         <module>springboot-elasticsearch</module>
+        <module>springboot-swagger</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -58,6 +59,11 @@
         <spring-data-elasticsearch.version>3.2.0.RC3</spring-data-elasticsearch.version>
         <reflections.version>0.9.11</reflections.version>
         <groovy.version>2.5.8</groovy.version>
+        <structlog4j.version>1.0.0</structlog4j.version>
+        <springfox.version>2.9.2</springfox.version>
+        <swagger.vesion>1.5.21</swagger.vesion>
+        <xiaoymin.version>1.9.3</xiaoymin.version>
+        <caspar-chen.version>1.1.3</caspar-chen.version>
     </properties>
 
     <dependencyManagement>
@@ -211,6 +217,56 @@
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
                 <version>${groovy.version}</version>
+            </dependency>
+
+            <!-- Structured logging -->
+            <dependency>
+                <groupId>structlog4j</groupId>
+                <artifactId>structlog4j-api</artifactId>
+                <version>${structlog4j.version}</version>
+            </dependency>
+
+            <!-- Optional JSON formatter -->
+            <dependency>
+                <groupId>structlog4j</groupId>
+                <artifactId>structlog4j-json</artifactId>
+                <version>${structlog4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.vesion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger.vesion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${xiaoymin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.caspar-chen</groupId>
+                <artifactId>swagger-ui-layer</artifactId>
+                <version>${caspar-chen.version}</version>
             </dependency>
 
 
