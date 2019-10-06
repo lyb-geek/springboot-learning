@@ -31,9 +31,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(value = SpringRunner.class)
 @AutoConfigureMockMvc
 //controller单元测试可以参考：https://www.jianshu.com/p/13408dd4bef7 和 https://www.cnblogs.com/caofanqi/p/10836459.html
-public class BookControlleTest {
+public class BookControllerTest {
     //https://github.com/jacek99/structlog4j ,结构化日志
-    private ILogger log = SLoggerFactory.getLogger(BookControlleTest.class);
+    private ILogger log = SLoggerFactory.getLogger(BookControllerTest.class);
 
     @Autowired
     private WebApplicationContext wac;

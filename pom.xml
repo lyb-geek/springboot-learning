@@ -20,6 +20,7 @@
         <module>springboot-redis</module>
         <module>springboot-elasticsearch</module>
         <module>springboot-swagger</module>
+        <module>springboot-httpclient</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

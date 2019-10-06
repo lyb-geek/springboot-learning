@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+httpclient:
+  maxTotal: 300
+  defaultMaxPerRoute: 50
+  connectTimeout: 1000
+  connectionRequestTimeout: 500
+  socketTimeout: 5000
+  staleConnectionCheckEnabled: true
