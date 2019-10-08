@@ -26,6 +26,9 @@ spring:
       filter:
         config:
           enabled: true
+  #驼峰和下划线映射
+  jackson:
+    property-naming-strategy: SNAKE_CASE
 
 
 mybatis-plus:
