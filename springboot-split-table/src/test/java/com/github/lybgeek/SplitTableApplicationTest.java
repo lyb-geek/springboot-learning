@@ -1,17 +1,23 @@
 package com.github.lybgeek;
 
+import com.github.lybgeek.spilt.dao.BookMapper;
 import com.github.lybgeek.spilt.dto.BookDTO;
 import com.github.lybgeek.spilt.service.BookService;
+import com.github.lybgeek.spilt.service.impl.BookServiceImpl;
 import java.math.BigDecimal;
 import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
-
-@SpringBootTest
+@SpringBootTest(webEnvironment = WebEnvironment.NONE)
 @RunWith(SpringRunner.class)
 public class SplitTableApplicationTest {
 

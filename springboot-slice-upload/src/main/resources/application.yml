@@ -1,0 +1,28 @@
+spring:
+  redis:
+    host: 10.35.51.35
+    port: 6379
+  #  password: 123456
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 20
+        min-idle: 10
+  freemarker:
+    request-context-attribute: request
+    suffix: .html
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+
+upload:
+  chunkSize: 2 #单位为M
+  thread:
+    maxSize: 5
+  queue:
+    maxSize: 10
+  root:
+    dir: /file/uploads
+  window: #window系统指定盘符
+    root: F:/

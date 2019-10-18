@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <link rel="stylesheet" type="text/css" href="${request.contextPath}/upload/css/webuploader.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div id="uploader" class="wu-example">
+    <!--用来存放文件信息-->
+    <div id="thelist" class="uploader-list"></div>
+    <div class="btns">
+        <div id="picker">选择大文件</div>
+        <span>
+            上传的文件目录：<input type="text" value="data" id="pathText"/>
+        </span>
+        <br>
+        <button id="ctlBtn" class="btn btn-default">开始上传</button>
+    </div>
+</div>
+<!--引入JS-->
+<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/upload/js/webuploader.min.js"></script>
+<script>
+    var $btn = $('#ctlBtn');
+    var $thelist = $('#thelist');
+    var chunkSize = 2 * 1024 * 1024;
+
+    // HOOK 这个必须要再uploader实例化前面
+    WebUploader.Uploader.register({
+        'before-send-file': 'beforeSendFile',
+        'before-send': 'beforeSend'
+    }, {
+        beforeSendFile: function (file) {
+           // console.log("beforeSendFile");
+            // Deferred对象在钩子回掉函数中经常要用到，用来处理需要等待的异步操作。
+            var task = new $.Deferred();
+            // 根据文件内容来查询MD5
+            uploader.md5File(file).progress(function (percentage) {   // 及时显示进度
+                console.log('计算md5进度:', percentage);
+                //getProgressBar(file, percentage, "MD5", "MD5");
+            }).then(function (val) { // 完成
+                console.log('md5 result:', val);
+                file.md5 = val;
+                // 进行md5判断
+                $.post("${request.contextPath}/checkFileMd5", {path:$("#pathText").val(), md5: file.md5},
+                        function (data) {
+                           // console.log(data.data);
+                          if(data.status == 1) {
+                            var status = data.data.code;
+                            task.resolve();
+                            if (status == 404) {
+                              // 文件不存在，那就正常流程
+                            } else if (status == 200) {
+                              // 忽略上传过程，直接标识上传成功；
+                              uploader.skipFile(file);
+                              file.pass = true;
+                              file.path = data.data.path;
+                            } else if (status == 206) {
+                              // 部分已经上传到服务器了，但是差几个模块。
+                              file.missChunks = data.data.missChunks;
+                            }
+                          }else{
+                            $('#' + file.id).find('p.state').html("<font color='red'>"+data.msg+"</font>");
+                          }
+                        });
+
+            });
+            return $.when(task);
+        },
+        beforeSend: function (block) {
+            var task = new $.Deferred();
+            var file = block.file;
+            var missChunks = file.missChunks;
+            var blockChunk = block.chunk;
+            console.log("当前分块号：" + blockChunk);
+            if (missChunks !== null && missChunks !== undefined && missChunks !== '') {
+                console.log("还没上传的分片号有:" + missChunks);
+                var flag = true;
+                for (var i = 0; i < missChunks.length; i++) {
+                    if (blockChunk == missChunks[i]) {
+                        console.log(file.name + "->分块号：" + blockChunk + ":还没上传，现在继续上传。");
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) {
+                    task.reject();
+                } else {
+                    task.resolve();
+                }
+            } else {
+                task.resolve();
+            }
+            return $.when(task);
+        }
+    });
+
+    // 实例化
+    var uploader = WebUploader.create({
+        pick: {
+            id: '#picker',
+            label: '点击选择文件'
+        },
+        formData: {
+            md5: '',
+            chunkSize: chunkSize,
+            path: $("#pathText").val()
+        },
+        //dnd: '#dndArea',
+        //paste: '#uploader',
+        swf: '${request.contextPath}/upload/js/Uploader.swf',
+        chunked: true,
+        chunkSize: chunkSize, // 字节 1M分块
+        threads: 5,
+        server: '${request.contextPath}/upload',
+        auto: false,
+
+        // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+        disableGlobalDnd: true,
+        fileNumLimit: 1,
+        fileSizeLimit: 50 * 1024 * 1024 * 1024,    // 200 M
+        fileSingleSizeLimit: 50 * 1024 * 1024 * 1024    // 50 M
+    });
+
+    // 当有文件被添加进队列的时候
+    uploader.on('fileQueued', function (file) {
+      //  console.log("fileQueued");
+        $thelist.append('<div id="' + file.id + '" class="item">' +
+                '<h4 class="info" style="cursor:pointer">' + file.name + '</h4>' +
+                '<p class="state">等待上传...</p>' +
+                '</div>');
+    });
+
+    //当某个文件的分块在发送前触发，主要用来询问是否要添加附带参数，大文件在开起分片上传的前提下此事件可能会触发多次。
+    uploader.onUploadBeforeSend = function (obj, data) {
+      //  console.log("onUploadBeforeSend");
+        var file = obj.file;
+        data.md5 = file.md5 || '';
+        data.path = $("#pathText").val();
+    };
+    // 上传中
+    uploader.on('uploadProgress', function (file, percentage) {
+        getProgressBar(file, percentage, "FILE", "上传进度");
+    });
+    // 上传返回结果
+    uploader.on('uploadSuccess', function (file,response) {
+      var text = ""
+      var path = ""
+      if (file.pass) {
+         text = "文件秒传功能，文件已上传。"
+         path = file.path;
+         fileClick(file.id,path);
+      }else{
+        console.log(response)
+        if(response.status == "1"){
+           text = '已上传';
+           path = response.data.path;
+           fileClick(file.id,path);
+        }else{
+          text = "<font color='red'>"+response.msg+"</font>";
+        }
+      }
+
+      $('#' + file.id).find('p.state').html(text);
+
+
+
+    });
+    uploader.on('uploadError', function (file) {
+        $('#' + file.id).find('p.state').html('<font color="red">上传出错</font>');
+    });
+    uploader.on('uploadComplete', function (file) {
+        // 隐藏进度条
+        fadeOutProgress(file, 'MD5');
+        fadeOutProgress(file, 'FILE');
+       //清空队列
+       uploader.reset();
+
+    });
+    // 文件上传
+    $btn.on('click', function () {
+      //  console.log("上传...");
+        uploader.upload();
+      //  console.log("上传成功");
+    });
+
+    /**
+     *  生成进度条封装方法
+     * @param file 文件
+     * @param percentage 进度值
+     * @param id_Prefix id前缀
+     * @param titleName 标题名
+     */
+    function getProgressBar(file, percentage, id_Prefix, titleName) {
+        var $li = $('#' + file.id), $percent = $li.find('#' + id_Prefix + '-progress-bar');
+        // 避免重复创建
+        if (!$percent.length) {
+            $percent = $('<div id="' + id_Prefix + '-progress" class="progress progress-striped active">' +
+                    '<div id="' + id_Prefix + '-progress-bar" class="progress-bar" role="progressbar" style="width: 0%">' +
+                    '</div>' +
+                    '</div>'
+            ).appendTo($li).find('#' + id_Prefix + '-progress-bar');
+        }
+        var progressPercentage = percentage * 100 + '%';
+        $percent.css('width', progressPercentage);
+        $percent.html(titleName + ':' + progressPercentage);
+    }
+
+    /**
+     * 隐藏进度条
+     * @param file 文件对象
+     * @param id_Prefix id前缀
+     */
+    function fadeOutProgress(file, id_Prefix) {
+        $('#' + file.id).find('#' + id_Prefix + '-progress').fadeOut();
+    }
+
+    $("#picker").click(function(){
+      $(".info").text("");
+      $(".state").text("");
+      uploader.reset();
+      $(".progress progress-striped active").fadeOut();
+    });
+
+    function download(url){
+      var iframe = document.createElement("iframe");
+      document.body.appendChild(iframe);
+      iframe.src = encodeURI(url);
+      iframe.style.display = "none";
+    }
+
+    function fileClick(fileId,path){
+      $('#' + fileId).click(function(){
+         // var url = "${request.contextPath}/download?path="+path;
+         // download(url);
+        var action = "${request.contextPath}/download";
+        downloadTemplate(action,"path",path);
+      });
+    }
+
+    function downloadTemplate(action, type, value){
+      var form = document.createElement('form');
+      document.body.appendChild(form);
+      form.style.display = "none";
+      form.action = action;
+      form.method = 'post';
+
+      var newElement = document.createElement("input");
+      newElement.setAttribute("type","hidden");
+      newElement.name = type;
+      newElement.value = value;
+      form.appendChild(newElement);
+
+      form.submit();
+    }
+
+</script>
+</body>
+</html>

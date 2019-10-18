@@ -19,6 +19,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import springfox.documentation.swagger.web.OperationsSorter;
+import springfox.documentation.swagger.web.UiConfiguration;
+import springfox.documentation.swagger.web.UiConfigurationBuilder;
 
 import static com.google.common.collect.Lists.newArrayList;
 
@@ -118,11 +121,16 @@ public class SwaggerConfig {
         );
     }
 
-
-
-
-
-
+    /**
+     * swagger 按字母排序
+     * @return
+     */
+    @Bean
+    public UiConfiguration uiConfiguration() {
+        return UiConfigurationBuilder.builder()
+            .operationsSorter(OperationsSorter.ALPHA)
+            .build();
+    }
 
 
 

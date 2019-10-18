@@ -1,0 +1,33 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文件上传</title>
+  <style>
+    html {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+<a href="${request.contextPath}/uploadFile" target="_blank">文件上传</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="${request.contextPath}/oss/upload" target="_blank">OSS文件上传</a>
+
+</body>
+</html>
