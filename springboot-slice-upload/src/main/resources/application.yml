@@ -1,8 +1,8 @@
 spring:
   redis:
-    host: 10.35.51.35
+    host: localhost
     port: 6379
-  #  password: 123456
+    password: 123456
     lettuce:
       pool:
         max-active: 20
@@ -25,4 +25,4 @@ upload:
   root:
     dir: /file/uploads
   window: #window系统指定盘符
-    root: F:/
+    root: D:/

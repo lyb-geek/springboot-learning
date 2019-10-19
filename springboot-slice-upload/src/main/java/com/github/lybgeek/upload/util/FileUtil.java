@@ -5,6 +5,7 @@ import com.github.lybgeek.common.exception.BizException;
 import com.github.lybgeek.common.util.SystemUtil;
 import com.github.lybgeek.upload.constant.FileConstant;
 import java.io.BufferedInputStream;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,6 +15,9 @@ import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.nio.MappedByteBuffer;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -29,6 +33,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import sun.misc.Cleaner;
 
 @Slf4j
 @Component
@@ -356,10 +361,6 @@ public class FileUtil extends FileUtils {
 
   public static void downloadFile(String name, String path, HttpServletRequest request,
       HttpServletResponse response) throws FileNotFoundException {
-    //获取所需文件资源
-    if (SystemUtil.isWinOs()) {
-      path = uploadWindowRoot + path;
-    }
     File downloadFile = new File(path);
     String fileName = name;
     if (StringUtils.isBlank(fileName)) {
@@ -503,5 +504,84 @@ public class FileUtil extends FileUtils {
   public void setUploadWindowRoot(String windowRoot) {
 
     uploadWindowRoot = windowRoot;
+  }
+
+  public static void close(final Closeable closeable){
+    if(closeable != null){
+      try {
+        closeable.close();
+      } catch (IOException e) {
+        log.error("close fail:"+e.getMessage(),e);
+      } finally {
+      }
+    }
+  }
+
+  /**
+   * 在MappedByteBuffer释放后再对它进行读操作的话就会引发jvm crash，在并发情况下很容易发生 正在释放时另一个线程正开始读取，于是crash就发生了。所以为了系统稳定性释放前一般需要检 查是否还有线程在读或写
+   */
+  public static void freedMappedByteBuffer(final MappedByteBuffer mappedByteBuffer) {
+
+    try {
+      if (mappedByteBuffer == null) {
+        return;
+      }
+
+      mappedByteBuffer.force();
+      AccessController.doPrivileged(new PrivilegedAction<Object>() {
+        @Override
+        public Object run() {
+
+          try {
+            Method getCleanerMethod = mappedByteBuffer.getClass().getMethod("cleaner", new Class[0]);
+            getCleanerMethod.setAccessible(true);
+            Cleaner cleaner = (Cleaner) getCleanerMethod.invoke(mappedByteBuffer,
+                new Object[0]);
+            cleaner.clean();
+          } catch (Exception e) {
+            log.error("clean MappedByteBuffer error!!!", e);
+          }
+          log.info("clean MappedByteBuffer completed!!!");
+          return null;
+        }
+      });
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void clean(final Object buffer) {
+
+    AccessController.doPrivileged(new PrivilegedAction() {
+      public Object run() {
+
+        try {
+          Method getCleanerMethod = buffer.getClass().getMethod("cleaner", new Class[0]);
+          getCleanerMethod.setAccessible(true);
+          Cleaner cleaner = (Cleaner) getCleanerMethod.invoke(buffer, new Object[0]);
+          cleaner.clean();
+        } catch (Exception e) {
+          log.error("clean fail :" + e.getMessage(), e);
+        }
+        return null;
+      }
+    });
+
+  }
+
+  public static void close(FileInputStream in, MappedByteBuffer byteBuffer) {
+
+    if (null != in) {
+      try {
+        in.getChannel().close();
+        in.close();
+      } catch (IOException e) {
+        log.error("close error:"+e.getMessage(), e);
+      }
+    }
+    if (null != byteBuffer) {
+      freedMappedByteBuffer(byteBuffer);
+    }
   }
 }

@@ -48,7 +48,7 @@
                 $.post("${request.contextPath}/checkFileMd5", {path:$("#pathText").val(), md5: file.md5},
                         function (data) {
                            // console.log(data.data);
-                          if(data.status == 1) {
+                          if(data.status == 0) {
                             var status = data.data.code;
                             task.resolve();
                             if (status == 404) {
@@ -155,7 +155,7 @@
          fileClick(file.id,path);
       }else{
         console.log(response)
-        if(response.status == "1"){
+        if(response.status == "0"){
            text = '已上传';
            path = response.data.path;
            fileClick(file.id,path);

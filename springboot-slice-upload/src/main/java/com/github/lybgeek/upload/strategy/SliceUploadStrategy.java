@@ -5,5 +5,5 @@ import com.github.lybgeek.upload.dto.FileUploadRequestDTO;
 
 public interface SliceUploadStrategy {
 
-  FileUploadDTO sliceUpload(FileUploadRequestDTO fileUploadRequestDTO);
+  FileUploadDTO sliceUpload(FileUploadRequestDTO param);
 }
