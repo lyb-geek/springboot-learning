@@ -19,9 +19,9 @@ spring:
 upload:
   chunkSize: 2 #单位为M
   thread:
-    maxSize: 5
+    maxSize: 25
   queue:
-    maxSize: 10
+    maxSize: 100
   root:
     dir: /file/uploads
   window: #window系统指定盘符

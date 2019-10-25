@@ -1,6 +1,5 @@
-package com.github.lybggeek;
+package com.github.lybgeek;
 
-import com.github.lybgeek.HttpClientApplication;
 import com.github.lybgeek.common.model.PageQuery;
 import com.github.lybgeek.common.model.PageResult;
 import com.github.lybgeek.httpclient.dto.BookDTO;

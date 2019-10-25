@@ -1,0 +1,15 @@
+jodconverter:
+  local:
+    enabled: true
+    office-home: ${office.home}
+    port-numbers: 8100,8101,8102
+    max-tasks-per-process: 100
+  store:
+    path: ${store.path}
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+  freemarker:
+    suffix: .html

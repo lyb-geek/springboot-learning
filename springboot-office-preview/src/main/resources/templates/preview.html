@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>预览</title>
+    <meta name="author" content="四个空格-https://www.4spaces.org">
+    <link href="" rel="stylesheet">
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            overflow-y:hidden
+        }
+    </style>
+
+</head>
+<body>
+<!--<embed src="/preview/readFile?fileName=${fileName}" width="100%" height="1500" quality="high" align="middle" allowscriptaccess="never" allowfullscreen="true" mode="transparent"/>-->
+<iframe id="iframe" frameborder="0" src="/preview/readFile?fileName=${fileName}" style="width:100%;"></iframe>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+  window.onerror = function(){return true;}
+  $(function(){
+    headerH = 0;
+    var h=$(window).height();
+    $("#iframe").height((h-headerH)+"px");
+  });
+</script>
+</html>

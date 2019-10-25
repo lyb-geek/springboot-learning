@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>springboot-learning</artifactId>
+    <groupId>com.github.lybgeek</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>springboot-office-preview</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+    <!-- office预览相关-->
+    <dependency>
+      <groupId>org.jodconverter</groupId>
+      <artifactId>jodconverter-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jodconverter</groupId>
+      <artifactId>jodconverter-local</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jodconverter</groupId>
+      <artifactId>jodconverter-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jodconverter</groupId>
+      <artifactId>jodconverter-online</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.libreoffice</groupId>
+      <artifactId>ridl</artifactId>
+    </dependency>
+
+    <!-- 文件内容检测提取相关-->
+    <dependency>
+      <groupId>org.apache.tika</groupId>
+      <artifactId>tika-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tika</groupId>
+      <artifactId>tika-parsers</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-freemarker</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>win</id>
+      <properties>
+        <office.home>D:/Program Files/LibreOffice</office.home>
+        <store.path>D:/data/preview</store.path>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>linux</id>
+      <properties>
+        <office.home>/usr/lib64/libreoffice</office.home>
+        <store.path>/data/preview</store.path>
+      </properties>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+    </profile>
+  </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <useDefaultDelimiters>true</useDefaultDelimiters>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
