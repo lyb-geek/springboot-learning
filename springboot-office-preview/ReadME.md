@@ -28,11 +28,16 @@
     #安装的目录在/usr/lib64/libreoffice
     ```
     
-> libreoffice在centos上通过命令行进行测试shell指令如下
+> libreoffice在centos/window上通过命令行进行测试shell指令如下
   ```
+  #centos
   /usr/bin/libreoffice  --invisible --convert-to pdf  <待转换的word路径> --outdir <生成的pdf路径>
   
   比如：/usr/bin/libreoffice  --invisible --convert-to pdf  test.txt --outdir abc
+  
+  
+  # windows
+  soffice.exe --headless --invisible --convert-to pdf test.txt --outdir d:\abc
   ```
 
 
