@@ -23,6 +23,7 @@
         <module>springboot-httpclient</module>
         <module>springboot-slice-upload</module>
         <module>springboot-office-preview</module>
+        <module>springboot-prometheus</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

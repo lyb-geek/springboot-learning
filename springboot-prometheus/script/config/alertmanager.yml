@@ -1,0 +1,18 @@
+global:
+  resolve_timeout: 5m
+  smtp_smarthost: 'smtp.qq.com:465'
+  smtp_from: 'xxx@qq.com'
+  smtp_auth_username: 'xxxqq.com'
+  smtp_auth_password: 'QQ邮箱授权码'
+  smtp_require_tls: false
+  smtp_hello: 'qq.com'
+
+
+route:
+  group_interval: 1m
+  repeat_interval: 1m
+  receiver: 'mail-receiver'
+receivers:
+- name: 'mail-receiver'
+  email_configs:
+    - to: 'xxx@qq.com'
