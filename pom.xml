@@ -24,6 +24,7 @@
         <module>springboot-slice-upload</module>
         <module>springboot-office-preview</module>
         <module>springboot-prometheus</module>
+        <module>springboot-downgrade</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -73,6 +74,7 @@
         <jodconverter.version>4.2.2</jodconverter.version>
         <tika.version>1.22</tika.version>
         <libreoffice.version>6.3.2</libreoffice.version>
+        <guava.version>28.1-jre</guava.version>
     </properties>
 
     <dependencyManagement>
@@ -327,6 +329,12 @@
                 <groupId>org.apache.tika</groupId>
                 <artifactId>tika-parsers</artifactId>
                 <version>${tika.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
 

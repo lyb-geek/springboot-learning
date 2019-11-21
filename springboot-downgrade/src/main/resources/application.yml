@@ -1,0 +1,3 @@
+
+env:
+  profie: dev #区分环境，dev为开发环境，prod为生成环境,test为测试环境
