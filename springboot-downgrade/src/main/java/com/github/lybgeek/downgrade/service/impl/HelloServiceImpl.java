@@ -12,6 +12,7 @@ public class HelloServiceImpl implements HelloService {
   public String hello(String userName) {
 
     try {
+      //模拟业务请求
       Thread.sleep(1000);
     } catch (InterruptedException e) {
       e.printStackTrace();
