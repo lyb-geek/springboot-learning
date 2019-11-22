@@ -51,7 +51,7 @@ public enum ResouceDowngradeUtil {
 
 
   public void changeThreshold(String resouceId,Integer threshold){
-    ResouceDowngrade resouceDowngrade = ResouceDowngradeUtil.INSTANCE.getResouceDowngradeByResouceId(resouceId);
+    ResouceDowngrade resouceDowngrade = this.getResouceDowngradeByResouceId(resouceId);
     InvocationHandler invocationHandler = Proxy.getInvocationHandler(resouceDowngrade);
     try {
       Field field = invocationHandler.getClass().getDeclaredField("memberValues");
