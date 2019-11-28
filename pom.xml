@@ -25,6 +25,7 @@
         <module>springboot-office-preview</module>
         <module>springboot-prometheus</module>
         <module>springboot-downgrade</module>
+      <module>springboot-docker</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

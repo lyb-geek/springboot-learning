@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>springboot-learning</artifactId>
+    <groupId>com.github.lybgeek</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>springboot-docker</artifactId>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <docker.image.prefix>lyb-geek</docker.image.prefix>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-pool2</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.yml</include>
+          <include>**/*.yaml</include>
+          <include>**/*.properties</include>
+          <include>**/*.key</include>
+          <include>**/*.des</include>
+          <include>**/*.template</include>
+          <include>**/*.json</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+          <include>**/*.tld</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+
+
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Docker maven plugin -->
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>1.0.0</version>
+        <!--将插件绑定在某个phase执行-->
+        <executions>
+          <execution>
+            <id>build-image</id>
+            <!--用户只需执行mvn package ，就会自动执行mvn docker:build-->
+            <phase>package</phase>
+            <goals>
+              <goal>build</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+          <!--dockerDirectory指定 Dockerfile 的位置-->
+          <dockerDirectory>config</dockerDirectory>
+          <!--指定远程 docker api地址-->
+          <dockerHost>http://localhost:2375</dockerHost>
+          <!--resources是指那些需要和 Dockerfile 放在一起，在构建镜像时使用的文件，一般应用 jar 包需要纳入-->
+          <resources>
+            <resource>
+              <targetPath>/</targetPath>
+              <!--jar 包所在的路径  此处配置的 即对应 target 目录-->
+              <directory>${project.build.directory}</directory>
+              <!-- 需要包含的 jar包 ，这里对应的是 Dockerfile中添加的文件名　-->
+              <include>${project.build.finalName}.jar</include>
+            </resource>
+          </resources>
+        </configuration>
+      </plugin>
+      <!-- Docker maven plugin -->
+    </plugins>
+  </build>
+
+
+
+</project>

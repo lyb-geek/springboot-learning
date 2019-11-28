@@ -1,0 +1,40 @@
+version: '3'
+networks:
+    dockerTest:
+        driver: bridge
+
+services:
+    springboot-docker:
+        build: .
+        image: lyb-geek/springboot-docker
+        container_name: springboot-docker
+        privileged: true
+        restart: always
+        ports:
+            - "8080:8080"
+        depends_on:
+            - my-redis
+        networks:
+            - dockerTest
+        links:
+            - my-redis
+        
+
+    my-redis:
+        image: redis:latest
+        container_name: docker-redis
+        restart: always
+        privileged: true
+        volumes:
+            - ../redis/redis.conf:/etc/redis/redis.conf:rw
+            - ../redis/data:/data
+        command:
+            - redis-server
+            - /etc/redis/redis.conf
+        ports:
+            - "6399:6379"
+        networks:
+            - dockerTest
+      
+
+   
