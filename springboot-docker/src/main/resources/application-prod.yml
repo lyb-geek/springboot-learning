@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: my-redis
+    host: my-redis # docker-compose 配置的redis服务名
     port: 6379
     password: foobared
     lettuce:
