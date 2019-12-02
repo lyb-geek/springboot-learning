@@ -12,10 +12,10 @@ import java.lang.annotation.Target;
 public @interface ResouceDowngrade {
 
   /**
-   * 最大阈值，为了演示方便，设置成0
+   * 最大阈值
    * @return
    */
-  int maxThreshold() default 0;
+  int maxThreshold() default 1;
 
   /**
    * 限流回调实现类
