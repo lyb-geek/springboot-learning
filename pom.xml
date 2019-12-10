@@ -77,6 +77,8 @@
         <tika.version>1.22</tika.version>
         <libreoffice.version>6.3.2</libreoffice.version>
         <guava.version>28.1-jre</guava.version>
+        <swagger2markup.version>1.3.3</swagger2markup.version>
+        <springfox-staticdocs.version>2.6.1</springfox-staticdocs.version>
     </properties>
 
     <dependencyManagement>
@@ -338,6 +340,22 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+
+
+            <!-- swagger2markup 相关依赖 -->
+            <dependency>
+                <groupId>io.github.swagger2markup</groupId>
+                <artifactId>swagger2markup</artifactId>
+                <version>${swagger2markup.version}</version>
+            </dependency>
+
+            <!--springfox-staticdocs 生成静态文档 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-staticdocs</artifactId>
+                <version>${springfox-staticdocs.version}</version>
+            </dependency>
+
 
 
         </dependencies>

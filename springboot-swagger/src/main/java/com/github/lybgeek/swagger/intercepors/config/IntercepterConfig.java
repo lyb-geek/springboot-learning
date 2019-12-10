@@ -31,6 +31,7 @@ public class IntercepterConfig implements WebMvcConfigurer {
         .excludePathPatterns("/static/**")
         .excludePathPatterns("/")
         .excludePathPatterns("/demo/*/content/**","/demo/content/**")
+        .excludePathPatterns("/export/**")
         .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**","/swagger-ui.html","/doc.html","/docs.html");
 
 

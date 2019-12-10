@@ -4,6 +4,7 @@
 - 2、swagger分组
 - 3、全局token设置、局部token设置
 - 4、接口版本号控制，以及swagger和接口版本号集成
+- 5、[swagger离线文档生成](http://suo.im/6iDzqd)
 
 > 其他
 - mock测试controller
@@ -12,7 +13,7 @@
 
 
 
-> 
+>
  
  
   
