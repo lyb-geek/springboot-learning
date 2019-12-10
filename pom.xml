@@ -26,6 +26,7 @@
         <module>springboot-prometheus</module>
         <module>springboot-downgrade</module>
       <module>springboot-docker</module>
+      <module>springboot-exclude-web</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
