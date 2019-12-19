@@ -103,7 +103,7 @@ public class BaseAnalysisEventListener<T> extends AnalysisEventListener<T> {
 
 
     private ErrorExcelRow setAndReturnErrorExcelRow(AnalysisContext analysisContext,String errorMsg){
-        int rowIndex = analysisContext.readRowHolder().getRowIndex() - 1;
+        int rowIndex = analysisContext.readRowHolder().getRowIndex();
         int sheetNo = analysisContext.readSheetHolder().getSheetNo();
         String sheetName = analysisContext.readSheetHolder().getSheetName();
         ErrorExcelRow errorExcelRow = ErrorExcelRow.builder()
