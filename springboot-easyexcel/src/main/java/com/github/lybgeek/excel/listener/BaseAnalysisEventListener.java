@@ -90,8 +90,8 @@ public class BaseAnalysisEventListener<T> extends AnalysisEventListener<T> {
         log.info("解析到一条头数据:{}", JSON.toJSONString(headMap));
     }
 
-    private boolean validatePass(T r, AnalysisContext analysisContext) {
-        ValidResult validResult = ValidatorUtils.allCheckValidate(r,false, ExcelGroup.class);
+    private boolean validatePass(T entity, AnalysisContext analysisContext) {
+        ValidResult validResult = ValidatorUtils.allCheckValidate(entity,false, ExcelGroup.class);
         if(!validResult.isSuccess()){
             String errorMsg = StringUtils.join(validResult.getErrorMessages(),",");
             ErrorExcelRow errorExcelRow = this.setAndReturnErrorExcelRow(analysisContext,errorMsg);
