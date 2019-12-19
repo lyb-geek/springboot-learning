@@ -32,6 +32,11 @@ public class BaseAnalysisEventListener<T> extends AnalysisEventListener<T> {
         excelData = new ExcelData<>();
     }
 
+    /**
+     * excel一行行解析
+     * @param entity
+     * @param analysisContext
+     */
     @Override
     public void invoke(T entity, AnalysisContext analysisContext) {
 
@@ -41,6 +46,10 @@ public class BaseAnalysisEventListener<T> extends AnalysisEventListener<T> {
         }
     }
 
+    /**
+     * excel数据行都解析完毕时调用
+     * @param analysisContext
+     */
     @Override
     public void doAfterAllAnalysed(AnalysisContext analysisContext) {
         excelData.setErrorRows(errorExcelRows);
@@ -71,7 +80,7 @@ public class BaseAnalysisEventListener<T> extends AnalysisEventListener<T> {
     }
 
     /**
-     * 这里会一行行的返回头
+     * 这里为一行行的返回头
      *
      * @param headMap
      * @param context
@@ -82,8 +91,6 @@ public class BaseAnalysisEventListener<T> extends AnalysisEventListener<T> {
     }
 
     private boolean validatePass(T r, AnalysisContext analysisContext) {
-
-
         ValidResult validResult = ValidatorUtils.allCheckValidate(r,false, ExcelGroup.class);
         if(!validResult.isSuccess()){
             String errorMsg = StringUtils.join(validResult.getErrorMessages(),",");
