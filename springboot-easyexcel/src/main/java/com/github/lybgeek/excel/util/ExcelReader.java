@@ -25,13 +25,13 @@ public class ExcelReader {
      * @return
      */
     public <T> ExcelData<T> read(Class<T> entityClass) {
-        BaseAnalysisEventListener<T> listener = new BaseAnalysisEventListener<>(entityClass);
+        BaseAnalysisEventListener<T> listener = new BaseAnalysisEventListener<>();
         EasyExcel.read(inputStream,entityClass,listener).sheet(sheetNo).headRowNumber(headRowNumber).doRead();
         return listener.getExcelData();
     }
 
     public <T> ExcelData<T> readAll(Class<T> entityClass) {
-        BaseAnalysisEventListener<T> listener = new BaseAnalysisEventListener<>(entityClass);
+        BaseAnalysisEventListener<T> listener = new BaseAnalysisEventListener<>();
         EasyExcel.read(inputStream,entityClass,listener).headRowNumber(headRowNumber).doReadAll();
         return listener.getExcelData();
     }

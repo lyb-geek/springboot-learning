@@ -23,16 +23,13 @@ public class BaseAnalysisEventListener<T> extends AnalysisEventListener<T> {
     @Getter
     private ExcelData<T> excelData;
 
-    private Class<T> entityClass;
-
     private List<T> rows = new ArrayList<>();
 
     private List<ErrorExcelRow> errorExcelRows = new ArrayList<>();
 
 
-    public BaseAnalysisEventListener(Class<T> entityClass) {
+    public BaseAnalysisEventListener() {
         excelData = new ExcelData<>();
-        this.entityClass = entityClass;
     }
 
     @Override
