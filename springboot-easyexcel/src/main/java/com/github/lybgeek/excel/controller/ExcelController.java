@@ -159,7 +159,7 @@ public class ExcelController {
       excelDemoEntities.add(excelDemoEntity);
 
     }
-    ExcelWriter.builder().fileName("员工花名册").response(response).sheetNo(0).build().write(excelDemoEntities,ExcelDemoEntity.class);
+    ExcelWriter.builder().fileName("员工花名册").response(response).sheetName("员工花名册模板").build().write(excelDemoEntities,ExcelDemoEntity.class);
 
 
   }

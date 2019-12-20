@@ -15,7 +15,7 @@ public class ExcelWriter {
 
   private HttpServletResponse response;
 
-  private int sheetNo;
+  private String sheetName;
 
   private String fileName;
 
@@ -111,7 +111,7 @@ public class ExcelWriter {
     response.setCharacterEncoding("utf-8");
     fileName = URLEncoder.encode(fileName, "UTF-8");
     response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
-    EasyExcel.write(response.getOutputStream(),entityClass).sheet(sheetNo).doWrite(entityClassList);
+    EasyExcel.write(response.getOutputStream(),entityClass).sheet(sheetName).doWrite(entityClassList);
   }
 
 }
