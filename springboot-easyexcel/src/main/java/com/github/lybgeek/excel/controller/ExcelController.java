@@ -24,6 +24,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * 本例使用到模板有，位于excel-template下的多表头多sheet-正常样例.xlsx、多表头多sheet错误-校验样例.xlsx、简单样例.xlsx
+ */
 @Controller
 @RequestMapping(value="/excel")
 public class ExcelController {

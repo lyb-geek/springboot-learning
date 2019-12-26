@@ -3,3 +3,5 @@
 /springboot-mongodb/target
 /springboot-orm/target
 /.idea
+/docs
+/springboot-easyexcel/target

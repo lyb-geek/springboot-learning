@@ -81,6 +81,10 @@
         <swagger2markup.version>1.3.3</swagger2markup.version>
         <springfox-staticdocs.version>2.6.1</springfox-staticdocs.version>
         <easyexcel.version>2.1.4</easyexcel.version>
+        <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
+        <easypoi.version>4.1.3</easypoi.version>
+        <poi.version>4.1.1</poi.version>
+        <joda.time.version>2.9.9</joda.time.version>
     </properties>
 
     <dependencyManagement>
@@ -363,6 +367,41 @@
                 <artifactId>easyexcel</artifactId>
                 <version>${easyexcel.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-spring-boot-starter</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda.time.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
