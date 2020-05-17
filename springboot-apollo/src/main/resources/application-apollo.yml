@@ -1,0 +1,10 @@
+app:
+  id: ${spring.application.name}
+apollo:
+  meta: http://192.168.88.128:8080,http://192.168.88.129:8080
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
+
+
