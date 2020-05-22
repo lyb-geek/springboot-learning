@@ -4,17 +4,18 @@ import com.ctrip.framework.apollo.Config;
 import com.ctrip.framework.apollo.model.ConfigChangeEvent;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfig;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
-import com.github.lybgeek.apollo.util.ClassScannerUtils;
+import com.github.lybgeek.apollo.annotation.RefreshBean;
+import com.github.lybgeek.apollo.cache.BeanCache;
 import com.github.lybgeek.apollo.util.PrintChangeKeyUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.environment.EnvironmentChangeEvent;
@@ -26,7 +27,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collection;
 import java.util.Set;
 
 @Component
@@ -38,11 +39,13 @@ public class OrderPropertiesRefresh implements ApplicationContextAware {
     @ApolloConfig(value = "order.properties")
     private Config config;
 
+    @Autowired
+    private BeanCache beanCache;
+
 
     @ApolloConfigChangeListener(value="order.properties",interestedKeyPrefixes = {"order."},interestedKeys = {"model.isShowOrder"})
     private void refresh(ConfigChangeEvent changeEvent){
-        for (String basePackage : listBasePackages()) {
-            Set<Class> conditionalClasses = ClassScannerUtils.scan(basePackage, ConditionalOnProperty.class);
+            Collection<Class> conditionalClasses = beanCache.getConditionalClassesMap().values();
             if(!CollectionUtils.isEmpty(conditionalClasses)){
                 for (Class conditionalClass : conditionalClasses) {
                     ConditionalOnProperty conditionalOnProperty = (ConditionalOnProperty) conditionalClass.getAnnotation(ConditionalOnProperty.class);
@@ -56,7 +59,7 @@ public class OrderPropertiesRefresh implements ApplicationContextAware {
                     }
                 }
             }
-        }
+
 
 
         PrintChangeKeyUtils.printChange(changeEvent);
@@ -82,6 +85,7 @@ public class OrderPropertiesRefresh implements ApplicationContextAware {
             }
         }else if(isNeedRemoveBeanIfKeyChange){
             this.unregisterBean(beanName);
+            this.refreshBeanDependChangeBean(conditionalClass);
             return true;
         }
         return false;
@@ -98,6 +102,7 @@ public class OrderPropertiesRefresh implements ApplicationContextAware {
         BeanDefinition beanDefinition = beanDefinitionBurinilder.getBeanDefinition();
         setBeanField(beanClass, beanDefinition);
         getBeanDefinitionRegistry().registerBeanDefinition(beanName,beanDefinition);
+        refreshBeanDependChangeBean(beanClass);
 
     }
 
@@ -134,6 +139,8 @@ public class OrderPropertiesRefresh implements ApplicationContextAware {
     }
 
 
+
+
     public  <T> T getBean(String name) {
         return (T) applicationContext.getBean(name);
     }
@@ -156,7 +163,7 @@ public class OrderPropertiesRefresh implements ApplicationContextAware {
         return false;
     }
 
-    private boolean isNeedRegisterBeanIfKeyChange(String changeKey,String conditionalOnPropertyValue){
+    public boolean isNeedRegisterBeanIfKeyChange(String changeKey,String conditionalOnPropertyValue){
         if(StringUtils.isEmpty(changeKey)){
             return false;
         }
@@ -197,15 +204,31 @@ public class OrderPropertiesRefresh implements ApplicationContextAware {
         return changeKey;
     }
 
+
+    /**
+     * 刷新依赖order的bean
+     * @param conditionalClass
+     */
+    private void refreshBeanDependChangeBean(final Class conditionalClass){
+        beanCache.getRefreshBeanClassesMap().forEach((refreshBeanName,refreshBeanClass)->{
+            RefreshBean refreshBean = (RefreshBean) refreshBeanClass.getAnnotation(RefreshBean.class);
+            for (Class fieldBeanClass : refreshBean.refreshFieldBeans()) {
+                if(conditionalClass.getName().equals(fieldBeanClass.getName())){
+                    log.info("refreshBeanDependChangeBean-->refreshBeanName:{},refreshBeanClass:{}",refreshBeanName,refreshBeanClass);
+                    BeanDefinition beanDefinition = getBeanDefinitionRegistry().getBeanDefinition(refreshBeanName);
+                    beanDefinition.setBeanClassName(refreshBeanClass.getName());
+                    getBeanDefinitionRegistry().registerBeanDefinition(refreshBeanName, beanDefinition);
+                }
+            }
+
+        });
+        
+    }
+
     private BeanDefinitionRegistry getBeanDefinitionRegistry(){
         ConfigurableApplicationContext configurableContext = (ConfigurableApplicationContext) applicationContext;
         BeanDefinitionRegistry beanDefinitionRegistry = (DefaultListableBeanFactory) configurableContext.getBeanFactory();
         return beanDefinitionRegistry;
-    }
-
-    private List<String> listBasePackages(){
-        ConfigurableApplicationContext configurableContext = (ConfigurableApplicationContext) applicationContext;
-        return AutoConfigurationPackages.get(configurableContext.getBeanFactory());
     }
 
 
