@@ -32,6 +32,7 @@ public class BeanCache implements ApplicationContextAware {
     private Map<String,Class> refreshBeanClassesMap = new ConcurrentHashMap<>();
 
 
+
     @PostConstruct
     public void init(){
         for (String basePackage : listBasePackages()){
@@ -55,6 +56,8 @@ public class BeanCache implements ApplicationContextAware {
     }
 
 
+
+
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
@@ -64,4 +67,6 @@ public class BeanCache implements ApplicationContextAware {
         ConfigurableApplicationContext configurableContext = (ConfigurableApplicationContext) applicationContext;
         return AutoConfigurationPackages.get(configurableContext.getBeanFactory());
     }
+
+
 }

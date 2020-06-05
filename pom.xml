@@ -88,6 +88,7 @@
         <joda.time.version>2.9.9</joda.time.version>
         <apollo.version>1.6.0</apollo.version>
         <spring-cloud-context.version>2.0.3.RELEASE</spring-cloud-context.version>
+        <hytrix.version>1.5.18</hytrix.version>
     </properties>
 
     <dependencyManagement>
@@ -416,6 +417,24 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-context</artifactId>
                 <version>${spring-cloud-context.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-core</artifactId>
+                <version>${hytrix.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-javanica</artifactId>
+                <version>${hytrix.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-metrics-event-stream</artifactId>
+                <version>${hytrix.version}</version>
             </dependency>
 
 

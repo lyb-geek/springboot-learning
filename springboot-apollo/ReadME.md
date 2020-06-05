@@ -10,6 +10,10 @@ bean的刷新只能手动刷新，可以通过RefreshScope.refresh()刷新或者
 
 > 3、bean字段上有@ConditionalOnProperty的刷新
 
+> 4、动态刷新自定义注解上的属性值
+
+> 5、与@hytrixcommand整合实现hytrix动态降级
+
 
 
 
