@@ -47,7 +47,7 @@ public class HelloController {
     @HystrixCommand(groupKey = "refreshGroup",commandKey = "refreshCommandKey",fallbackMethod = "refreshFallBack",
             commandProperties = {
                     @HystrixProperty(name = HystrixConstant.EXECUTION_ISOLATION_STRATEGY,value = "SEMAPHORE"),
-                    @HystrixProperty(name = HystrixConstant.EXECUTION_ISOLATION_SEMAPHORE_MAXCONCURRENTREQUESTS,value = "0"),
+                    @HystrixProperty(name = HystrixConstant.EXECUTION_ISOLATION_SEMAPHORE_MAXCONCURRENTREQUESTS,value = "5"),
             })
     public String refresh()throws Exception{
         Log log = HelloController.class.getMethod("sayHello").getAnnotation(Log.class);
