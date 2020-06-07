@@ -7,6 +7,9 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [springboot实战之读取自定义配置文件](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247487583&idx=1&sn=21eec54e505aaf21e01a2cf25d15d2c8&chksm=e9eefe29de99773f97814815e4ead86f4d4589ff2272652dd8fc2e0eafdab43350f546e12e10&scene=21#wechat_redirect)
 
 
+[springboot实战之整合配置中心实现动态刷新（Apollo篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247490283&idx=2&sn=1f38fc6872ff49adc5cb66e7d1d937a3&chksm=e9eef49dde997d8ba2b79734784d708cfeb35267fa534bd65cdf75cd0e853a88087b2c1076a6&token=158433357&lang=zh_CN#rd)
+
+
 
 > 2、驱动篇
 
