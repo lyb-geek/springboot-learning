@@ -29,6 +29,8 @@
       <module>springboot-exclude-web</module>
       <module>springboot-easyexcel</module>
         <module>springboot-apollo</module>
+       <!-- <module>springboot-k8s</module>-->
+        <module>springboot-mq-idempotent-consume</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -89,6 +91,7 @@
         <apollo.version>1.6.0</apollo.version>
         <spring-cloud-context.version>2.0.3.RELEASE</spring-cloud-context.version>
         <hytrix.version>1.5.18</hytrix.version>
+        <spring-kafka.version>2.2.6.RELEASE</spring-kafka.version>
     </properties>
 
     <dependencyManagement>
@@ -435,6 +438,13 @@
                 <groupId>com.netflix.hystrix</groupId>
                 <artifactId>hystrix-metrics-event-stream</artifactId>
                 <version>${hytrix.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
             </dependency>
 
 
