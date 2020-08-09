@@ -29,7 +29,6 @@
       <module>springboot-exclude-web</module>
       <module>springboot-easyexcel</module>
         <module>springboot-apollo</module>
-       <!-- <module>springboot-k8s</module>-->
         <module>springboot-mq-idempotent-consume</module>
     </modules>
     <parent>
