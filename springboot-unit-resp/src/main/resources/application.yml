@@ -1,0 +1,5 @@
+#server:
+#  port: ${random.int[1000,9999]}
+
+server:
+  port: 8080

@@ -30,6 +30,7 @@
       <module>springboot-easyexcel</module>
         <module>springboot-apollo</module>
         <module>springboot-mq-idempotent-consume</module>
+        <module>springboot-unit-resp</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
