@@ -31,6 +31,7 @@
         <module>springboot-apollo</module>
         <module>springboot-mq-idempotent-consume</module>
         <module>springboot-unit-resp</module>
+        <module>springboot-mybatis-autoId</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -92,6 +93,7 @@
         <spring-cloud-context.version>2.0.3.RELEASE</spring-cloud-context.version>
         <hytrix.version>1.5.18</hytrix.version>
         <spring-kafka.version>2.2.6.RELEASE</spring-kafka.version>
+        <hutool.version>5.4.1</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -445,6 +447,13 @@
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka</artifactId>
                 <version>${spring-kafka.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
 
 

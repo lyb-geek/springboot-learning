@@ -106,7 +106,7 @@
           <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.16</version>
+            <version>5.1.44</version>
           </dependency>
           <dependency>
             <groupId>org.mybatis.generator</groupId>

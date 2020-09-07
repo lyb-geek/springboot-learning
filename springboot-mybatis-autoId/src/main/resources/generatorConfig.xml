@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!--<properties resource="jdbc.properties" />-->
+	<properties url="file:///F:/jdbc.properties" />
+
+	<context id="mysqlTables" targetRuntime="MyBatis3">
+         <commentGenerator> 
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 --> 
+            <property name="suppressAllComments" value="true" /> 
+        </commentGenerator> 
+        
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}" />
+        
+		<!-- 指定生成的类型为java类型，避免数据库中number等类型字段 -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 自动生成的实体的存放包路径 -->
+		<javaModelGenerator targetPackage="com.github.lybgeek.user.entity"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			  <property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!--自动生成的*Mapper.xml文件存放路径 -->
+		<sqlMapGenerator targetPackage="mapper/user"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+
+		</sqlMapGenerator>
+		<!--自动生成的*Mapper.java存放路径 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.github.lybgeek.user.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+	<table tableName="t_user" domainObjectName="User"
+		enableCountByExample="false" enableUpdateByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false"
+		selectByExampleQueryId="false">
+	</table>
+		
+		
+	</context>
+
+</generatorConfiguration>
+
