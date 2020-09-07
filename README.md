@@ -100,8 +100,9 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [springboot实战之创建一个支持平滑关闭的非web项目](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488372&idx=1&sn=d7fe2036b634bffcd2becf1577db6f5f&chksm=e9eefd02de997414d85518000c43523d031243a3b6a3fe231f1a601574a38feaef84f9cfd91e&scene=21#wechat_redirect)
 
 
-
 [如何用一行代码实现excel导入导出](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488501&idx=1&sn=e95a85ece7e4bd8e501912ddaf98b5c6&chksm=e9eefd83de9974956ddb7253fba232c377f69c16b342a0beeb885ee20135067b6aea648e1108&scene=21#wechat_redirect)
 
 [springboot结合kakfa演示消息队列的消费幂等性如何保证](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247492142&idx=1&sn=67a708e07d2efbe3e7d3524b7156a825&chksm=e9ed0c58de9a854e109a15be1a271af4d27f532873f65c7fb8ed147900c58b8f37afaf8f5d20&token=912953533&lang=zh_CN#rd)
+
+[springboot之优雅处理返回值](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247492409&idx=1&sn=e18d0511d71cec0a122d8ea950a81243&chksm=e9ed0d4fde9a8459183519ce711c71dce719d2382b8b9e33bd8adeadc0d6c1bee067b692a02a&token=2137971283&lang=zh_CN#rd)
 
