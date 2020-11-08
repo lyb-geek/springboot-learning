@@ -6,8 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * WebMvcConfigurer of chaincontext
  * 
- * @author einarzhang
- * @email einarzhang@gmail.com
+ * @author linyb
  */
 public class ChainContextWebMvcConfigure implements WebMvcConfigurer {
 
