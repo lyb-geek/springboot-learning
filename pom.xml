@@ -33,6 +33,7 @@
         <module>springboot-unit-resp</module>
         <module>springboot-mybatis-autoId</module>
         <module>springboot-code-authorization</module>
+        <module>springboot-chaincontext</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -95,10 +96,18 @@
         <hytrix.version>1.5.18</hytrix.version>
         <spring-kafka.version>2.2.6.RELEASE</spring-kafka.version>
         <hutool.version>5.4.1</hutool.version>
+        <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
