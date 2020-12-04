@@ -1,6 +1,7 @@
 package com.github.lybgeek.kafka.config;
 
 
+import com.github.lybgeek.kafka.producer.interceptor.KafkaProducerInterceptor;
 import com.github.lybgeek.kafka.serialization.ObjectDeserializer;
 import com.github.lybgeek.kafka.serialization.ObjectSerializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -19,7 +20,9 @@ import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -82,6 +85,10 @@ public class KakfaConfig {
         props.put(ProducerConfig.BUFFER_MEMORY_CONFIG, bufferMemory);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ObjectSerializer.class);
+        //定义拦截器
+        List<String> interceptors = new ArrayList<>();
+        interceptors.add(KafkaProducerInterceptor.class.getName());
+        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, interceptors);
         return props;
     }
 
