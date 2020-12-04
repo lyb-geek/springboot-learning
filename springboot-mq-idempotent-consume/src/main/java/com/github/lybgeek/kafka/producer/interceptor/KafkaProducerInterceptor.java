@@ -1,6 +1,5 @@
 package com.github.lybgeek.kafka.producer.interceptor;
 
-import com.alibaba.fastjson.JSON;
 import com.github.lybgeek.kafka.dto.MessageDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerInterceptor;
@@ -25,7 +24,7 @@ public class KafkaProducerInterceptor implements ProducerInterceptor<String, Mes
      */
     @Override
     public ProducerRecord<String, MessageDTO> onSend(ProducerRecord<String, MessageDTO> record) {
-        log.info("onSend,orginalRecord:{}", JSON.toJSONString(record));
+        log.info("原始topic：{}",record.topic());
         return new ProducerRecord<String, MessageDTO>(TOPIC_KEY_PREFIX + record.topic(),
                 record.partition(),record.timestamp(),record.key(), record.value());
     }
@@ -40,7 +39,7 @@ public class KafkaProducerInterceptor implements ProducerInterceptor<String, Mes
      */
     @Override
     public void onAcknowledgement(RecordMetadata metadata, Exception exception) {
-
+      log.info("实际topic：{}",metadata.topic());
     }
 
 

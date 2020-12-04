@@ -625,3 +625,5 @@
 /springboot-mybatis-autoId/springboot-mybatis-autoId.iml
 /springboot-chaincontext/target/classes/com/github/lybgeek/chaincontext/
 /springboot-chaincontext/springboot-chaincontext.iml
+/springboot-chaincontext/target/classes/META-INF/
+/springboot-mq-idempotent-consume/target/classes/
