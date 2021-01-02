@@ -18,7 +18,7 @@ public class DBSqlScriptUtils {
 	}
 
 
-	public static List<String>	prepareSqlStatementWithStringFormat(boolean isForFiles) {
+	public static List<String> prepareSqlStatementWithStringFormat(boolean isForFiles) {
 		String sql = "alter table %s ADD COLUMN create_time DATETIME COMMENT '创建时间',ADD COLUMN created_by_id BIGINT(20) DEFAULT NULL COMMENT '创建人id', ADD COLUMN update_time DATETIME COMMENT '修改时间', ADD COLUMN last_updated_by_id BIGINT(20) DEFAULT NULL COMMENT '修改人id'";
 		List<String> sqlStatements = new ArrayList<>();
 		Map<String, List<String>> dbTableNamesMap = DbUtils.INSTANCE.getDbTablesNamesMap();
@@ -60,7 +60,7 @@ public class DBSqlScriptUtils {
 	 * @param isForFiles 如果是要写入文件，则每条生成的sql语句，需追加分号
 	 * @return
 	 */
-	public static List<String>	prepareSqlStatement(boolean isForFiles){
+	public static List<String> prepareSqlStatement(boolean isForFiles){
 		List<String> sqlStatements = new ArrayList<>();
 		String sql = "\n" +
 				"SELECT\n" +
