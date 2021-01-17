@@ -34,6 +34,7 @@
         <module>springboot-mybatis-autoId</module>
         <module>springboot-code-authorization</module>
         <module>springboot-chaincontext</module>
+        <module>springboot-mybatisplus-tenant</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

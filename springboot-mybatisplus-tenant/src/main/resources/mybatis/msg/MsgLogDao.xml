@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.lybgeek.mybatisplus.msg.dao.MsgLogDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.github.lybgeek.mybatisplus.msg.entity.MsgLog">
+    <result column="id" property="id" />
+    <result column="tenant_id" property="tenantId" />
+    <result column="app_id" property="appId" />
+    <result column="created_by" property="createdBy" />
+    <result column="create_date" property="createDate" />
+    <result column="last_updated_by" property="lastUpdatedBy" />
+    <result column="last_update_date" property="lastUpdateDate" />
+    <result column="object_version_number" property="objectVersionNumber" />
+    <result column="delete_flag" property="deleteFlag" />
+    <result column="created_by_id" property="createdById" />
+    <result column="last_updated_by_id" property="lastUpdatedById" />
+        <result column="biz_id" property="bizId" />
+        <result column="biz_type" property="bizType" />
+        <result column="msg_content" property="msgContent" />
+        <result column="msg_status" property="msgStatus" />
+        <result column="msg_remark" property="msgRemark" />
+        <result column="try_count" property="tryCount" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        tenant_id,
+        app_id,
+        created_by,
+        create_date,
+        last_updated_by,
+        last_update_date,
+        object_version_number,
+        delete_flag,
+        created_by_id,
+        last_updated_by_id,
+        biz_id, biz_type, msg_content, msg_status, msg_remark, try_count
+    </sql>
+
+</mapper>

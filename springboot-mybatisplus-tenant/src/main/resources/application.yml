@@ -1,0 +1,14 @@
+
+
+spring:
+  application:
+    name: springboot-mybatisplus-tenant
+  profiles:
+    active: jdbc
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
