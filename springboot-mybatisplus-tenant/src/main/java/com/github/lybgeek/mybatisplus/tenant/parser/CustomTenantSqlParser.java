@@ -1,19 +1,18 @@
 package com.github.lybgeek.mybatisplus.tenant.parser;
 
-import com.baomidou.mybatisplus.core.toolkit.Assert;
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.ExceptionUtils;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 import net.sf.jsqlparser.expression.*;
-import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
-import net.sf.jsqlparser.expression.operators.conditional.OrExpression;
-import net.sf.jsqlparser.expression.operators.relational.*;
+import net.sf.jsqlparser.expression.operators.relational.ExpressionList;
+import net.sf.jsqlparser.expression.operators.relational.ItemsList;
+import net.sf.jsqlparser.expression.operators.relational.MultiExpressionList;
 import net.sf.jsqlparser.schema.Column;
-import net.sf.jsqlparser.schema.Table;
-import net.sf.jsqlparser.statement.delete.Delete;
 import net.sf.jsqlparser.statement.insert.Insert;
-import net.sf.jsqlparser.statement.select.*;
-import net.sf.jsqlparser.statement.update.Update;
+import net.sf.jsqlparser.statement.select.PlainSelect;
+import net.sf.jsqlparser.statement.select.SelectExpressionItem;
+import net.sf.jsqlparser.statement.select.SelectItem;
+import net.sf.jsqlparser.statement.select.SubSelect;
 
 import java.util.List;
 
@@ -24,25 +23,6 @@ import java.util.List;
  **/
 public class CustomTenantSqlParser extends TenantSqlParser {
 
-    /**
-     * select 语句处理
-     */
-    @Override
-    public void processSelectBody(SelectBody selectBody) {
-        if (selectBody instanceof PlainSelect) {
-            processPlainSelect((PlainSelect) selectBody);
-        } else if (selectBody instanceof WithItem) {
-            WithItem withItem = (WithItem) selectBody;
-            if (withItem.getSelectBody() != null) {
-                processSelectBody(withItem.getSelectBody());
-            }
-        } else {
-            SetOperationList operationList = (SetOperationList) selectBody;
-            if (operationList.getSelects() != null && operationList.getSelects().size() > 0) {
-                operationList.getSelects().forEach(this::processSelectBody);
-            }
-        }
-    }
 
     /**
      * insert 语句处理
@@ -53,10 +33,8 @@ public class CustomTenantSqlParser extends TenantSqlParser {
             // 过滤退出执行
             return;
         }
-        for (Column column : insert.getColumns()) {
-            if(column.getColumnName().equals(getTenantHandler().getTenantIdColumn())){
-                return;
-            }
+        if (isAleadyExistTenantColumn(insert)) {
+            return;
         }
         insert.getColumns().add(new Column(getTenantHandler().getTenantIdColumn()));
         if (insert.getSelect() != null) {
@@ -75,51 +53,19 @@ public class CustomTenantSqlParser extends TenantSqlParser {
     }
 
     /**
-     * update 语句处理
+     * 判断是否存在租户id列字段
+     * @param insert
+     * @return 如果已经存在，则绕过不执行
      */
-    @Override
-    public void processUpdate(Update update) {
-        List<Table> tableList = update.getTables();
-        Assert.isTrue(null != tableList && tableList.size() < 2,
-                "Failed to process multiple-table update, please exclude the statementId");
-        Table table = tableList.get(0);
-        if (getTenantHandler().doTableFilter(table.getName())) {
-            // 过滤退出执行
-            return;
+    private boolean isAleadyExistTenantColumn(Insert insert) {
+        List<Column> columns = insert.getColumns();
+        if(CollectionUtils.isEmpty(columns)){
+            return false;
         }
-        update.setWhere(this.andExpression(table, update.getWhere()));
+        String tenantIdColumn = getTenantHandler().getTenantIdColumn();
+        return columns.stream().map(Column::getColumnName).anyMatch(tenantId -> tenantId.equals(tenantIdColumn));
     }
 
-    /**
-     * delete 语句处理
-     */
-    @Override
-    public void processDelete(Delete delete) {
-        if (getTenantHandler().doTableFilter(delete.getTable().getName())) {
-            // 过滤退出执行
-            return;
-        }
-        delete.setWhere(this.andExpression(delete.getTable(), delete.getWhere()));
-    }
-
-    /**
-     * delete update 语句 where 处理
-     */
-    @Override
-    protected BinaryExpression andExpression(Table table, Expression where) {
-        //获得where条件表达式
-        EqualsTo equalsTo = new EqualsTo();
-        equalsTo.setLeftExpression(this.getAliasColumn(table));
-        equalsTo.setRightExpression(getTenantHandler().getTenantId());
-        if (null != where) {
-            if (where instanceof OrExpression) {
-                return new AndExpression(equalsTo, new Parenthesis(where));
-            } else {
-                return new AndExpression(equalsTo, where);
-            }
-        }
-        return equalsTo;
-    }
 
     /***
      * 因为mybatis-plus自带的功能只会拼接left 、from和where后面的表或子查询添加租户id。
@@ -177,131 +123,6 @@ public class CustomTenantSqlParser extends TenantSqlParser {
 
 
 
-    /**
-     * 处理 PlainSelect
-     *
-     * @param plainSelect ignore
-     * @param addColumn   是否添加租户列,insert into select语句中需要
-     */
-    @Override
-    protected void processPlainSelect(PlainSelect plainSelect, boolean addColumn) {
-        FromItem fromItem = plainSelect.getFromItem();
-        if (fromItem instanceof Table) {
-            Table fromTable = (Table) fromItem;
-            if (getTenantHandler().doTableFilter(fromTable.getName())) {
-                // 过滤退出执行
-                return;
-            }
-            plainSelect.setWhere(builderExpression(plainSelect.getWhere(), fromTable));
-            if (addColumn) {
-                plainSelect.getSelectItems().add(new SelectExpressionItem(new Column(getTenantHandler().getTenantIdColumn())));
-            }
-        } else {
-            processFromItem(fromItem);
-        }
-        List<Join> joins = plainSelect.getJoins();
-        if (joins != null && joins.size() > 0) {
-            joins.forEach(j -> {
-                processJoin(j);
-                processFromItem(j.getRightItem());
-            });
-        }
-    }
 
-    /**
-     * 处理子查询等
-     */
-    @Override
-    protected void processFromItem(FromItem fromItem) {
-        if (fromItem instanceof SubJoin) {
-            SubJoin subJoin = (SubJoin) fromItem;
-            if (subJoin.getJoinList() != null) {
-                subJoin.getJoinList().forEach(this::processJoin);
-            }
-            if (subJoin.getLeft() != null) {
-                processFromItem(subJoin.getLeft());
-            }
-        } else if (fromItem instanceof SubSelect) {
-            SubSelect subSelect = (SubSelect) fromItem;
-            if (subSelect.getSelectBody() != null) {
-                processSelectBody(subSelect.getSelectBody());
-            }
-        } else if (fromItem instanceof ValuesList) {
-            logger.debug("Perform a subquery, if you do not give us feedback");
-        } else if (fromItem instanceof LateralSubSelect) {
-            LateralSubSelect lateralSubSelect = (LateralSubSelect) fromItem;
-            if (lateralSubSelect.getSubSelect() != null) {
-                SubSelect subSelect = lateralSubSelect.getSubSelect();
-                if (subSelect.getSelectBody() != null) {
-                    processSelectBody(subSelect.getSelectBody());
-                }
-            }
-        }
-    }
-
-    /**
-     * 处理联接语句
-     */
-    @Override
-    protected void processJoin(Join join) {
-        if (join.getRightItem() instanceof Table) {
-            Table fromTable = (Table) join.getRightItem();
-            if (this.getTenantHandler().doTableFilter(fromTable.getName())) {
-                // 过滤退出执行
-                return;
-            }
-            join.setOnExpression(builderExpression(join.getOnExpression(), fromTable));
-        }
-    }
-
-    /**
-     * 处理条件
-     */
-    @Override
-    protected Expression builderExpression(Expression expression, Table table) {
-        //生成字段名
-        EqualsTo equalsTo = new EqualsTo();
-        equalsTo.setLeftExpression(this.getAliasColumn(table));
-        equalsTo.setRightExpression(getTenantHandler().getTenantId());
-        //加入判断防止条件为空时生成 "and null" 导致查询结果为空
-        if (expression == null) {
-            return equalsTo;
-        } else {
-            if (expression instanceof BinaryExpression) {
-                BinaryExpression binaryExpression = (BinaryExpression) expression;
-                if (binaryExpression.getLeftExpression() instanceof FromItem) {
-                    processFromItem((FromItem) binaryExpression.getLeftExpression());
-                }
-                if (binaryExpression.getRightExpression() instanceof FromItem) {
-                    processFromItem((FromItem) binaryExpression.getRightExpression());
-                }
-            }
-            if (expression instanceof OrExpression) {
-                return new AndExpression(equalsTo, new Parenthesis(expression));
-            } else {
-                return new AndExpression(equalsTo, expression);
-            }
-        }
-    }
-
-    /**
-     * 租户字段别名设置
-     * <p>tableName.tenantId 或 tableAlias.tenantId</p>
-     *
-     * @param table 表对象
-     * @return 字段
-     */
-    @Override
-    protected Column getAliasColumn(Table table) {
-        StringBuilder column = new StringBuilder();
-        if (null == table.getAlias()) {
-            column.append(table.getName());
-        } else {
-            column.append(table.getAlias().getName());
-        }
-        column.append(StringPool.DOT);
-        column.append(getTenantHandler().getTenantIdColumn());
-        return new Column(column.toString());
-    }
 
 }

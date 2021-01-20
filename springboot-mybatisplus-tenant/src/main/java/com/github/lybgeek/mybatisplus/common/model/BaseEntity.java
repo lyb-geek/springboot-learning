@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Entity基类
@@ -25,10 +25,10 @@ public class BaseEntity implements Serializable
 
     /** 创建时间 */
     @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createDate;
+    private Date createDate;
 
     /** 创建者 */
-    @TableField(fill = FieldFill.INSERT)
+ @TableField(fill = FieldFill.INSERT)
     private String createdBy;
 
     /** 创建者id */
@@ -45,7 +45,7 @@ public class BaseEntity implements Serializable
 
     /** 更新时间 */
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime lastUpdateDate;
+    private Date lastUpdateDate;
 
     /** 版本号 */
     @Version
