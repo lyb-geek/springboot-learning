@@ -26,8 +26,16 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [springboot实战之ORM整合（mybatis篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247487718&idx=1&sn=eff0d92671875d8acbf2a676a00b091c&chksm=e9eefe90de997786adfdf769644014c2c182b925e73e8c40702a1819b02f60d22b4a9afac33c&scene=21#wechat_redirect)
 
 
+[mybatis-plus多租户使用采坑记](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247494620&amp;idx=1&amp;sn=73d471e8c9f351124a64f062a3285c81&amp;chksm=e9ed05aade9a8cbc8be138816f4cfe6181f1b325eb55830288af73d2655ac4c6d15cce2c8fb1&token=1644107503&lang=zh_CN#rd)
+
+
+[如何解决mybatis-plus自动填充字段不生效问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247494797&amp;idx=1&amp;sn=9b7593788b8c001c64d2dd0e89fa82e6&amp;chksm=e9ed02fbde9a8bedc6108e7be8dfa60fa9f3ffb115f0a2c8d0637dedeaad9083d7a9f7f42150&token=1644107503&lang=zh_CN#rd)
+
 
 [springboot实战之ORM整合（JPA篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247487674&idx=1&sn=2f33664e18858409a55e07cdffd8878b&chksm=e9eefeccde9977da4e15df6e8bfa69ceb83417f32c82a00dae50dabe176bf046e0847b010c8f&scene=21#wechat_redirect)
+
+
+
 
 
 
@@ -92,6 +100,7 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 > 9、部署篇
 
 [springboot实战之docker部署](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488493&idx=1&sn=4b429bbe734d303c14adabda758c1882&chksm=e9eefd9bde99748d295ede5423164421ef5ff86977aa6025512f0fe1e72acf074d9ad67169b8&scene=21#wechat_redirect)
+[springboot项目在docker容器中如何优雅关闭](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247494541&amp;idx=1&amp;sn=96b485733f0750ee424147bc395f7faf&amp;chksm=e9ed05fbde9a8ceddc0c739a86f44f169345380ef38abf122c62f9a1859220d6675327629eb7&token=1644107503&lang=zh_CN#rd)
 
 
 
@@ -107,4 +116,6 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [springboot之优雅处理返回值](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247492409&idx=1&sn=e18d0511d71cec0a122d8ea950a81243&chksm=e9ed0d4fde9a8459183519ce711c71dce719d2382b8b9e33bd8adeadc0d6c1bee067b692a02a&token=2137971283&lang=zh_CN#rd)
 
 [如何使用自定义类加载器防止代码被反编译破解](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247493416&idx=1&sn=2c4cc888793e88df15396ff6fb3dbda0&chksm=e9ed095ede9a8048522c77d9a01d0675ccfd134d2db2f4adccc2eb9c5e85d998edc3c9da2097&token=1482534083&lang=zh_CN#rd)
+
+[如何解决springboot参数传中文乱码](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247494264&amp;idx=1&amp;sn=521b198092b4a11971f6fe00d6c8f1ae&amp;chksm=e9ed040ede9a8d18594af836f72b4a78cc3e8a87ff6b887fdf2f16eb9a2edf79969805a8d0b3&token=1644107503&lang=zh_CN#rd)
 

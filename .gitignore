@@ -656,3 +656,7 @@
 /springboot-mybatisplus-tenant/target/classes/application-jdbc.yml
 /springboot-mybatisplus-tenant/target/classes/demo_test.sql
 /springboot-mybatisplus-tenant/springboot-mybatisplus-tenant.iml
+/springboot-generate-sqlscript/target/classes/
+/springboot-mybatisplus-tenant/target/classes/META-INF/
+/springboot-xxl-job-executor/target/classes/
+/springboot-xxl-job-executor/springboot-xxl-job-executor.iml
