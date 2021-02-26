@@ -26,6 +26,9 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [springboot实战之ORM整合（mybatis篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247487718&idx=1&sn=eff0d92671875d8acbf2a676a00b091c&chksm=e9eefe90de997786adfdf769644014c2c182b925e73e8c40702a1819b02f60d22b4a9afac33c&scene=21#wechat_redirect)
 
 
+[springboot2结合mybatis拦截器实现主键自动生成](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247492628&amp;idx=1&amp;sn=a50cb8f126c2994787e932246f1052ed&amp;chksm=e9ed0a62de9a837432dd8f1ef92ea5b65dd8162fbdafac06844662eb938dc714ef713273fa0b&token=1644107503&lang=zh_CN#rd)
+
+
 [mybatis-plus多租户使用采坑记](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247494620&amp;idx=1&amp;sn=73d471e8c9f351124a64f062a3285c81&amp;chksm=e9ed05aade9a8cbc8be138816f4cfe6181f1b325eb55830288af73d2655ac4c6d15cce2c8fb1&token=1644107503&lang=zh_CN#rd)
 
 
