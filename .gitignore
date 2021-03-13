@@ -660,3 +660,5 @@
 /springboot-mybatisplus-tenant/target/classes/META-INF/
 /springboot-xxl-job-executor/target/classes/
 /springboot-xxl-job-executor/springboot-xxl-job-executor.iml
+/springboot-aop-spel/springboot-aop-spel.iml
+/springboot-aop-spel/target/classes/

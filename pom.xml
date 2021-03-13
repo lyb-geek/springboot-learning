@@ -37,6 +37,7 @@
         <module>springboot-generate-sqlscript</module>
         <module>springboot-mybatisplus-tenant</module>
         <module>springboot-xxl-job-executor</module>
+        <module>springboot-aop-spel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
