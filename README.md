@@ -35,6 +35,9 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [如何解决mybatis-plus自动填充字段不生效问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247494797&amp;idx=1&amp;sn=9b7593788b8c001c64d2dd0e89fa82e6&amp;chksm=e9ed02fbde9a8bedc6108e7be8dfa60fa9f3ffb115f0a2c8d0637dedeaad9083d7a9f7f42150&token=1644107503&lang=zh_CN#rd)
 
 
+[mybatis-plus如何禁用一级缓存](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247495739&amp;idx=1&amp;sn=b6b0528083b7fe2a973973c1047a4695&amp;chksm=e9ed1e4dde9a975b974d5246f5903b743d09aa8a160212347d62df6c45691f7b265947c6c7cf&token=1411348760&lang=zh_CN#rd)
+
+
 [springboot实战之ORM整合（JPA篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247487674&idx=1&sn=2f33664e18858409a55e07cdffd8878b&chksm=e9eefeccde9977da4e15df6e8bfa69ceb83417f32c82a00dae50dabe176bf046e0847b010c8f&scene=21#wechat_redirect)
 
 
@@ -89,8 +92,14 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [springboot实战之swagger整合](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488019&idx=1&sn=99c10cbc99d72825811c8f908296e5d0&chksm=e9eefc65de9975737dcbecfa08a86b41c1a4ba7c80d8ec9fcb64759ca3191a1f1acc3a54a19f&scene=21#wechat_redirect)
 
 
+> 8、定时任务调度篇
 
-> 8、运维监控篇
+[如何通过编码的方式手动触发xxl-job执行器](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247495310&amp;idx=1&amp;sn=832c5b5fcf5218e93f0d181b23288552&amp;chksm=e9ed00f8de9a89ee7ede4b5debbab3c02dbed940abe293b780b2346e13eb202cde96069caac0&token=1411348760&lang=zh_CN#rd)
+
+
+
+
+> 9、运维监控篇
 
 [springboot实战之prometheus监控整合](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488220&idx=1&sn=ffea978162aeb75f5778dc03d7f4ca0d&chksm=e9eefcaade9975bc4c7dd9d7b7ba42ec342533fed77a435291cbae0f09ed7b19d4d6e6a3374f&scene=21#wechat_redirect)
 
@@ -100,7 +109,7 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 
 
-> 9、部署篇
+> 10、部署篇
 
 [springboot实战之docker部署](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488493&idx=1&sn=4b429bbe734d303c14adabda758c1882&chksm=e9eefd9bde99748d295ede5423164421ef5ff86977aa6025512f0fe1e72acf074d9ad67169b8&scene=21#wechat_redirect)
 
@@ -110,7 +119,7 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 
 
-> 10、其他
+> 11、其他
 
 [springboot实战之创建一个支持平滑关闭的非web项目](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488372&idx=1&sn=d7fe2036b634bffcd2becf1577db6f5f&chksm=e9eefd02de997414d85518000c43523d031243a3b6a3fe231f1a601574a38feaef84f9cfd91e&scene=21#wechat_redirect)
 
