@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    # 配置文件激活
+    active: standalone
+  security:
+    user:
+      # 认证的用户名
+      name: lybgeek
+      # 认证的密码
+      password: lybgeek
+  application:
+    # 应用名
+    name: custom-eureka
+  freemarker:
+    prefer-file-system-access: false
+
+#放开权限，可以被hystrix dashboard,spring boot admin监控到
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+

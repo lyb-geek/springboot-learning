@@ -38,6 +38,7 @@
         <module>springboot-mybatisplus-tenant</module>
         <module>springboot-xxl-job-executor</module>
         <module>springboot-aop-spel</module>
+        <module>springboot-custom-eureka</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,47 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>请登录</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post" action="/login">
+        <!--<h2 class="form-signin-heading">请登录</h2>-->
+        <div class="alert alert-danger" role="alert" id="errorMsgAlert" style="display:none" ></div>
+        <p>
+            <label for="username" class="sr-only">用户名</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+                   autofocus="">
+        </p>
+        <p>
+            <label for="password" class="sr-only">密码</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   required="">
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+</div>
+</body>
+<script src="../js/jquery-3.5.1.min.js"></script>
+
+<script th:inline="javascript">
+    $(document).ready(function(){
+        var errorMsg = [[${errorMsg}]];
+        if(errorMsg != null && errorMsg != ''){
+          $("#errorMsgAlert").text(errorMsg);
+          $("#errorMsgAlert").show();
+        }
+
+        $("#username,#password").click(function () {
+            $("#errorMsgAlert").hide();
+        });
+
+
+    });
+</script>
+</html>
