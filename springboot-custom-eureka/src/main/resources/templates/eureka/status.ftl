@@ -17,9 +17,9 @@
   </head>
 
   <body id="one">
-    <#include "header.ftlh">
+    <#include "header.ftl">
     <div class="container-fluid xd-container">
-      <#include "navbar.ftlh">
+      <#include "navbar.ftl">
       <h1>Instances currently registered with Eureka</h1>
       <table id='instances' class="table table-striped table-hover">
         <thead>
@@ -102,21 +102,18 @@
         </tbody>
       </table>
 
-    <h1>CopyRight Info</h1>
+        <h1>CopyRight Info</h1>
 
-    <table id='copyright' class="table table-striped table-hover">
-        <thead>
-        <tr><th>Company</th><th>Organization</th></tr>
-        <thead>
-        <tbody>
-        <tr>
-            <td><a href="https://github.com/lyb-geek/springboot-learning" target="_blank">LYBGEEK</a></td><td>LYBGEEK PLATFORM</td>
-        </tr>
-        </tbody>
-    </table>
-    </div>
-
-
+        <table id='copyright' class="table table-striped table-hover">
+            <thead>
+            <tr><th>Company</th><th>Organization</th></tr>
+            <thead>
+            <tbody>
+            <tr>
+                <td><a href="https://github.com/lyb-geek/springboot-learning" target="_blank">LYBGEEK</a></td><td>LYBGEEK PLATFORM</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <script type="text/javascript" src="eureka/js/wro.js" ></script>
     <script type="text/javascript">
