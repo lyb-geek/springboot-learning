@@ -39,6 +39,7 @@
         <module>springboot-xxl-job-executor</module>
         <module>springboot-aop-spel</module>
         <module>springboot-custom-eureka</module>
+        <module>springboot-sentinel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -103,6 +104,8 @@
         <hutool.version>5.4.1</hutool.version>
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
         <xxl-job.version>2.2.0</xxl-job.version>
+        <spring-cloud.alibaba.version>2.2.3.RELEASE</spring-cloud.alibaba.version>
+        <sentinel.version>1.8.0</sentinel.version>
     </properties>
 
     <dependencyManagement>
@@ -114,6 +117,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
@@ -476,6 +488,12 @@
                 <groupId>com.xuxueli</groupId>
                 <artifactId>xxl-job-core</artifactId>
                 <version>${xxl-job.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-datasource-extension</artifactId>
+                <version>${sentinel.version}</version>
             </dependency>
 
 

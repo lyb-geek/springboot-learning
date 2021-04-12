@@ -662,3 +662,5 @@
 /springboot-xxl-job-executor/springboot-xxl-job-executor.iml
 /springboot-aop-spel/springboot-aop-spel.iml
 /springboot-aop-spel/target/classes/
+/springboot-sentinel/target/classes/
+/springboot-sentinel/springboot-sentinel.iml
