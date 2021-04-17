@@ -4,7 +4,9 @@ import com.alibaba.csp.sentinel.Entry;
 import com.alibaba.csp.sentinel.Tracer;
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.config.BaseWebMvcConfig;
 import com.github.lybgeek.common.exception.BizException;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -31,6 +33,7 @@ import javax.servlet.http.HttpServletRequest;
  **/
 @Aspect
 @Component
+@Slf4j
 public class StatisticsExceptionCountAspect {
 
     @Autowired
@@ -42,7 +45,13 @@ public class StatisticsExceptionCountAspect {
 
     }
 
-    @Around("pointcut()")
+    @AfterThrowing(pointcut = "pointcut()",throwing = "ex")
+    public void afterAfterThrowing(Throwable ex){
+        log.info("statisticsExceptionCount...");
+        traceException(ex);
+    }
+
+//    @Around("pointcut()")
     public Object around(ProceedingJoinPoint pjp)  {
         try {
             Object result = pjp.proceed();
