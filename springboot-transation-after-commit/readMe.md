@@ -1,0 +1,5 @@
+本文主要演示两种方式进行事务提交后调用的方式
+
+- 方式一：通过 org.springframework.transaction.support.TransactionSynchronizationManager.registerSynchronization进行实现
+
+- 方式二：基于事件驱动监听，通过org.springframework.transaction.event.TransactionalEventListener进行实现

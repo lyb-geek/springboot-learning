@@ -40,6 +40,7 @@
         <module>springboot-aop-spel</module>
         <module>springboot-custom-eureka</module>
         <module>springboot-sentinel</module>
+        <module>springboot-transation-after-commit</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
