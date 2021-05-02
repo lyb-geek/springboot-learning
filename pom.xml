@@ -41,6 +41,7 @@
         <module>springboot-custom-eureka</module>
         <module>springboot-sentinel</module>
         <module>springboot-transation-after-commit</module>
+        <module>springboot-agent</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
