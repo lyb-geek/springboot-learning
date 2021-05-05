@@ -7,7 +7,7 @@
 
 ```
 #在vm参数里面添加
- -javaagent:F:\springboot-agent\springboot-javaagent-log\target\agent-log.jar=F:\springboot-agent\springboot-javaagent-log\target\classes\agent.properties
+ -javaagent:F:\springboot-learning\springboot-agent\springboot-javaagent-log\target\agent-log.jar=F:\springboot-learning\springboot-agent\springboot-javaagent-log\target\classes\agent.properties
 ```
 
 > 2、基于AOP + springboot自动装配机制
