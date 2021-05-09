@@ -1,0 +1,10 @@
+arthas:
+  http-port: 8563
+  telnet-port: 3658
+  session-timeout: 1800
+  ip: 0.0.0.0
+# agent-id: ${ARTHAS_AGENT_ID:hsehdfsfghhwertyfad}
+#  app-name: ${spring.application.name}
+#  tunnel-server: ${ARTHAS_TUNNEL_SERVER:ws://localhost:7777/ws}
+
+

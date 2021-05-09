@@ -42,6 +42,7 @@
         <module>springboot-sentinel</module>
         <module>springboot-transation-after-commit</module>
         <module>springboot-agent</module>
+        <module>springboot-arthas</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -108,6 +109,7 @@
         <xxl-job.version>2.2.0</xxl-job.version>
         <spring-cloud.alibaba.version>2.2.3.RELEASE</spring-cloud.alibaba.version>
         <sentinel.version>1.8.0</sentinel.version>
+        <arthas.version>3.5.0</arthas.version>
     </properties>
 
     <dependencyManagement>
@@ -496,6 +498,12 @@
                 <groupId>com.alibaba.csp</groupId>
                 <artifactId>sentinel-datasource-extension</artifactId>
                 <version>${sentinel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.taobao.arthas</groupId>
+                <artifactId>arthas-spring-boot-starter</artifactId>
+                <version>${arthas.version}</version>
             </dependency>
 
 
