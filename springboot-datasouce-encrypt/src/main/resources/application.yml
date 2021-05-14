@@ -1,0 +1,48 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8080
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:springboot-datasouce-encrypt}
+  profiles:
+    active: dbCustomEncrypt
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+
+
+logging:
+  file:
+    path: /data/logs/springboot-datasouce-encrypt
+
+
+#mybatis-plus相关配置
+mybatis-plus:
+  mapper-locations: mybatis/*/*.xml
+  type-aliases-package: com.github.lybgeek.**.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+

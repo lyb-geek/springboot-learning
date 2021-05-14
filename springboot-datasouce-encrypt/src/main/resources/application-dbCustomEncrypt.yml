@@ -1,0 +1,52 @@
+# 数据源配置
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: ${DATASOURCE_URL:dcb268cf3a2626381d2bc5c96f94fb3d7f99352e0e392362cb818a321b0ca61f3a8dad3aeb084242b745c61a1d3dc244ed1484bf745c858c44560dde10e60e90ac65f77ce2926676df7af6b35aefd2bb984ff9a868f1f9052ee9cae5572fa015b66a602f32df39fb1bbc36e04cc0f148e4d610a3e5d54f2eb7c57e4729c9d7b4}
+        username: ${DATASOURCE_USERNAME:61db3bf3c6d3fe3ce87549c1af1e9061}
+        password: ${DATASOURCE_PWD:fb31cdd78a5fa2c43f530b849f1135e7}
+        druid:
+            # 初始连接数
+            initialSize: 5
+            # 最小连接池数量
+            minIdle: 10
+            # 最大连接池数量
+            maxActive: 20
+            # 配置获取连接等待超时的时间
+            maxWait: 60000
+            # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+            timeBetweenEvictionRunsMillis: 60000
+            # 配置一个连接在池中最小生存的时间，单位是毫秒
+            minEvictableIdleTimeMillis: 300000
+            # 配置一个连接在池中最大生存的时间，单位是毫秒
+            maxEvictableIdleTimeMillis: 900000
+            # 配置检测连接是否有效
+            validationQuery: SELECT 1 FROM DUAL
+            testWhileIdle: true
+            testOnBorrow: false
+            testOnReturn: false
+            webStatFilter:
+                enabled: true
+            statViewServlet:
+                enabled: true
+                # 设置白名单，不填则允许所有访问
+                allow:
+                url-pattern: /druid/*
+                # 控制台管理用户名和密码
+                login-username:
+                login-password:
+            filter:
+                stat:
+                    enabled: true
+                    # 慢SQL记录
+                    log-slow-sql: true
+                    slow-sql-millis: 1000
+                    merge-sql: true
+                wall:
+                    config:
+                        multi-statement-allow: true
+custom:
+    encrypt:
+        enabled: true
+        secret-key: 2f8ba810011e0973728afa3f28a0ecb6

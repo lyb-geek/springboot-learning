@@ -43,6 +43,7 @@
         <module>springboot-transation-after-commit</module>
         <module>springboot-agent</module>
         <module>springboot-arthas</module>
+        <module>springboot-datasouce-encrypt</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -110,6 +111,8 @@
         <spring-cloud.alibaba.version>2.2.3.RELEASE</spring-cloud.alibaba.version>
         <sentinel.version>1.8.0</sentinel.version>
         <arthas.version>3.5.0</arthas.version>
+        <jasypt.verison>3.0.3</jasypt.verison>
+        <codec.version>1.8</codec.version>
     </properties>
 
     <dependencyManagement>
@@ -504,6 +507,18 @@
                 <groupId>com.taobao.arthas</groupId>
                 <artifactId>arthas-spring-boot-starter</artifactId>
                 <version>${arthas.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt.verison}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.directory.studio</groupId>
+                <artifactId>org.apache.commons.codec</artifactId>
+                <version>${codec.version}</version>
             </dependency>
 
 
