@@ -44,6 +44,7 @@
         <module>springboot-agent</module>
         <module>springboot-arthas</module>
         <module>springboot-datasouce-encrypt</module>
+        <module>springboot-feign-servicename-route</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

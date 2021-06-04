@@ -1,0 +1,20 @@
+eureka:
+  #此处设置会改变eureka控制台的显示
+  datacenter: ${DATA_CENTER:LYB-GEEK DATA CENTER}
+  #此处设置会改变eureka控制台的显示
+  environment: ${ENV:feign-test}
+  instance:
+    # 服务实例ID
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    service-url:
+      # Eureka客户端与Eureka服务端的交互地址
+      defaultZone: http://localhost:8761/eureka/
+      # 是否从eureka server抓取服务信息
+    fetch-registry: false
+    # 是否注册到eureka server
+    register-with-eureka: false
+
+
+server:
+  port: 8761
