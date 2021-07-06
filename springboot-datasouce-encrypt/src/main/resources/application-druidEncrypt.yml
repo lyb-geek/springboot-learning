@@ -5,8 +5,8 @@ spring:
         driverClassName: com.mysql.cj.jdbc.Driver
         url: ${DATASOURCE_URL:jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai}
         username: ${DATASOURCE_USERNAME:root}
-        password: ${DATASOURCE_PWD:123456}
-        publickey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANiqhRRZpGHL9GMB2emF5wa0Y4kL2AFeI7CXLf4mZQF2/srYg/XBkpufkl1BxRPWG9HPpScGFBw58GEdR9a5+zUCAwEAAQ==
+        password: ${DATASOURCE_PWD:HB5FmUeAI1U81YJrT/T6awImFg1/Az5o8imy765WkVJouOubC2H80jqmZrr8L9zWKuzS/8aGzuQ4YySAkhywnA==}
+        publickey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIvP9xF4RCM4oFiu47NZY15iqNOAB9K2Ml9fiTLa05CWaXK7uFwBImR7xltZM1frl6ahWAXJB6a/FSjtJkTZUJECAwEAAQ==
         druid:
             # 初始连接数
             initialSize: 5
@@ -49,4 +49,5 @@ spring:
                         multi-statement-allow: true
                 config:
                     enabled: true
-            connect-properties: config.decrypt=true;config.decrypt.key=${spring.datasource.publickey}
+            connection-properties: config.decrypt=true;config.decrypt.key=${spring.datasource.publickey}
+
