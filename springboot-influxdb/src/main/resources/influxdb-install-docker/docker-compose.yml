@@ -1,0 +1,15 @@
+version: "3"
+services:
+  influxdb:
+    image: influxdb:1.8
+    restart: always
+    container_name: "influxdb"
+    privileged: true  
+    network_mode: bridge
+    volumes:
+      - /data/influxdb/conf:/etc/influxdb
+      - /data/influxdb/data:/var/lib/influxdb
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      

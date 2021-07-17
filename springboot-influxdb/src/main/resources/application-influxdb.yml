@@ -1,0 +1,6 @@
+spring:
+    influx:
+        url: ${INFLUX_URL:http://localhost:8086}
+        user: ${INFLUX_USER:admin}
+        password: ${INFLUX_PASSWORD:admin123}
+        datasource: ${INFLUX_DB:influxdb_demo}

@@ -45,6 +45,7 @@
         <module>springboot-arthas</module>
         <module>springboot-datasouce-encrypt</module>
         <module>springboot-feign-servicename-route</module>
+        <module>springboot-influxdb</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
