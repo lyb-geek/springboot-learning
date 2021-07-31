@@ -46,6 +46,7 @@
         <module>springboot-datasouce-encrypt</module>
         <module>springboot-feign-servicename-route</module>
         <module>springboot-influxdb</module>
+        <module>springboot-registrationcenter-switch</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+## 禁用eureka客户端自动注册
+#eureka:
+#  client:
+#    enabled: false
