@@ -47,6 +47,7 @@
         <module>springboot-feign-servicename-route</module>
         <module>springboot-influxdb</module>
         <module>springboot-registrationcenter-switch</module>
+        <module>springboot-spi-ioc</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
