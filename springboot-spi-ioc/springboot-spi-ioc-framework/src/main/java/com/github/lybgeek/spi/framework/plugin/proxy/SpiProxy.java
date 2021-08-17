@@ -70,4 +70,8 @@ public class SpiProxy implements InvocationHandler {
         Invocation invocation = new Invocation(target,method,args);
         return invocation;
     }
+    
+      public Object getTarget() {
+        return target;
+    }
 }
