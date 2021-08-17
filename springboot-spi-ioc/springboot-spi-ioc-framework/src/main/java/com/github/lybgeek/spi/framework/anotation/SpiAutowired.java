@@ -14,6 +14,6 @@ public @interface SpiAutowired {
 
 
     @AliasFor(annotation = Qualifier.class)
-    String value() default "";
+    String value();
 
 }
