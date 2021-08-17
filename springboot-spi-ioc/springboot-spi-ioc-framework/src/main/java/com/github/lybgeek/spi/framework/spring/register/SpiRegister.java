@@ -5,6 +5,7 @@ import cn.hutool.core.map.MapUtil;
 import com.github.lybgeek.spi.framework.anotation.EnableSpi;
 import com.github.lybgeek.spi.framework.anotation.Spi;
 import com.github.lybgeek.spi.framework.factory.SpiFactory;
+import com.github.lybgeek.spi.framework.plugin.proxy.SpiProxy;
 import org.apache.commons.lang3.StringUtils;
 import org.reflections.Reflections;
 import org.springframework.beans.BeansException;
@@ -17,6 +18,7 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.CollectionUtils;
 
+import java.lang.reflect.Proxy;
 import java.util.*;
 
 public class SpiRegister implements ImportBeanDefinitionRegistrar,BeanFactoryAware {
@@ -48,7 +50,16 @@ public class SpiRegister implements ImportBeanDefinitionRegistrar,BeanFactoryAwa
     private void registerSpiInterfaceSingleton(Class<?> spiInterface, Object bean) {
         Spi spi = spiInterface.getAnnotation(Spi.class);
         String defalutSpiImplClassName = spi.defalutSpiImplClassName();
-        if(bean.getClass().getName().equals(defalutSpiImplClassName)){
+        if(StringUtils.isBlank(defalutSpiImplClassName)){
+            defalutSpiImplClassName = spi.value();
+        }
+
+        String beanName = bean.getClass().getName();
+        if(bean.toString().startsWith(SpiProxy.class.getName())){
+            SpiProxy spiProxy = (SpiProxy) Proxy.getInvocationHandler(bean);
+            beanName = spiProxy.getTarget().getClass().getName();
+        }
+        if(beanName.equals(defalutSpiImplClassName)){
             String spiInterfaceBeanName = StringUtils.uncapitalize(spiInterface.getSimpleName());
             beanFactory.registerSingleton(spiInterfaceBeanName,bean);
         }
@@ -88,3 +99,4 @@ public class SpiRegister implements ImportBeanDefinitionRegistrar,BeanFactoryAwa
         this.beanFactory = (DefaultListableBeanFactory)beanFactory;
     }
 }
+
