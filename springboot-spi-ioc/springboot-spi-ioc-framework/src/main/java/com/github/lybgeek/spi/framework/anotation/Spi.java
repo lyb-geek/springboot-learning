@@ -10,10 +10,10 @@ import java.lang.annotation.*;
 @Documented
 public @interface Spi {
 
-    @AliasFor(attribute = "value")
+    @AliasFor("value")
     String defalutSpiImplClassName() default "";
 
-    @AliasFor(attribute = "defalutSpiImplClassName")
+    @AliasFor("defalutSpiImplClassName")
     String value() default "";
 
 }
