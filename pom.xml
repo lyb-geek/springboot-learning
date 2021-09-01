@@ -48,6 +48,7 @@
         <module>springboot-influxdb</module>
         <module>springboot-registrationcenter-switch</module>
         <module>springboot-spi-ioc</module>
+        <module>springboot-maven-plugin</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -62,6 +63,8 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <yaml.version>1.24</yaml.version>
         <lang3.version>3.9</lang3.version>
@@ -117,6 +120,7 @@
         <arthas.version>3.5.0</arthas.version>
         <jasypt.verison>3.0.3</jasypt.verison>
         <codec.version>1.8</codec.version>
+        <maven-plugin.version>3.5.2</maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -525,6 +529,20 @@
                 <version>${codec.version}</version>
             </dependency>
 
+            <!-- dependencies to doc -->
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>${maven-plugin.version}</version>
+            </dependency>
+
+            <!-- dependencies to annotations -->
+            <dependency>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-annotations</artifactId>
+                <version>${maven-plugin.version}</version>
+            </dependency>
+
 
 
         </dependencies>
@@ -548,14 +566,7 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
 
     <!-- 阿里云maven仓库 -->
     <repositories>
