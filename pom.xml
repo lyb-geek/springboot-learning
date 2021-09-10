@@ -49,6 +49,7 @@
         <module>springboot-registrationcenter-switch</module>
         <module>springboot-spi-ioc</module>
         <module>springboot-maven-plugin</module>
+        <module>springboot-custom-actuator-endpoint</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
