@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.spring.interceptor.autoconfigure.InterceptorAutoConfiguration,\
+com.github.lybgeek.spring.spi.autoconfigure.SpiInstanceAutoConfiguration

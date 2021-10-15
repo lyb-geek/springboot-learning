@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            xmlns:tool="http://www.springframework.org/schema/tool"
+            xmlns="http://lybgeek.github.com/schema/spi"
+            targetNamespace="http://lybgeek.github.com/schema/spi">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.springframework.org/schema/beans"
+                schemaLocation="http://www.springframework.org/schema/beans/spring-beans.xsd"/>
+    <xsd:import namespace="http://www.springframework.org/schema/tool"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            <![CDATA[ Namespace support for spi services ]]></xsd:documentation>
+    </xsd:annotation>
+
+
+    <xsd:complexType name="scanType">
+        <xsd:attribute name="id" type="xsd:ID">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The unique identifier for a bean. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="basePackages" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Specify the spi package name to scan, multiple scan packages are separated by commas ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="interceptorType">
+        <xsd:attribute name="id" type="xsd:ID">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The unique identifier for a bean. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="class" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Interceptor class name]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="interceptorChainType">
+        <xsd:choice>
+            <xsd:element ref="interceptor" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+
+    <xsd:element name="scan" type="scanType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ The scan config ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="interceptor" type="interceptorType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ The interceptor config ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="interceptorChain" type="interceptorChainType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ The interceptorChainType config ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+
+
+
+
+
+
+</xsd:schema>

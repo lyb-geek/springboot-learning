@@ -51,6 +51,7 @@
         <module>springboot-maven-plugin</module>
         <module>springboot-custom-actuator-endpoint</module>
         <module>springboot-scan-thirdparty-service</module>
+        <module>springboot-spi-enhance</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
