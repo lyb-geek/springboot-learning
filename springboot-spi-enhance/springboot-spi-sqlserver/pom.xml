@@ -9,16 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-spi-sqldialect</artifactId>
+    <artifactId>springboot-spi-sqlserver</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.github.lybgeek</groupId>
-            <artifactId>springboot-spi-framework-circuitbreaker</artifactId>
+            <artifactId>springboot-spi-sqldialect</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-
 
 
 </project>

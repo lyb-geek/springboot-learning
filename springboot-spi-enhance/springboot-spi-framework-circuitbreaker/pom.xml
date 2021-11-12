@@ -9,29 +9,29 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-spi-test</artifactId>
+    <artifactId>springboot-spi-framework-circuitbreaker</artifactId>
+
+    <properties>
+        <cglib.version>3.3.0</cglib.version>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+
+
         <dependency>
-            <groupId>com.github.lybgeek</groupId>
-            <artifactId>springboot-spi-mysql</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>springboot-spi-framework-spring</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.github.lybgeek</groupId>
-            <artifactId>springboot-spi-oracle</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.lybgeek</groupId>
-            <artifactId>springboot-spi-sqlserver</artifactId>
-            <version>${project.version}</version>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
         </dependency>
     </dependencies>
 

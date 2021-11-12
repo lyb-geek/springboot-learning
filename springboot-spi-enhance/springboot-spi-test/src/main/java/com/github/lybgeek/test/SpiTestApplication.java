@@ -1,6 +1,7 @@
 package com.github.lybgeek.test;
 
 
+import com.github.lybgeek.circuitbreaker.annotation.EnableSpiCircuitBreaker;
 import com.github.lybgeek.dialect.SpringSqlDialect;
 import com.github.lybgeek.spring.spi.annatation.EnableSpi;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication(scanBasePackages = "com.github.lybgeek")
 @EnableSpi(basePackages = "com.github.lybgeek")
+@EnableSpiCircuitBreaker(basePackages = "com.github.lybgeek")
 public class SpiTestApplication implements ApplicationRunner {
 
     @Autowired

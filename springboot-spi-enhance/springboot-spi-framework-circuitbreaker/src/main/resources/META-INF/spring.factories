@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.circuitbreaker.autoconfigure.SpringUtilAutoConfiguration,\
+com.github.lybgeek.circuitbreaker.autoconfigure.CircuitBreakerProxyAutoConfiguration\
+ 

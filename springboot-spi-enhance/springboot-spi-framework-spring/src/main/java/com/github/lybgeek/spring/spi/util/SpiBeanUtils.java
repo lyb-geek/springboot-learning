@@ -1,6 +1,7 @@
 package com.github.lybgeek.spring.spi.util;
 
 
+import cn.hutool.core.util.ObjectUtil;
 import com.github.lybgeek.spi.anotatation.Activate;
 import com.github.lybgeek.spi.anotatation.SPI;
 import com.github.lybgeek.spi.extension.ExtensionLoader;
@@ -10,10 +11,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.core.env.Environment;
+import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
+import org.springframework.util.ClassUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Slf4j
 public final class SpiBeanUtils {
@@ -55,6 +57,38 @@ public final class SpiBeanUtils {
         activateClassPathBeanDefinitionScanner.addIncludeFilter(new AnnotationTypeFilter(Activate.class));
         activateClassPathBeanDefinitionScanner.scan(basePackages);
 
+    }
+
+
+    public static Set<String> getBasePackages(AnnotationMetadata importingClassMetadata,String annotationName) {
+        Map<String, Object> attributes = importingClassMetadata
+                .getAnnotationAttributes(annotationName);
+
+        Set<String> basePackages = new HashSet<>();
+        fillBasePackages(basePackages,attributes,"value");
+        fillBasePackages(basePackages,attributes,"basePackages");
+
+        if(ObjectUtil.isNotNull(attributes.get("basePackageClasses"))) {
+            for (Class<?> clazz : (Class[]) attributes.get("basePackageClasses")) {
+                basePackages.add(ClassUtils.getPackageName(clazz));
+            }
+        }
+
+        if (basePackages.isEmpty()) {
+            basePackages.add(
+                    ClassUtils.getPackageName(importingClassMetadata.getClassName()));
+        }
+        return basePackages;
+    }
+
+    private static void fillBasePackages(Set<String> basePackages,Map<String, Object> attributes,String key){
+        if(ObjectUtil.isNotNull(attributes.get(key))) {
+            for (String pkg : (String[]) attributes.get(key)) {
+                if (org.springframework.util.StringUtils.hasText(pkg)) {
+                    basePackages.add(pkg);
+                }
+            }
+        }
     }
 
 

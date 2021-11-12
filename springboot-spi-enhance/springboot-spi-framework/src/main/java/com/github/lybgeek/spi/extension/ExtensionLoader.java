@@ -21,6 +21,7 @@ import com.github.lybgeek.spi.anotatation.SPI;
 import com.github.lybgeek.spi.factory.ExtensionFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.core.annotation.AnnotatedElementUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -233,10 +234,16 @@ public final class ExtensionLoader<T> {
         if (!clazz.isAssignableFrom(subClass)) {
             throw new IllegalStateException("load extension resources error," + subClass + " subtype is not of " + clazz);
         }
-        Activate annotation = subClass.getAnnotation(Activate.class);
+        //FIX CircuitBreakerActivate没找到
+        /***
+         *  确定在提供的AnnotatedElement上或指定元素上方的注解层次结构中是否存在指定annotationType的注解
+         *  https://www.cnblogs.com/hujunzheng/p/9790588.html
+         */
+        Activate annotation = AnnotatedElementUtils.findMergedAnnotation(subClass,Activate.class);
         if (annotation == null) {
             throw new IllegalStateException("load extension resources error," + subClass + " with Activate annotation");
         }
+
         Class<?> oldClass = classes.get(name);
         if (oldClass == null) {
             classes.put(name, subClass);

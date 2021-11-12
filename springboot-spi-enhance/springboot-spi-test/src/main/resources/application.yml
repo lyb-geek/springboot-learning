@@ -1,0 +1,25 @@
+server:
+  port: 8082
+
+
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      filter:
+        enabled: false
+
+# 因为示例的springcloud版本比较低，因此
+# 报ClassNotFoundException: org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory
+# 有因本示例是无需和springcloud断路器集成，因此禁用
+    circuitbreaker:
+      sentinel:
+        enabled: false
+  application:
+    name: springboot-spi-test
+
+
+
+
+

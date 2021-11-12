@@ -18,6 +18,8 @@
         <module>springboot-spi-mysql</module>
         <module>springboot-spi-oracle</module>
         <module>springboot-spi-test</module>
+        <module>springboot-spi-framework-circuitbreaker</module>
+        <module>springboot-spi-sqlserver</module>
     </modules>
 
 

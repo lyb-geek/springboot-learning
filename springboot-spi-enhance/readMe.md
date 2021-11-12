@@ -1,4 +1,4 @@
-## 本例主要演示如何实现键值对SPI、带拦截器SPI、SPI与spring整合
+## 本例主要演示如何实现键值对SPI、带拦截器SPI、SPI与spring整合、SPI与sentinel整合熔断降级
 
 ### 1、实现键值对SPI核心逻辑
 
@@ -46,6 +46,10 @@ springMysql=com.github.lybgeek.dialect.mysql.SpringMysqlDialect
  * 　　4、spring.handlers、spring.schemas中写入处理器、标签的位置
 
  schema教程：https://www.w3school.com.cn/schema/index.asp
+ 
+ ### 4、SPI与sentinel集成
+ 
+ 核心利用动态代理 + sentinel原生API
 
 
 
