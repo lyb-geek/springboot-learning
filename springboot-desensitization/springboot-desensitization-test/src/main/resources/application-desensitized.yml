@@ -1,0 +1,5 @@
+desensitized:
+  filepath: sensitive.txt
+  dir: F:\abc
+  strategy: mybatis
+
