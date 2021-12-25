@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: springboot-circuit-breaker-test
+
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+    circuitbreaker:
+      sentinel:
+        enabled: false
+
+
+server:
+  port: 8081

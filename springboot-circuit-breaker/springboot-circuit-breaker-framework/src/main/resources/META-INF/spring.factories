@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ com.github.lybgeek.circuitbreaker.framework.autoconfiure.CircuitBreakerMappingAutoConfiguration, \
+ com.github.lybgeek.circuitbreaker.framework.autoconfiure.SpringUtilAutoConfiguration\
+  
+org.springframework.context.ApplicationListener=\
+  com.github.lybgeek.circuitbreaker.framework.ciruitbreaker.listener.SentinelFilterDisabledApplicationListener
+        
+

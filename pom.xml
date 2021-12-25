@@ -53,6 +53,7 @@
         <module>springboot-scan-thirdparty-service</module>
         <module>springboot-spi-enhance</module>
         <module>springboot-desensitization</module>
+        <module>springboot-circuit-breaker</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
