@@ -212,4 +212,4 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊spring bean名称命名的那些事儿](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247497632&amp;idx=1&amp;sn=ca158341356e96aaabeabf533360c4e9&amp;chksm=e9ed19d6de9a90c04d27c96193c5e1c1d5d3816c28bab9676c621e8eff86d84020529095dd89&token=76335148&lang=zh_CN#rd)
 
-[spring kafka之如何批量给topic加前缀](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493922&amp;idx=1&amp;sn=986975dc4b659ca5acad7d924c5c01d3&amp;chksm=e9ed0754de9a8e42d20a52f71bf3c6273269add514c7a464015b15352efd74ca92e567c1b68d&token=76335148&lang=zh_CN#rd)
+[spring kafka之如何批量给topic加前缀](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493922&amp;idx=1&amp;sn=986975dc4b659ca5acad7d924c5c01d3&amp;chksm=e9ed0754de9a8e42d20a52f71bf3c6273269add514c7a464015b15352efd74ca92e567c1b68d&token=76335148&lang=zh_CN#rd){:target="_blank"}
