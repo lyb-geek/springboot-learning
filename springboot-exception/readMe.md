@@ -1,0 +1,5 @@
+本示例主要演示全局异常捕获的细节
+
+核心点：
+
+利用maven的optional标签，加@ConditionalOnClass实现按需加载指定全局异常捕获器

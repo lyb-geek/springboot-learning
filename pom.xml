@@ -54,6 +54,7 @@
         <module>springboot-spi-enhance</module>
         <module>springboot-desensitization</module>
         <module>springboot-circuit-breaker</module>
+        <module>springboot-exception</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -554,10 +555,6 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
