@@ -55,6 +55,7 @@
         <module>springboot-desensitization</module>
         <module>springboot-circuit-breaker</module>
         <module>springboot-exception</module>
+        <module>springboot-proguard</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

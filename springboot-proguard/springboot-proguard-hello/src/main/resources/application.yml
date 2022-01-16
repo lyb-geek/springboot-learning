@@ -1,0 +1,6 @@
+server:
+  port: 8081
+
+lybgeek:
+  license:
+    code: f9c3e2dccd5c78b09a0cb86a32b63543
