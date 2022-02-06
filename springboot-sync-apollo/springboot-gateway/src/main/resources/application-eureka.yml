@@ -1,0 +1,18 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+    prefer-ip-address: ${PREFER_IP:true}  #是否选择IP注册
+    #   ip-address: ${IP_ADDRESS:localhost}   #指定IP地址注册
+    lease-renewal-interval-in-seconds: 5  #续约更新时间间隔（默认30秒）,使得eureka及时剔除无效服务
+    lease-expiration-duration-in-seconds: 10 #续约到期时间（默认90秒）
+    hostname: ${HOSTNAME:${spring.application.name}}
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
+      #缩短延迟向服务端注册的时间、默认40s
+    initial-instance-info-replication-interval-seconds: 10
+    #提高Eureka-Client端拉取Server注册信息的频率,默认30s
+    registry-fetch-interval-seconds: 5
+
+
+

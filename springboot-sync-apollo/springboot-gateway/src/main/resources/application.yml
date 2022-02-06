@@ -1,0 +1,39 @@
+spring:
+  application:
+    # 服务名称
+    name:  ${APPLICATION_NAME:springboot-gateway}
+  cloud:
+    gateway:
+      discovery:
+        locator:
+         # 是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能
+          # 路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId/**，其中微服务应用名默认大写访问。
+          enabled: true
+          # 微服务应用名是否允许小写
+          lower-case-service-id: true
+  profiles:
+    # 激活配置文件
+    active: apollo,eureka
+# 服务端口
+server:
+  port: ${SERVER_PORT:8000}
+
+ribbon:
+  # ribbon配置2s刷新一次服务列表,默认30s
+  ServerListRefreshInterval: 2000
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+
+
+

@@ -1,0 +1,47 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: ${SERVER_PORT:8082}
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # tomcat最大线程数，默认为200
+    max-threads: 800
+    # Tomcat启动初始化的线程数，默认值25
+    min-spare-threads: 30
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:springboot-mock-gateway-dashboard}
+  profiles:
+    active: eureka
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+
+
+
+
+
+apollo:
+  openapi:
+    portal-url: http://localhost:8070
+    token: 44f94514c8b62d160b097acd59ba8f413f010c32
+  appinfo:
+    app-id: springboot-gateway
