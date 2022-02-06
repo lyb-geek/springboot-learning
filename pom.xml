@@ -57,6 +57,7 @@
         <module>springboot-exception</module>
         <module>springboot-proguard</module>
         <module>springboot-sync-apollo</module>
+        <module>springboot-transaction-invalid-case</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
