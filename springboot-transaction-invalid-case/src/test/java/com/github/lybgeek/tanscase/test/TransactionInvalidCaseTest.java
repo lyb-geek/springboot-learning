@@ -72,7 +72,7 @@ public class TransactionInvalidCaseTest {
 
     /**
      * 场景二：抛出受检异常
-     * 原因：spring默认只会回滚非检查异常
+     * 原因：spring默认只会回滚非检查异常和error异常
      * 解决方案：配置rollbackFor
      */
     @Test
