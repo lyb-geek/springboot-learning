@@ -58,6 +58,7 @@
         <module>springboot-proguard</module>
         <module>springboot-sync-apollo</module>
         <module>springboot-transaction-invalid-case</module>
+        <module>springboot-interceptor-order</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

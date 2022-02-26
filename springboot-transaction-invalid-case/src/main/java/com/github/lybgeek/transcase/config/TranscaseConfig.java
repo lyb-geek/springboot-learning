@@ -1,7 +1,6 @@
 package com.github.lybgeek.transcase.config;
 
 
-import com.github.lybgeek.transcase.finalandstatic.TranInvalidCaseWithFinalAndStaticMethod;
 import com.github.lybgeek.transcase.serviceWithoutInjectSpring.TranInvalidCaseWithoutInjectSpring;
 import com.github.lybgeek.user.service.UserService;
 import org.springframework.context.annotation.Bean;

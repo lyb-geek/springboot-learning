@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+	com.gihtub.lybgeek.interceptor.autoconfigure.MockJarWebMvcAutoConfiguration
