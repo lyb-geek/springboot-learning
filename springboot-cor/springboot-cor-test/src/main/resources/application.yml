@@ -1,0 +1,6 @@
+server:
+  port: 8081
+
+lybgeek:
+  pointcut:
+    expression: execution(* com.github.lybgeek.cor.test.service..*.*(..))

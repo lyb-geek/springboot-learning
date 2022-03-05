@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.advise.autoconfigure.AdviseAutoConfiguration,\
+com.github.lybgeek.cor.autoconfigure.CorHandlerInterceptorAutoConfiguration
