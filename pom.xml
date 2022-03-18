@@ -60,6 +60,7 @@
         <module>springboot-transaction-invalid-case</module>
         <module>springboot-interceptor-order</module>
         <module>springboot-cor</module>
+        <module>springboot-registerSingleton-aop-invalid</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
