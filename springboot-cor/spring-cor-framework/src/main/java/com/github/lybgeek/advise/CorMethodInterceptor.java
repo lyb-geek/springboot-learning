@@ -28,11 +28,12 @@ public class CorHandlerInterceptor {
         boolean isCanExec = true;
         int canExecCount = 0;
         for (AbstarctHandler abstarctHandler : abstarctHandlers) {
+             canExecCount++;
              if(!abstarctHandler.preHandler(invocation)){
                  isCanExec = false;
                  break;
              }
-            canExecCount++;
+           
         }
 
            try{
