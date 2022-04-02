@@ -26,11 +26,14 @@ public class CorHandlerInterceptor {
         }
 
         boolean isCanExec = true;
+        int canExecCount = 0;
         for (AbstarctHandler abstarctHandler : abstarctHandlers) {
+            canExecCount++;
              if(!abstarctHandler.preHandler(invocation)){
                  isCanExec = false;
                  break;
              }
+
         }
 
            try{
@@ -40,13 +43,8 @@ public class CorHandlerInterceptor {
            }catch (Exception e){
                throw new Exception(e);
            }finally {
-//               Collections.reverse(abstarctHandlers);
-//               for (AbstarctHandler abstarctHandler : abstarctHandlers) {
-//                   abstarctHandler.afterCompletion(invocation);
-//               }
-
-               for (int i = 0; i < abstarctHandlers.size(); i++) {
-                   int j = abstarctHandlers.size() - 1 - i;
+               for (int i = 0; i < canExecCount; i++) {
+                   int j = canExecCount - i - 1;
                    abstarctHandlers.get(j).afterCompletion(invocation);
                }
            }
