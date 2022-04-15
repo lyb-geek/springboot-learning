@@ -62,6 +62,7 @@
         <module>springboot-cor</module>
         <module>springboot-registerSingleton-aop-invalid</module>
         <module>springboot-git-commit</module>
+        <module>springboot-kafka-template</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
