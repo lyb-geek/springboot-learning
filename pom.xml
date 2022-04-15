@@ -61,6 +61,7 @@
         <module>springboot-interceptor-order</module>
         <module>springboot-cor</module>
         <module>springboot-registerSingleton-aop-invalid</module>
+        <module>springboot-git-commit</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
