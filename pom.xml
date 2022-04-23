@@ -63,6 +63,7 @@
         <module>springboot-registerSingleton-aop-invalid</module>
         <module>springboot-git-commit</module>
         <module>springboot-kafka-template</module>
+        <module>springboot-p6spy</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -135,6 +136,7 @@
         <jasypt.verison>3.0.3</jasypt.verison>
         <codec.version>1.8</codec.version>
         <maven-plugin.version>3.5.2</maven-plugin.version>
+        <p6spy.version>3.9.1</p6spy.version>
     </properties>
 
     <dependencyManagement>
@@ -556,6 +558,13 @@
                 <artifactId>maven-plugin-annotations</artifactId>
                 <version>${maven-plugin.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+
 
 
 
