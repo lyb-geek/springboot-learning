@@ -64,6 +64,7 @@
         <module>springboot-git-commit</module>
         <module>springboot-kafka-template</module>
         <module>springboot-p6spy</module>
+        <module>springboot-comparedata</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
