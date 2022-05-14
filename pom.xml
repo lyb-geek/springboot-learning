@@ -65,6 +65,7 @@
         <module>springboot-kafka-template</module>
         <module>springboot-p6spy</module>
         <module>springboot-comparedata</module>
+        <module>springboot-mysql-virtual-column</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -138,6 +139,8 @@
         <codec.version>1.8</codec.version>
         <maven-plugin.version>3.5.2</maven-plugin.version>
         <p6spy.version>3.9.1</p6spy.version>
+        <pinyin4j.version>2.6.1</pinyin4j.version>
+        <faker.version>1.0.2</faker.version>
     </properties>
 
     <dependencyManagement>
@@ -566,7 +569,18 @@
                 <version>${p6spy.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.github.tokenjan</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>${pinyin4j.version}</version>
+            </dependency>
 
+
+            <dependency>
+                <groupId>com.github.javafaker</groupId>
+                <artifactId>javafaker</artifactId>
+                <version>${faker.version}</version>
+            </dependency>
 
 
         </dependencies>
