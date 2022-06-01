@@ -2,7 +2,7 @@ spring:
     kafka:
         producer:
             # kafka生产者服务端地址
-            bootstrap-servers: ${KAFKA_PRODUCER_BOOTSTRAP_SERVER:10.1.4.71:32643}
+            bootstrap-servers: ${KAFKA_PRODUCER_BOOTSTRAP_SERVER:localhost:9092}
             # 生产者重试的次数
             retries: ${KAFKA_PRODUCER_RETRIES:0}
             # 每次批量发送的数据量
@@ -16,7 +16,7 @@ spring:
             acks: ${KAFKA_PRODUCER_ACK:1}
 
         consumer:
-            bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVER:10.1.4.71:32643}
+            bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVER:localhost:9092}
             # 在偏移量无效的情况下，消费者将从起始位置读取分区的记录
             auto-offset-reset: ${KAFKA_CONSUMER_AUTO_OFFSET_RESET:earliest}
             #  是否自动提交偏移量，默认值是true,为了避免出现重复数据和数据丢失，可以把它设置为false,然后手动提交偏移量
