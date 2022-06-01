@@ -1,4 +1,11 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
  com.github.lybgeek.mq.kafka.comsume.autoconfigure.ComsumeAutoConfiguration,\
-  com.github.lybgeek.mq.kafka.producer.autoconfigure.ProducerAutoConfiguration
+  com.github.lybgeek.mq.kafka.producer.autoconfigure.ProducerAutoConfiguration,\
+  com.github.lybgeek.mq.kafka.comsume.multi.one.OneKafkaComsumeAutoConfiguration,\
+  com.github.lybgeek.mq.kafka.comsume.multi.two.TwoKafkaComsumeAutoConfiguration,\
+  com.github.lybgeek.mq.kafka.comsume.multi.three.ThreeKafkaComsumeAutoConfiguration
+
+
+
+
  

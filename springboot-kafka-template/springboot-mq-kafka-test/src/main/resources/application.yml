@@ -1,7 +1,7 @@
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为8080
-  port: 8080
+  port: 8081
   servlet:
     # 应用的访问路径
     context-path: /
@@ -17,7 +17,7 @@ spring:
   application:
     name: ${APPLICATION_NAME:springboot-mq-kafka-test}
   profiles:
-    active: jdbc,kafka
+    active: jdbc,kafkamulti
 
 management:
   endpoints:

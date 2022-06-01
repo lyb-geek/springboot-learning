@@ -7,7 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-
+/**
+ * @description:
+ * @author: Linyb
+ * @date : 2022/2/23 16:10
+ **/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
