@@ -88,7 +88,7 @@
         <dozer.version>6.5.0</dozer.version>
         <druid.version>1.1.19</druid.version>
         <dbutils.version>1.7</dbutils.version>
-        <mysql.version>8.0.16</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <fastjson.version>1.2.58</fastjson.version>
         <stream.version>2.2.0.RELEASE</stream.version>
         <cglib.version>3.2.12</cglib.version>
