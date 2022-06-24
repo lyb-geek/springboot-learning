@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lybgeek="http://lybgeek.github.com/schema/pipeline"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://lybgeek.github.com/schema/pipeline http://lybgeek.github.com/schema/pipeline/pipeline.xsd">
+
+    
+    <lybgeek:pipeline consumePipelinesServiceClassName="com.github.lybgeek.pipeline.spring.test.xml.service.UserXmlService" consumePipelinesMethod="save" argsType="com.github.lybgeek.pipeline.spring.test.model.User">
+        <lybgeek:pipelineHandler className="com.github.lybgeek.pipeline.spring.test.xml.handler.UserCheckChannelHandler" order="1"/>
+        <lybgeek:pipelineHandler className="com.github.lybgeek.pipeline.spring.test.xml.handler.UserFillUsernameAndEmailChannelHandler" order="2"/>
+        <lybgeek:pipelineHandler className="com.github.lybgeek.pipeline.spring.test.xml.handler.UserPwdEncryptChannelHandler" order="3"/>
+        <lybgeek:pipelineHandler className="com.github.lybgeek.pipeline.spring.test.xml.handler.UserMockSaveChannelHandler" order="4"/>
+        <lybgeek:pipelineHandler className="com.github.lybgeek.pipeline.spring.test.xml.handler.UserPrintChannleHandler" order="5"/>
+    </lybgeek:pipeline>
+
+
+</beans>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            xmlns:tool="http://www.springframework.org/schema/tool"
+            xmlns="http://lybgeek.github.com/schema/pipeline"
+            targetNamespace="http://lybgeek.github.com/schema/pipeline">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.springframework.org/schema/beans"
+                schemaLocation="http://www.springframework.org/schema/beans/spring-beans.xsd"/>
+    <xsd:import namespace="http://www.springframework.org/schema/tool"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            <![CDATA[ Namespace support for pipeline services ]]></xsd:documentation>
+    </xsd:annotation>
+
+
+    <xsd:complexType name="pipelineType">
+        <xsd:choice>
+            <xsd:element ref="pipelineHandler" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:choice>
+        <xsd:attribute name="id" type="xsd:ID">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The unique identifier for a bean. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="consumePipelinesServiceClassName" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ consumePipelinesService class name  ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="consumePipelinesMethod" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ consumePipelinesMethod name  ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="argsType" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ consumePipelinesMethod args type , multiple args types are separated by commas ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="pipelineHandlerType">
+        <xsd:attribute name="className" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ pipelineHanlder class name]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="order" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ pipeline class name]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+
+
+    <xsd:element name="pipelineHandler" type="pipelineHandlerType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ The pipelineHandler config ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="pipeline" type="pipelineType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ The pipeline config ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+
+
+
+
+
+
+</xsd:schema>

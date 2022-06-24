@@ -1,0 +1,10 @@
+lybgeek:
+  pipeline:
+    chain:
+      - comsumePipelineName: userYmlService
+        pipelineClassNames:
+          - com.github.lybgeek.pipeline.spring.test.yml.handler.UserCheckChannelHandler
+          - com.github.lybgeek.pipeline.spring.test.yml.handler.UserFillUsernameAndEmailChannelHandler
+          - com.github.lybgeek.pipeline.spring.test.yml.handler.UserPwdEncryptChannelHandler
+          - com.github.lybgeek.pipeline.spring.test.yml.handler.UserMockSaveChannelHandler
+          - com.github.lybgeek.pipeline.spring.test.yml.handler.UserPrintChannleHandler

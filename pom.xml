@@ -66,6 +66,7 @@
         <module>springboot-p6spy</module>
         <module>springboot-comparedata</module>
         <module>springboot-mysql-virtual-column</module>
+        <module>springboot-pipeline</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
