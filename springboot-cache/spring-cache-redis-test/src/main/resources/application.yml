@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: redis
+
+#logging:
+#  level:
+#    root: debug
+
+

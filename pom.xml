@@ -67,6 +67,7 @@
         <module>springboot-comparedata</module>
         <module>springboot-mysql-virtual-column</module>
         <module>springboot-pipeline</module>
+        <module>springboot-cache</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
