@@ -23,7 +23,7 @@ public class UserHandlerMethodArgumentResolver implements HandlerMethodArgumentR
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         return parameter.hasParameterAnnotation(RequestBody.class) &&
-                parameter.getParameterType().isAssignableFrom(User.class);
+               User.class.isAssignableFrom(parameter.getParameterType());
     }
 
     @Override
