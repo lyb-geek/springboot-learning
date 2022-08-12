@@ -20,7 +20,7 @@ public class ProductRequestBodyAdvice implements RequestBodyAdvice {
     @Override
     public boolean supports(MethodParameter methodParameter, Type targetType, Class<? extends HttpMessageConverter<?>> converterType) {
         return methodParameter.hasParameterAnnotation(RequestBody.class) &&
-                methodParameter.getParameterType().isAssignableFrom(Product.class);
+               Product.class.isAssignableFrom(methodParameter.getParameterType());
     }
 
     @Override
