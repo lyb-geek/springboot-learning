@@ -1,21 +1,17 @@
 package com.github.lybgeek.interceptor.autoconfigure;
 
 
-import com.github.lybgeek.advice.ProductRequestBodyAdvice;
 import com.github.lybgeek.interceptor.OrderFilter;
 import com.github.lybgeek.interceptor.OrderHandlerInterceptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@ComponentScan(basePackageClasses = OrderFilter.class)
 public class OrderHandlerInterceptorAutoConfiguration implements WebMvcConfigurer {
 
 
