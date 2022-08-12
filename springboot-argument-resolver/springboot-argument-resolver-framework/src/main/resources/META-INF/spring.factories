@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.resolver.autoconfigure.HandlerMethodArgumentResolverAutoConfiguration,\
+  com.github.lybgeek.advice.autoconfigure.RequestBodyAdviceAutoConfiguration,\
+com.github.lybgeek.interceptor.autoconfigure.OrderHandlerInterceptorAutoConfiguration,\
+  com.github.lybgeek.advisor.autoconfigure.PointcutAdvisorAutoConfiguration,\
+  com.github.lybgeek.aspect.autoconfigure.AspectAutoConfiguration
+
+  
+

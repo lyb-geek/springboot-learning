@@ -68,6 +68,7 @@
         <module>springboot-mysql-virtual-column</module>
         <module>springboot-pipeline</module>
         <module>springboot-cache</module>
+        <module>springboot-argument-resolver</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
