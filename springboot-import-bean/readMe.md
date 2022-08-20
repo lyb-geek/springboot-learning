@@ -1,0 +1,3 @@
+## 本示例主要演示当spring业务bean和自定义组件bean一样而导致冲突如何解决
+
+解决方案可以利用import中的DeferredImportSelecto以及结合condition注解r进行实现

@@ -1,0 +1,7 @@
+server:
+  port: 0
+
+lybgeek:
+  event:
+    async: true
+

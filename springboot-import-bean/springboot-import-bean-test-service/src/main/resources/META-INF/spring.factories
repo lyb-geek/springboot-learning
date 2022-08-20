@@ -1,0 +1,4 @@
+com.github.lybgeek.bean.annotation.LybGeekEnableAutoConfiguration=\
+com.github.lybgeek.bean.test.autoconfigure.ThirdPartyEchoServiceAutoConfiguration
+        
+
