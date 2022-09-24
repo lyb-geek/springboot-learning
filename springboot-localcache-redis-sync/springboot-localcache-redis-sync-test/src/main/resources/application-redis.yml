@@ -1,7 +1,7 @@
 spring:
   redis:
-    host: ${REDIS_URL:121.37.203.244}
-    port: ${REDIS_PORT:12379}
+    host: ${REDIS_URL:localhost}
+    port: ${REDIS_PORT:6379}
     password: ${REDIS_PASSWORD:lybgeek}
     database: 0
     timeout: 10000
