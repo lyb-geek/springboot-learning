@@ -70,6 +70,7 @@
         <module>springboot-cache</module>
         <module>springboot-argument-resolver</module>
         <module>springboot-import-bean</module>
+        <module>springboot-localcache-redis-sync</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

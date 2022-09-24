@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.redis.autoconfigure.LettuceRedisTemplateAutoConfiguration
+
