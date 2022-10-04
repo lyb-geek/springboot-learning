@@ -151,6 +151,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [springcloud本地开发的微服务如何调用远程k8s的微服务](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493044&amp;idx=1&amp;sn=0fbf07347e52c15a204387112a23a790&amp;chksm=e9ed0bc2de9a82d462262f480d3c9798f37ac8adb76b5eb7929d51f5a8e90802803f9c1e3b41&token=76335148&lang=zh_CN#rd)
 
+[聊聊如何将数据同步到apollo配置中心](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501960&amp;idx=1&amp;sn=abb620a546a82e27ccdf49d8b1255ff4&amp;chksm=e9ed26fede9aafe88c9815e7de3228334626fe2bbb620e959396ac260403babc6c4d4177f371&token=252819573&lang=zh_CN#rd)
+
 > 13、自定义SPI篇
 
 [聊聊基于jdk实现的spi如何与spring整合实现依赖注入](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247498657&amp;idx=1&amp;sn=6644b8c36079bf5347c1b69dde5a47e1&amp;chksm=e9ed15d7de9a9cc1ed086870ff20704289d57dccfe9523ddcbe1bc8f82cccb5055469f81807c&token=76335148&lang=zh_CN#rd)
@@ -178,6 +180,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [聊聊如何自定义实现maven插件](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247498942&amp;idx=1&amp;sn=0ebb7b403bf5a309bbdcd4e9889d1ea4&amp;chksm=e9ed12c8de9a9bde55d673faf709cb45280d838e9648903cac5f65294f13aa06cf5624daba4a&token=76335148&lang=zh_CN#rd)
 
 [聊聊springboot项目引用第三平台私有jar踩到的坑](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247497494&amp;idx=1&amp;sn=6f34dd38472522a9ebb12c89161da3f0&amp;chksm=e9ed1960de9a9076ea467beb5e1bbc4b1a3fe8b0fc908d71b5dccdbefb7c06ae59a5096ede2e&token=76335148&lang=zh_CN#rd)
+
+[聊聊如何修复springboot使maven-resources-plugin占位符失效问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501779&amp;idx=1&amp;sn=de7e413751134fd0ffb20d4cca260452&amp;chksm=e9ed29a5de9aa0b31e4bd7babac31917563a512dcf59cb32d5efc1be841a562592dc03131494&token=252819573&lang=zh_CN#rd)
 
 
 
@@ -220,3 +224,5 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [spring kafka之如何批量给topic加前缀](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493922&amp;idx=1&amp;sn=986975dc4b659ca5acad7d924c5c01d3&amp;chksm=e9ed0754de9a8e42d20a52f71bf3c6273269add514c7a464015b15352efd74ca92e567c1b68d&token=76335148&lang=zh_CN#rd)
 
 [聊聊springboot项目全局异常处理那些事儿](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501386&amp;idx=1&amp;sn=42cdc14c7e738748b38e405a11d67e8b&amp;chksm=e9ed283cde9aa12ad852fbf9583895297a916e1c0f82b733dd4659cca3e3083434ef8fd4a5a5&token=252819573&lang=zh_CN#rd)
+
+[spring事务失效的几种场景以及原因](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502065&amp;idx=1&amp;sn=cd29fff4eca78338ec1a58aef9ae073d&amp;chksm=e9ed2687de9aaf9176b666cd6224b85f5ac87b5dbc11fd5cd534543944018a37643d09149695&token=252819573&lang=zh_CN#rd)
