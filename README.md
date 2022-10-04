@@ -12,6 +12,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [springboot实战之整合配置中心实现动态刷新（Apollo篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247490283&idx=2&sn=1f38fc6872ff49adc5cb66e7d1d937a3&chksm=e9eef49dde997d8ba2b79734784d708cfeb35267fa534bd65cdf75cd0e853a88087b2c1076a6&token=158433357&lang=zh_CN#rd)
 
+[聊聊如何将数据同步到apollo配置中心](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501960&amp;idx=1&amp;sn=abb620a546a82e27ccdf49d8b1255ff4&amp;chksm=e9ed26fede9aafe88c9815e7de3228334626fe2bbb620e959396ac260403babc6c4d4177f371&token=252819573&lang=zh_CN#rd)
+
 
 
 > 2、驱动篇
@@ -110,6 +112,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊如何通过自定义注解实现springmvc和sentinel整合](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501167&amp;idx=1&amp;sn=80b9eaf7466a4b9c0443968e7f3131e1&amp;chksm=e9ed2b19de9aa20fe4313747d9e84edf04d624b4b3a88b15e455f19d0dfca8177d4c1d76c113&token=252819573&lang=zh_CN#rd)
 
+[聊聊如何利用p6spy进行sql监控](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503572&amp;idx=1&amp;sn=0022b9834853c2f3111aab8f4b12b422&amp;chksm=e9ed20a2de9aa9b4055830b7b6cbc44b7060105cb803dfd1bc3e9e162255db1acb1fc332e0e4&token=252819573&lang=zh_CN#rd)
+
 
 
 
@@ -125,6 +129,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊如何验证线上的版本是符合预期的版本](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503020&amp;idx=1&amp;sn=c27c188d00f7ad01d0d5bf47d995f2fc&amp;chksm=e9ed22dade9aabcc2c955ee6c73ca36f0509453ce1b8668a71192445bb4963a39f737787e88c&token=252819573&lang=zh_CN#rd)
 
+[聊聊基于docker部署的mysql如何进行数据恢复](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503181&amp;idx=1&amp;sn=f05e6458d260c487fd564e3152763e29&amp;chksm=e9ed233bde9aaa2de31e70abef843a918679a7b2430deea5a26a562ac63f1f8dc36e4e44edb5&token=252819573&lang=zh_CN#rd)
+
 
 > 11、安全篇
 
@@ -135,6 +141,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [聊聊如何自定义数据脱敏](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501037&amp;idx=1&amp;sn=895457cdecebc63ee0ee3df00bd85928&amp;chksm=e9ed2a9bde9aa38d1a2f0c24bf8a89c37a46afc10921a45fb39d05910557fe965a3ce48f58c0&token=76335148&lang=zh_CN#rd)
 
 [聊聊如何进行代码混淆](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501464&amp;idx=1&amp;sn=cebaefdfea75b3a585ef018e4b25b280&amp;chksm=e9ed28eede9aa1f81de294faa101516c9966cd547da913390ef813042b329ec27a04483dee25&token=252819573&lang=zh_CN#rd)
+
+[推荐一款代码依赖包安全漏洞检查插件](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503095&amp;idx=1&amp;sn=4bf35f9cb13e8b054822d2d018a75326&amp;chksm=e9ed2281de9aab97ee50432d77ab85622f1f57261808fdad0f81738b99431aecd8228ecf218e&token=252819573&lang=zh_CN#rd)
 
 
 > 12、微服务篇
@@ -153,7 +161,7 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [springcloud本地开发的微服务如何调用远程k8s的微服务](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493044&amp;idx=1&amp;sn=0fbf07347e52c15a204387112a23a790&amp;chksm=e9ed0bc2de9a82d462262f480d3c9798f37ac8adb76b5eb7929d51f5a8e90802803f9c1e3b41&token=76335148&lang=zh_CN#rd)
 
-[聊聊如何将数据同步到apollo配置中心](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501960&amp;idx=1&amp;sn=abb620a546a82e27ccdf49d8b1255ff4&amp;chksm=e9ed26fede9aafe88c9815e7de3228334626fe2bbb620e959396ac260403babc6c4d4177f371&token=252819573&lang=zh_CN#rd)
+
 
 > 13、自定义SPI篇
 
@@ -240,6 +248,10 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [聊聊缓存布尔值踩到的坑](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502503&amp;idx=1&amp;sn=2e8f6af96895360dbcfbdd35e1fa2bd5&amp;chksm=e9ed24d1de9aadc79fa10e3b41c762087a20d3519be6525e499c69416cb14ee2a12c180b0499&token=252819573&lang=zh_CN#rd)
 
 [记一次判断值是否存在遇到的神奇问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502865&amp;idx=1&amp;sn=cb4dace7617d7736e221031055bb4f41&amp;chksm=e9ed2267de9aab71db7cd1facf386f08e3aaee89278a90f99fdb4e400967706cc87be5f190d4&token=252819573&lang=zh_CN#rd)
+
+[聊聊如何实现一个带幂等模板的kafka消费者监听](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503134&amp;idx=1&amp;sn=00d206708a15f048303f814e01b2ccec&amp;chksm=e9ed2368de9aaa7e9e585e29964b61c80a80075b8bc5427e94191ca8bec7cf99bd5418ac0137&token=252819573&lang=zh_CN#rd)
+
+[两组数据量相对大时，如何高效进行比对](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503396&amp;idx=1&amp;sn=a364cc202b065c03c2e6238e2609dc9b&amp;chksm=e9ed2052de9aa9443fad9cdbe73dac936517c941d5a0bb84f87a1b57ac338ee689852c885171&token=252819573&lang=zh_CN#rd)
 
 
 
