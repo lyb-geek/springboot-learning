@@ -161,6 +161,9 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [springcloud本地开发的微服务如何调用远程k8s的微服务](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493044&amp;idx=1&amp;sn=0fbf07347e52c15a204387112a23a790&amp;chksm=e9ed0bc2de9a82d462262f480d3c9798f37ac8adb76b5eb7929d51f5a8e90802803f9c1e3b41&token=76335148&lang=zh_CN#rd)
 
+[记一次使用nacos2踩到的坑](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247505367&amp;idx=1&amp;sn=09108bf846131e954a225035f6c11c50&amp;chksm=e9ed3ba1de9ab2b7a96829947f9a4cb64d7270ef10cb96ce09c320ee2d737cc9703cd7b9f91d&token=252819573&lang=zh_CN#rd)
+
+[聊聊使用@RefreshScope与nacos2整合踩到的坑](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247505538&amp;idx=1&amp;sn=85562f5a8761b8f40a1d39cec0c53c4c&amp;chksm=e9ed38f4de9ab1e2b66bf1cd52ecec2a29a07e1afc15cd3edd5243ef003deee1fe614d2b9276&token=252819573&lang=zh_CN#rd)
 
 
 > 13、自定义SPI篇
@@ -194,7 +197,6 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [聊聊如何修复springboot使maven-resources-plugin占位符失效问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501779&amp;idx=1&amp;sn=de7e413751134fd0ffb20d4cca260452&amp;chksm=e9ed29a5de9aa0b31e4bd7babac31917563a512dcf59cb32d5efc1be841a562592dc03131494&token=252819573&lang=zh_CN#rd)
 
 
-
 > 15、学习成长篇
 
 [记一次gitlab代码仓清空还原复盘](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247500083&amp;idx=1&amp;sn=3950cc7de4e835b40c4e03cf224fa9fb&amp;chksm=e9ed2f45de9aa653cdbae032031ee79840303cd22ae478e807837d942c567fad70eb6bef5a81&token=76335148&lang=zh_CN#rd)
@@ -204,6 +206,10 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 > 16、业务项目扩展篇
 
 [聊聊如何让你的业务代码具有可扩展性](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502141&amp;idx=1&amp;sn=c74d996e64d89aa62d53dad8f37d656f&amp;chksm=e9ed274bde9aae5d29560c0ba69eaf25af1b0d9d7b3816566b158edcfb99ab9a9b51bef4ca19&token=252819573&lang=zh_CN#rd)
+
+[聊聊如何利用管道模式来进行业务编排（上篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247505512&amp;idx=1&amp;sn=6bb77771355849dfce16536905f9c835&amp;chksm=e9ed381ede9ab108cce1fd48eebd9754b1bf7639d027654183bae410fd40c5819010b7b95099&token=252819573&lang=zh_CN#rd)
+
+[聊聊如何利用管道模式来进行业务编排（下篇）](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247505624&amp;idx=1&amp;sn=9bc530dd4e6cce03a092ed18029915d4&amp;chksm=e9ed38aede9ab1b86e9f8c9314c6eece0458b4b986413370cef196e1e7bcf142c5e3cfbb3d40&token=252819573&lang=zh_CN#rd)
 
 > 17、消息队列
 
@@ -257,12 +263,13 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [记一次判断值是否存在遇到的神奇问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502865&amp;idx=1&amp;sn=cb4dace7617d7736e221031055bb4f41&amp;chksm=e9ed2267de9aab71db7cd1facf386f08e3aaee89278a90f99fdb4e400967706cc87be5f190d4&token=252819573&lang=zh_CN#rd)
 
-
 [两组数据量相对大时，如何高效进行比对](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503396&amp;idx=1&amp;sn=a364cc202b065c03c2e6238e2609dc9b&amp;chksm=e9ed2052de9aa9443fad9cdbe73dac936517c941d5a0bb84f87a1b57ac338ee689852c885171&token=252819573&lang=zh_CN#rd)
 
 [记一次因@Async引发的程序bug](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247504298&amp;idx=1&amp;sn=9ddd71be4750221fc54a39e58aff7c72&amp;chksm=e9ed3fdcde9ab6ca4bd565883597f8d2d2c60638156834ed2e61b307ad669df7a737415f91b6&token=252819573&lang=zh_CN#rd)
 
 [记一次springboot项目结合arthas排查ClassNotFoundException问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247504622&amp;idx=1&amp;sn=194aa2b16c9be5c2f2438d8da6aa986f&amp;chksm=e9ed3c98de9ab58eb6245fafe95c8f3bace12e3d85a21d0dccaa8e7676fa73ba59c21af5519b&token=252819573&lang=zh_CN#rd)
+
+[记一次使用spring javaconfig踩到的坑](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247505806&amp;idx=1&amp;sn=2285edf1e1f1e3704fd22a010d356754&amp;chksm=e9ed39f8de9ab0eee2bd7168bfe15eab6a2d5754d5063bd2594d27227107f46bd7697255e9fd&token=252819573&lang=zh_CN#rd)
 
 
 
