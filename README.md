@@ -108,6 +108,9 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊springboot项目如何实现自定义actuator端点](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247499256&amp;idx=1&amp;sn=3c9a376bd2863cd6485dfcc50666cfeb&amp;chksm=e9ed138ede9a9a98d4b214cf1017c0982760d47eb8ab4305b8a5d25e24da66e5db6a7e212d97&token=76335148&lang=zh_CN#rd)
 
+[聊聊如何通过自定义注解实现springmvc和sentinel整合](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501167&amp;idx=1&amp;sn=80b9eaf7466a4b9c0443968e7f3131e1&amp;chksm=e9ed2b19de9aa20fe4313747d9e84edf04d624b4b3a88b15e455f19d0dfca8177d4c1d76c113&token=252819573&lang=zh_CN#rd)
+
+
 
 
 > 10、部署篇
@@ -128,6 +131,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [聊聊springboot项目数据库密码如何加密](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247497834&amp;idx=1&amp;sn=204c4a4976f2fdaa1038996791a0e503&amp;chksm=e9ed161cde9a9f0a8f252d70034eac5c1978b60f96523d2898b23efe3a5716bf706f85472676&token=528131835&lang=zh_CN#rd)
 
 [聊聊如何自定义数据脱敏](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501037&amp;idx=1&amp;sn=895457cdecebc63ee0ee3df00bd85928&amp;chksm=e9ed2a9bde9aa38d1a2f0c24bf8a89c37a46afc10921a45fb39d05910557fe965a3ce48f58c0&token=76335148&lang=zh_CN#rd)
+
+[聊聊如何进行代码混淆](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501464&amp;idx=1&amp;sn=cebaefdfea75b3a585ef018e4b25b280&amp;chksm=e9ed28eede9aa1f81de294faa101516c9966cd547da913390ef813042b329ec27a04483dee25&token=252819573&lang=zh_CN#rd)
 
 
 > 12、微服务篇
@@ -213,3 +218,5 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [聊聊spring bean名称命名的那些事儿](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247497632&amp;idx=1&amp;sn=ca158341356e96aaabeabf533360c4e9&amp;chksm=e9ed19d6de9a90c04d27c96193c5e1c1d5d3816c28bab9676c621e8eff86d84020529095dd89&token=76335148&lang=zh_CN#rd)
 
 [spring kafka之如何批量给topic加前缀](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493922&amp;idx=1&amp;sn=986975dc4b659ca5acad7d924c5c01d3&amp;chksm=e9ed0754de9a8e42d20a52f71bf3c6273269add514c7a464015b15352efd74ca92e567c1b68d&token=76335148&lang=zh_CN#rd)
+
+[聊聊springboot项目全局异常处理那些事儿](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501386&amp;idx=1&amp;sn=42cdc14c7e738748b38e405a11d67e8b&amp;chksm=e9ed283cde9aa12ad852fbf9583895297a916e1c0f82b733dd4659cca3e3083434ef8fd4a5a5&token=252819573&lang=zh_CN#rd)
