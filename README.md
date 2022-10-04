@@ -123,6 +123,8 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊如何将gitlab ci的环境变量透传给k8s deployment.yaml](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247497167&amp;idx=1&amp;sn=5b748b6e1ee16a6c251d6f3645e9fa55&amp;chksm=e9ed1bb9de9a92af23295c3c25f34ab3e4c8c702fe1e086f6e81143cb4c341e2703904ddf873&token=76335148&lang=zh_CN#rd)
 
+[聊聊如何验证线上的版本是符合预期的版本](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503020&amp;idx=1&amp;sn=c27c188d00f7ad01d0d5bf47d995f2fc&amp;chksm=e9ed22dade9aabcc2c955ee6c73ca36f0509453ce1b8668a71192445bb4963a39f737787e88c&token=252819573&lang=zh_CN#rd)
+
 
 > 11、安全篇
 
@@ -191,7 +193,11 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊读源码这件事](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247500892&amp;idx=1&amp;sn=e2c54ba7d997dac1ce8b314fea2b4950&amp;chksm=e9ed2a2ade9aa33c230a58583faf13f490fed75af250fd3b0c7640b3b03ee10ed65928470ee9&token=76335148&lang=zh_CN#rd)
 
-> 16、其他
+> 16、业务项目扩展篇
+
+[聊聊如何让你的业务代码具有可扩展性](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502141&amp;idx=1&amp;sn=c74d996e64d89aa62d53dad8f37d656f&amp;chksm=e9ed274bde9aae5d29560c0ba69eaf25af1b0d9d7b3816566b158edcfb99ab9a9b51bef4ca19&token=252819573&lang=zh_CN#rd)
+
+> 17、其他
 
 [springboot实战之创建一个支持平滑关闭的非web项目](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488372&idx=1&sn=d7fe2036b634bffcd2becf1577db6f5f&chksm=e9eefd02de997414d85518000c43523d031243a3b6a3fe231f1a601574a38feaef84f9cfd91e&scene=21#wechat_redirect)
 
@@ -226,3 +232,18 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 [聊聊springboot项目全局异常处理那些事儿](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501386&amp;idx=1&amp;sn=42cdc14c7e738748b38e405a11d67e8b&amp;chksm=e9ed283cde9aa12ad852fbf9583895297a916e1c0f82b733dd4659cca3e3083434ef8fd4a5a5&token=252819573&lang=zh_CN#rd)
 
 [spring事务失效的几种场景以及原因](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502065&amp;idx=1&amp;sn=cd29fff4eca78338ec1a58aef9ae073d&amp;chksm=e9ed2687de9aaf9176b666cd6224b85f5ac87b5dbc11fd5cd534543944018a37643d09149695&token=252819573&lang=zh_CN#rd)
+
+[聊聊如何让springboot拦截器的执行顺序按我们想要的顺序执行](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502141&amp;idx=1&amp;sn=c74d996e64d89aa62d53dad8f37d656f&amp;chksm=e9ed274bde9aae5d29560c0ba69eaf25af1b0d9d7b3816566b158edcfb99ab9a9b51bef4ca19&token=252819573&lang=zh_CN#rd)
+
+[spring动态注册bean会使AOP失效？](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502442&amp;idx=1&amp;sn=33b6ebb3102c467086674a1003379158&amp;chksm=e9ed241cde9aad0aa09c8fc49364bd61cce5fc317d45bc0d8037754a1bd40babcbd5170ef6bf&token=252819573&lang=zh_CN#rd)
+
+[聊聊缓存布尔值踩到的坑](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502503&amp;idx=1&amp;sn=2e8f6af96895360dbcfbdd35e1fa2bd5&amp;chksm=e9ed24d1de9aadc79fa10e3b41c762087a20d3519be6525e499c69416cb14ee2a12c180b0499&token=252819573&lang=zh_CN#rd)
+
+[记一次判断值是否存在遇到的神奇问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502865&amp;idx=1&amp;sn=cb4dace7617d7736e221031055bb4f41&amp;chksm=e9ed2267de9aab71db7cd1facf386f08e3aaee89278a90f99fdb4e400967706cc87be5f190d4&token=252819573&lang=zh_CN#rd)
+
+
+
+
+
+
+
