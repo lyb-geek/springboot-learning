@@ -54,9 +54,9 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [springboot实战之mysql读写分离](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247487921&idx=1&sn=e3495542b67e131914b90d6c7e9157b5&chksm=e9eeffc7de9976d19989a01c74b449674b05735642b6046a114bf4ca9a368a30f2bc3f681d45&scene=21#wechat_redirect)
 
-
-
 [springboot实战之mysql分库分表](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247487971&idx=1&sn=c2a91ade482efe60fd4ccad15e66af46&chksm=e9eeff95de99768373731abdde0222de31ec1df4e4299de79d307407d3188f67590e6c889513&scene=21#wechat_redirect)
+
+[如何利用mysql5.7提供的虚拟列来提高查询效率](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247504278&amp;idx=1&amp;sn=2b7c65ff7126c93f5c24cde09767e662&amp;chksm=e9ed3fe0de9ab6f66c75f23caf5c88d05c1b8d14ea2e8c80ed2a3cfe8d43b3bc1850fa81fb6b&token=252819573&lang=zh_CN#rd)
 
 
 
@@ -205,13 +205,23 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊如何让你的业务代码具有可扩展性](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502141&amp;idx=1&amp;sn=c74d996e64d89aa62d53dad8f37d656f&amp;chksm=e9ed274bde9aae5d29560c0ba69eaf25af1b0d9d7b3816566b158edcfb99ab9a9b51bef4ca19&token=252819573&lang=zh_CN#rd)
 
-> 17、其他
+> 17、消息队列
+
+[springboot结合kakfa演示消息队列的消费幂等性如何保证](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247492142&idx=1&sn=67a708e07d2efbe3e7d3524b7156a825&chksm=e9ed0c58de9a854e109a15be1a271af4d27f532873f65c7fb8ed147900c58b8f37afaf8f5d20&token=912953533&lang=zh_CN#rd)
+
+[spring kafka之如何批量给topic加前缀](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493922&amp;idx=1&amp;sn=986975dc4b659ca5acad7d924c5c01d3&amp;chksm=e9ed0754de9a8e42d20a52f71bf3c6273269add514c7a464015b15352efd74ca92e567c1b68d&token=76335148&lang=zh_CN#rd)
+
+[聊聊如何实现一个带幂等模板的kafka消费者监听](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503134&amp;idx=1&amp;sn=00d206708a15f048303f814e01b2ccec&amp;chksm=e9ed2368de9aaa7e9e585e29964b61c80a80075b8bc5427e94191ca8bec7cf99bd5418ac0137&token=252819573&lang=zh_CN#rd)
+
+[聊聊在springboot项目中如何配置多个kafka消费者](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247504312&amp;idx=1&amp;sn=9ebfc032ce56c45b05a2b12b3473c653&amp;chksm=e9ed3fcede9ab6d837644a2ccea2a088d274b39431e557064c59f3d38803238c8cb4dca5cfcf&token=252819573&lang=zh_CN#rd)
+
+
+> 18、其他
 
 [springboot实战之创建一个支持平滑关闭的非web项目](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488372&idx=1&sn=d7fe2036b634bffcd2becf1577db6f5f&chksm=e9eefd02de997414d85518000c43523d031243a3b6a3fe231f1a601574a38feaef84f9cfd91e&scene=21#wechat_redirect)
 
 [如何用一行代码实现excel导入导出](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247488501&idx=1&sn=e95a85ece7e4bd8e501912ddaf98b5c6&chksm=e9eefd83de9974956ddb7253fba232c377f69c16b342a0beeb885ee20135067b6aea648e1108&scene=21#wechat_redirect)
 
-[springboot结合kakfa演示消息队列的消费幂等性如何保证](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247492142&idx=1&sn=67a708e07d2efbe3e7d3524b7156a825&chksm=e9ed0c58de9a854e109a15be1a271af4d27f532873f65c7fb8ed147900c58b8f37afaf8f5d20&token=912953533&lang=zh_CN#rd)
 
 [springboot之优雅处理返回值](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&mid=2247492409&idx=1&sn=e18d0511d71cec0a122d8ea950a81243&chksm=e9ed0d4fde9a8459183519ce711c71dce719d2382b8b9e33bd8adeadc0d6c1bee067b692a02a&token=2137971283&lang=zh_CN#rd)
 
@@ -235,8 +245,6 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [聊聊spring bean名称命名的那些事儿](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247497632&amp;idx=1&amp;sn=ca158341356e96aaabeabf533360c4e9&amp;chksm=e9ed19d6de9a90c04d27c96193c5e1c1d5d3816c28bab9676c621e8eff86d84020529095dd89&token=76335148&lang=zh_CN#rd)
 
-[spring kafka之如何批量给topic加前缀](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247493922&amp;idx=1&amp;sn=986975dc4b659ca5acad7d924c5c01d3&amp;chksm=e9ed0754de9a8e42d20a52f71bf3c6273269add514c7a464015b15352efd74ca92e567c1b68d&token=76335148&lang=zh_CN#rd)
-
 [聊聊springboot项目全局异常处理那些事儿](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247501386&amp;idx=1&amp;sn=42cdc14c7e738748b38e405a11d67e8b&amp;chksm=e9ed283cde9aa12ad852fbf9583895297a916e1c0f82b733dd4659cca3e3083434ef8fd4a5a5&token=252819573&lang=zh_CN#rd)
 
 [spring事务失效的几种场景以及原因](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502065&amp;idx=1&amp;sn=cd29fff4eca78338ec1a58aef9ae073d&amp;chksm=e9ed2687de9aaf9176b666cd6224b85f5ac87b5dbc11fd5cd534543944018a37643d09149695&token=252819573&lang=zh_CN#rd)
@@ -249,9 +257,12 @@ springboot实战系列暂时先更新到这边，下边是对之前springboot实
 
 [记一次判断值是否存在遇到的神奇问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247502865&amp;idx=1&amp;sn=cb4dace7617d7736e221031055bb4f41&amp;chksm=e9ed2267de9aab71db7cd1facf386f08e3aaee89278a90f99fdb4e400967706cc87be5f190d4&token=252819573&lang=zh_CN#rd)
 
-[聊聊如何实现一个带幂等模板的kafka消费者监听](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503134&amp;idx=1&amp;sn=00d206708a15f048303f814e01b2ccec&amp;chksm=e9ed2368de9aaa7e9e585e29964b61c80a80075b8bc5427e94191ca8bec7cf99bd5418ac0137&token=252819573&lang=zh_CN#rd)
 
 [两组数据量相对大时，如何高效进行比对](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247503396&amp;idx=1&amp;sn=a364cc202b065c03c2e6238e2609dc9b&amp;chksm=e9ed2052de9aa9443fad9cdbe73dac936517c941d5a0bb84f87a1b57ac338ee689852c885171&token=252819573&lang=zh_CN#rd)
+
+[记一次因@Async引发的程序bug](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247504298&amp;idx=1&amp;sn=9ddd71be4750221fc54a39e58aff7c72&amp;chksm=e9ed3fdcde9ab6ca4bd565883597f8d2d2c60638156834ed2e61b307ad669df7a737415f91b6&token=252819573&lang=zh_CN#rd)
+
+[记一次springboot项目结合arthas排查ClassNotFoundException问题](https://mp.weixin.qq.com/s?__biz=MzI1MTY1Njk4NQ==&amp;mid=2247504622&amp;idx=1&amp;sn=194aa2b16c9be5c2f2438d8da6aa986f&amp;chksm=e9ed3c98de9ab58eb6245fafe95c8f3bace12e3d85a21d0dccaa8e7676fa73ba59c21af5519b&token=252819573&lang=zh_CN#rd)
 
 
 
