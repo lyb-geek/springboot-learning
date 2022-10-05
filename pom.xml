@@ -109,7 +109,7 @@
         <mybatisPlus.dynamic.datasource.version>2.5.5</mybatisPlus.dynamic.datasource.version>
         <sharding.boot.version>3.1.0</sharding.boot.version>
         <commons-pool2.version>2.7.0</commons-pool2.version>
-        <elasticsearch.version>7.3.1</elasticsearch.version>
+        <elasticsearch.version>7.14.0</elasticsearch.version>
         <spring-data-elasticsearch.version>3.2.0.RC3</spring-data-elasticsearch.version>
         <reflections.version>0.9.11</reflections.version>
         <groovy.version>2.5.8</groovy.version>
