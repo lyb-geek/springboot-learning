@@ -1,0 +1,12 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.ds.switchover.autoconfigure.DynamicDataSourceAutoConfiguration
+
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+   com.github.lybgeek.ds.switchover.core.BeanDefintionOverridedEnvironmentPostProcessor
+
+
+
+# Bootstrap components
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+com.github.lybgeek.ds.switchover.properties.autoconfigure.PropertiesRebinderAutoConfiguration

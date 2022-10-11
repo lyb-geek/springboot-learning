@@ -1,0 +1,20 @@
+app:
+  # apollo portal上配置的appid
+  id: springboot-datasource-hot-switchover-test
+apollo:
+  # apollo configserver地址
+  meta: ${APOLLO_CONFIGSERVER_URL:http://localhost:8080}
+  #内存中的配置顺序和页面上看到的一致。
+  property:
+    order:
+      enabled: true
+      # will inject 'application' namespace in bootstrap phase
+  bootstrap:
+    enabled: true
+    # put apollo initialization before logging system initialization
+    eagerLoad:
+      enabled: true
+      # 指定命名空间
+    namespaces: ${APOLLO_NAMESPACES:application}
+
+
