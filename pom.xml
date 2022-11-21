@@ -138,7 +138,7 @@
         <spring-kafka.version>2.2.6.RELEASE</spring-kafka.version>
         <hutool.version>5.4.1</hutool.version>
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
-        <xxl-job.version>2.2.0</xxl-job.version>
+        <xxl-job.version>2.3.1</xxl-job.version>
         <spring-cloud.alibaba.version>2.2.3.RELEASE</spring-cloud.alibaba.version>
         <sentinel.version>1.8.0</sentinel.version>
         <arthas.version>3.5.0</arthas.version>
