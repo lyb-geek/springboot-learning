@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.http.common.autoconfigure.HttpPropertiesAutoConfiguration
+
+

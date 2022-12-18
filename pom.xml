@@ -73,6 +73,7 @@
         <module>springboot-localcache-redis-sync</module>
         <module>springboot-db-check</module>
         <module>springboot-datasource-hot-switchover</module>
+        <module>springboot-jar-merge</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

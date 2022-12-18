@@ -1,0 +1,4 @@
+lybgeek:
+  http:
+    client-id: zhangsan
+    secret: 123456
