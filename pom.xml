@@ -74,6 +74,7 @@
         <module>springboot-db-check</module>
         <module>springboot-datasource-hot-switchover</module>
         <module>springboot-jar-merge</module>
+        <module>springboot-json-format</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

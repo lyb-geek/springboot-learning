@@ -1,0 +1,5 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.github.lybgeek.jackson.env.CustomJacksonFormatEnvironmentPostProcessor
+
+org.springframework.context.ApplicationContextInitializer=\
+com.github.lybgeek.jackson.env.CustomJacksonFormatEnvironmentApplicationContextInitializer
