@@ -76,6 +76,7 @@
         <module>springboot-jar-merge</module>
         <module>springboot-json-format</module>
         <module>springboot-apt</module>
+        <module>springboot-aop</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

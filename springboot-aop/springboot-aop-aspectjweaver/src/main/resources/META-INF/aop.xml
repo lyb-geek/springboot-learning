@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<aspectj>
+    <weaver options="-XnoInline -Xset:weaveJavaxPackages=true -Xlint:ignore -verbose -XmessageHandlerClass:org.springframework.aop.aspectj.AspectJWeaverMessageHandler">
+        <!--在编织时导入切面类和需要被切入的目标类-->
+        <include within="com.github.lybgeek.aop.aspect.EchoAspect"/>
+        <include within="com.github.lybgeek.aop.service.EchoService"/>
+    </weaver>
+    <aspects>
+        <!--指定切面类-->
+        <aspect name="com.github.lybgeek.aop.aspect.EchoAspect"/>
+    </aspects>
+</aspectj>
