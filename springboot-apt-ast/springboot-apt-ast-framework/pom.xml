@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>springboot-apt-ast</artifactId>
+        <groupId>com.github.lybgeek</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>springboot-apt-ast-framework</artifactId>
+
+    <dependencies>
+        <!-- spi 文件自动生成-->
+        <dependency>
+            <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <!-- 使用AST语法需要使用JDK tools.jar 包-->
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.8</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
