@@ -78,6 +78,7 @@
         <module>springboot-apt</module>
         <module>springboot-aop</module>
         <module>springboot-apt-ast</module>
+        <module>springboot-springplugin-strategy</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -153,6 +154,7 @@
         <p6spy.version>3.9.1</p6spy.version>
         <pinyin4j.version>2.6.1</pinyin4j.version>
         <faker.version>1.0.2</faker.version>
+        <spring-plugin.version>2.0.0.RELEASE</spring-plugin.version>
     </properties>
 
     <dependencyManagement>
