@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.github.lybgeek.comsumer.ip.ServerAddrEnvironmentPostProcessor

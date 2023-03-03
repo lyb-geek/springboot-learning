@@ -79,6 +79,7 @@
         <module>springboot-aop</module>
         <module>springboot-apt-ast</module>
         <module>springboot-springplugin-strategy</module>
+        <module>springboot-kafka-broadcast</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

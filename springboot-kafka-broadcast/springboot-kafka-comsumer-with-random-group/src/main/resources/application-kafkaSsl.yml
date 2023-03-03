@@ -1,0 +1,15 @@
+spring:
+    kafka:
+        properties:
+          security:
+            enabled: ${PROPERTIES_SECURITY_ENABLED:true}
+            protocol: ${PROPERTIES_SECURITY_PROTOCOL:SASL_PLAINTEXT}
+          sasl:
+            mechanism: ${PROPERTIES_SASL_MECHANISM:PLAIN}
+            jaas:
+              config: ${PROPERTIES_SASL_JAAS_CONFIG:org.apache.kafka.common.security.scram.ScramLoginModule required username='broker' password='123.456@abc';}
+
+
+
+
+
