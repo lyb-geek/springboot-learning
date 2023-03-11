@@ -80,6 +80,8 @@
         <module>springboot-apt-ast</module>
         <module>springboot-springplugin-strategy</module>
         <module>springboot-kafka-broadcast</module>
+        <module>springboot-service-locator</module>
+        <module>springboot-service-locator/springboot-sms-tencent</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
