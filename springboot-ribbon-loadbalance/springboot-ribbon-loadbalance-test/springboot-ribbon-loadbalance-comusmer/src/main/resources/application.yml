@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+lybgeek:
+  loadbalance:
+    rules:
+      - serviceName: provider
+        namespace: test
+        loadBalancerPingClassName: com.github.lybgeek.loadbalance.ping.TelnetPing
+        pingIntervalSeconds: 3
+     #   loadBalancerRuleClassName: com.github.lybgeek.loadbalance.rule.CustomRoundRobinRule
+        listOfServers: 127.0.0.1:6666,127.0.0.1:6667
