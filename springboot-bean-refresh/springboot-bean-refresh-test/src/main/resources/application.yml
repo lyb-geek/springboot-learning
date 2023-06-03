@@ -1,0 +1,3 @@
+spring:
+  config:
+    additional-location: F:\springboot-bean-refresh\springboot-bean-refresh-test\config\config.yml

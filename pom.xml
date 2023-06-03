@@ -84,6 +84,7 @@
         <module>springboot-service-locator/springboot-sms-tencent</module>
         <module>springboot-ribbon-loadbalance</module>
         <module>springboot-ribbon-loadbalance/springboot-ribbon-loadbalance-framework</module>
+        <module>springboot-bean-refresh</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
