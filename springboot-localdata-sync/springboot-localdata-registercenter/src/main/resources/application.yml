@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    # 配置文件激活
+    active: standalone
+  application:
+    # 应用名
+    name: eureke-server
+  freemarker:
+    prefer-file-system-access: false
+
+
+
+
+

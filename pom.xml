@@ -85,6 +85,7 @@
         <module>springboot-ribbon-loadbalance</module>
         <module>springboot-ribbon-loadbalance/springboot-ribbon-loadbalance-framework</module>
         <module>springboot-bean-refresh</module>
+        <module>springboot-localdata-sync</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
