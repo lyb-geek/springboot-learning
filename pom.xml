@@ -86,6 +86,7 @@
         <module>springboot-ribbon-loadbalance/springboot-ribbon-loadbalance-framework</module>
         <module>springboot-bean-refresh</module>
         <module>springboot-localdata-sync</module>
+        <module>springboot-multinested-json-parse</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -162,6 +163,7 @@
         <pinyin4j.version>2.6.1</pinyin4j.version>
         <faker.version>1.0.2</faker.version>
         <spring-plugin.version>2.0.0.RELEASE</spring-plugin.version>
+        <ognl.version>3.3.0</ognl.version>
     </properties>
 
     <dependencyManagement>
@@ -602,6 +604,15 @@
                 <artifactId>javafaker</artifactId>
                 <version>${faker.version}</version>
             </dependency>
+
+
+
+            <dependency>
+                <groupId>ognl</groupId>
+                <artifactId>ognl</artifactId>
+                <version>${ognl.version}</version>
+            </dependency>
+
 
 
         </dependencies>
