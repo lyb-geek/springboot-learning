@@ -1,0 +1,3 @@
+## 本示例主要演示如何利用springcloud gateway实现简易版的灰度路由
+
+核心点：自定义实现断言工厂+开启服务发现路由定位器（spring.cloud.gateway.discovery.locator.enabled） + PropertiesRouteDefinitionLocator 生成的route与DiscoveryClientRouteDefinitionLocator生成route path映射保持一致

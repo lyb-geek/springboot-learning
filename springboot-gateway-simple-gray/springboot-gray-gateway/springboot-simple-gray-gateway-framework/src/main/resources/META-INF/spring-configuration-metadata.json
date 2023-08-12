@@ -1,0 +1,15 @@
+{
+  "properties": [
+    {
+      "name": "spring.cloud.gateway.ext.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enables gateway extend functionality.",
+      "defaultValue": "true"
+    },  {
+      "name": "spring.cloud.gateway.properties-route-definition-locator.load.first",
+      "type": "java.lang.Boolean",
+      "description": "Enables propertiesRouteDefinitionLocator Load first.",
+      "defaultValue": "true"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: route-springboot-gray-comsumer-to-other-comsumer
+          uri: http://localhost:8083
+          predicates:
+            - Path=/comsumer/**
+            ## 多个租户用&分割
+            - Param=tenantId,10000&10001&10002
+          filters:
+            - StripPrefix=1
+          order: -1000
+

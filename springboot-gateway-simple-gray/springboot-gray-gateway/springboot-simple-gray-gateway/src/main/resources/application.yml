@@ -1,0 +1,42 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      properties-route-definition-locator:
+        load:
+          first: false
+
+  application:
+    # 服务名称
+    name:  ${APPLICATION_NAME:gateway}
+  profiles:
+    # 激活配置文件
+    active: ${PROFILES_ACTIVE:eureka,route}
+
+# 服务端口
+server:
+  port: ${SERVER_PORT:8001}
+
+ribbon:
+  # ribbon配置2s刷新一次服务列表,默认30s
+  ServerListRefreshInterval: 2000
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+
+
+
+
