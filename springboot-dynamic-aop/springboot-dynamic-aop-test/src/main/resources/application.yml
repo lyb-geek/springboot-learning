@@ -1,0 +1,19 @@
+lybgeek:
+  proxy:
+    global-be-proxied-base-package: com.github.lybgeek
+    global-advisor-enabled: true
+    meta-definitions:
+      - id: costTimeHelloService
+        pointcut: execution (* com.github.lybgeek.aop.test.hello.service.HelloService.*(..))
+        proxyUrl: jar:file:F:/springboot-learning/springboot-dynamic-aop/springboot-aop-plugin/springboot-aop-plugin-timecost/target/springboot-aop-plugin-timecost-0.0.1-SNAPSHOT.jar!/
+        proxyClassName: com.github.lybgeek.interceptor.TimeCostMethodInterceptor
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
