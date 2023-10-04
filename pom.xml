@@ -87,6 +87,8 @@
         <module>springboot-bean-refresh</module>
         <module>springboot-localdata-sync</module>
         <module>springboot-multinested-json-parse</module>
+        <module>springboot-gateway-simple-gray</module>
+        <module>springboot-dynamic-aop</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
