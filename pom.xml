@@ -89,6 +89,7 @@
         <module>springboot-multinested-json-parse</module>
         <module>springboot-gateway-simple-gray</module>
         <module>springboot-dynamic-aop</module>
+        <module>springboot-filter-hot-loading</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
