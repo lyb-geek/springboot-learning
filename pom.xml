@@ -90,6 +90,7 @@
         <module>springboot-gateway-simple-gray</module>
         <module>springboot-dynamic-aop</module>
         <module>springboot-filter-hot-loading</module>
+        <module>springboot-custom-spi</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

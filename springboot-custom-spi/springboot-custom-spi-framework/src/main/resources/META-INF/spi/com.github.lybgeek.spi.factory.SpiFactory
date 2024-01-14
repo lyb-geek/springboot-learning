@@ -1,0 +1,1 @@
+DefaultSpiFactory=com.github.lybgeek.spi.factory.support.DefaultSpiFactory
