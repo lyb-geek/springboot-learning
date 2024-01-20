@@ -7,7 +7,7 @@ rem added double quotation marks to avoid the issue caused by the folder names c
 rem removed the last 5 chars(which means \bin\) to get the base DIR.
 set BASE_DIR=%BASE_DIR:~0,-5%
 set CUSTOM_SEARCH_LOCATIONS=file:%BASE_DIR%/conf/
-set SERVER=arthas-tunnel-server-3.5.3
+set SERVER=arthas-tunnel-server
 
 
 
