@@ -1,0 +1,68 @@
+2024-01-20 13:53:12 -Starting ArthasTunnelApplication v3.5.3 on PC-20170209OKJZ with PID 10148 (F:\springboot-learning\springboot-arthas-tunnel\springboot-arthas-tunnel-server\arthas-tunnel-server\target\arthas-tunnel-server-3.5.3.jar started by Administrator in F:\springboot-learning\springboot-arthas-tunnel\springboot-arthas-tunnel-server\arthas-tunnel-server\bin)
+2024-01-20 13:53:12 -No active profile set, falling back to default profiles: default
+2024-01-20 13:53:16 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-01-20 13:53:16 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-01-20 13:53:16 -Finished Spring Data repository scanning in 33ms. Found 0 Redis repository interfaces.
+2024-01-20 13:53:19 -Tomcat initialized with port(s): 8080 (http)
+2024-01-20 13:53:19 -Starting service [Tomcat]
+2024-01-20 13:53:19 -Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-01-20 13:53:19 -Initializing Spring embedded WebApplicationContext
+2024-01-20 13:53:19 -Root WebApplicationContext: initialization completed in 6526 ms
+2024-01-20 13:53:23 -[id: 0x6b85a722] REGISTERED
+2024-01-20 13:53:23 -[id: 0x6b85a722] BIND: /0.0.0.0:7777
+2024-01-20 13:53:23 -Tunnel server listen at 0.0.0.0:7777
+2024-01-20 13:53:23 -[id: 0x6b85a722, L:/0:0:0:0:0:0:0:0:7777] ACTIVE
+2024-01-20 13:53:25 -Initializing ExecutorService 'applicationTaskExecutor'
+2024-01-20 13:53:25 -Adding welcome page: class path resource [static/index.html]
+2024-01-20 13:53:26 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13ad5cd3, org.springframework.security.web.context.SecurityContextPersistenceFilter@130e116b, org.springframework.security.web.header.HeaderWriterFilter@1c93f6e1, org.springframework.security.web.csrf.CsrfFilter@5505ae1a, org.springframework.security.web.authentication.logout.LogoutFilter@61fe30, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@332796d3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@141e5bef, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1c33c17b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ddf0d24, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fd953a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bf0fe62, org.springframework.security.web.session.SessionManagementFilter@1458ed9c, org.springframework.security.web.access.ExceptionTranslationFilter@512baff6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b23c30a]
+2024-01-20 13:53:27 -Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-01-20 13:53:27 -Tomcat started on port(s): 8080 (http) with context path ''
+2024-01-20 13:53:27 -Started ArthasTunnelApplication in 16.117 seconds (JVM running for 17.695)
+2024-01-20 13:54:26 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-20 13:54:26 -Initializing Servlet 'dispatcherServlet'
+2024-01-20 13:54:26 -Completed initialization in 21 ms
+2024-01-20 15:05:59 -Shutting down ExecutorService 'applicationTaskExecutor'
+2024-01-20 15:05:59 -[id: 0x6b85a722, L:/0:0:0:0:0:0:0:0:7777] CLOSE
+2024-01-20 15:05:59 -[id: 0x6b85a722, L:/0:0:0:0:0:0:0:0:7777] INACTIVE
+2024-01-20 15:05:59 -[id: 0x6b85a722, L:/0:0:0:0:0:0:0:0:7777] UNREGISTERED
+2024-01-20 15:10:15 -Starting ArthasTunnelApplication v3.5.3 on PC-20170209OKJZ with PID 10604 (F:\springboot-learning\springboot-arthas-tunnel\springboot-arthas-tunnel-server\arthas-tunnel-server\target\arthas-tunnel-server-3.5.3.jar started by Administrator in F:\springboot-learning\springboot-arthas-tunnel\springboot-arthas-tunnel-server\arthas-tunnel-server\bin)
+2024-01-20 15:10:15 -No active profile set, falling back to default profiles: default
+2024-01-20 15:10:21 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-01-20 15:10:21 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-01-20 15:10:22 -Finished Spring Data repository scanning in 52ms. Found 0 Redis repository interfaces.
+2024-01-20 15:10:26 -Tomcat initialized with port(s): 8080 (http)
+2024-01-20 15:10:26 -Starting service [Tomcat]
+2024-01-20 15:10:26 -Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-01-20 15:10:26 -Initializing Spring embedded WebApplicationContext
+2024-01-20 15:10:26 -Root WebApplicationContext: initialization completed in 10151 ms
+2024-01-20 15:10:31 -[id: 0x990d5061] REGISTERED
+2024-01-20 15:10:31 -[id: 0x990d5061] BIND: /0.0.0.0:7777
+2024-01-20 15:10:31 -Tunnel server listen at 0.0.0.0:7777
+2024-01-20 15:10:31 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] ACTIVE
+2024-01-20 15:10:34 -Initializing ExecutorService 'applicationTaskExecutor'
+2024-01-20 15:10:34 -Adding welcome page: class path resource [static/index.html]
+2024-01-20 15:10:36 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3fed2870, org.springframework.security.web.context.SecurityContextPersistenceFilter@3abada5a, org.springframework.security.web.header.HeaderWriterFilter@2fd953a6, org.springframework.security.web.csrf.CsrfFilter@512baff6, org.springframework.security.web.authentication.logout.LogoutFilter@61544ae6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@39de3d36, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7b420819, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@77128536, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61fe30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3adcc812, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58326051, org.springframework.security.web.session.SessionManagementFilter@141e5bef, org.springframework.security.web.access.ExceptionTranslationFilter@363a52f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5bf0fe62]
+2024-01-20 15:10:36 -Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-01-20 15:10:36 -Tomcat started on port(s): 8080 (http) with context path ''
+2024-01-20 15:10:36 -Started ArthasTunnelApplication in 23.239 seconds (JVM running for 24.997)
+2024-01-20 15:18:00 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ: [id: 0xc5fb8b1a, L:/127.0.0.1:7777 - R:/127.0.0.1:56045]
+2024-01-20 15:18:00 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ COMPLETE
+2024-01-20 15:18:01 -websocket handshake complete, uri: /ws?method=agentRegister&arthasVersion=3.5.3&appName=arthas-demo
+2024-01-20 15:18:26 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-20 15:18:26 -Initializing Servlet 'dispatcherServlet'
+2024-01-20 15:18:26 -Completed initialization in 30 ms
+2024-01-20 15:23:21 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ: [id: 0x2c71d54c, L:/127.0.0.1:7777 - R:/127.0.0.1:56399]
+2024-01-20 15:23:21 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ COMPLETE
+2024-01-20 15:23:21 -websocket handshake complete, uri: /ws?method=agentRegister&arthasVersion=3.5.3&appName=arthas-demo
+2024-01-20 15:27:38 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ: [id: 0x08597cd0, L:/0:0:0:0:0:0:0:1:7777 - R:/0:0:0:0:0:0:0:1:56697]
+2024-01-20 15:27:38 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ COMPLETE
+2024-01-20 15:27:38 -websocket handshake complete, uri: /ws?method=connectArthas&id=arthas-demo_SNTP654A7DRSPQMMK00V&targetServer=192.168.5.109
+2024-01-20 15:27:38 -try to connect to arthas agent, id: arthas-demo_SNTP654A7DRSPQMMK00V
+2024-01-20 15:27:38 -random clientConnectionId: WNYVEAUXMP4NNZH2NFAI
+2024-01-20 15:27:38 -startTunnel response: response:/?method=startTunnel&id=arthas-demo_SNTP654A7DRSPQMMK00V&clientConnectionId=WNYVEAUXMP4NNZH2NFAI
+2024-01-20 15:27:38 -browser connect waitting for arthas agent open tunnel
+2024-01-20 15:27:38 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ: [id: 0xbb7697c6, L:/127.0.0.1:7777 - R:/127.0.0.1:56701]
+2024-01-20 15:27:38 -[id: 0x990d5061, L:/0:0:0:0:0:0:0:0:7777] READ COMPLETE
+2024-01-20 15:27:38 -websocket handshake complete, uri: /ws?method=openTunnel&clientConnectionId=WNYVEAUXMP4NNZH2NFAI&id=arthas-demo_SNTP654A7DRSPQMMK00V
+2024-01-20 15:27:38 -openTunnel clientConnectionId:WNYVEAUXMP4NNZH2NFAI
+2024-01-20 15:27:38 -browser connect wait for arthas agent open tunnel success, agentId: [arthas-demo_SNTP654A7DRSPQMMK00V], clientConnectionId: WNYVEAUXMP4NNZH2NFAI

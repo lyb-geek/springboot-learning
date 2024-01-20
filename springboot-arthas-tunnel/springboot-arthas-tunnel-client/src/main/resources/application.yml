@@ -1,0 +1,17 @@
+server:
+  port: 8802
+
+spring:
+  application:
+    name: arthas-demo
+
+arthas:
+  http-port: ${ARTHAS_HTTP_PORT:0}
+  #如果配置 arthas.telnetPort为 -1 ，则不 listen telnet 端口。arthas.httpPort类似。
+ # 如果配置 arthas.telnetPort为 0 ，则随机 telnet 端口，在~/logs/arthas/arthas.log里可以找到具体端口日志。arthas.httpPort类似。
+  telnet-port: ${ARTHAS_TELNET_PORT:0}
+  session-timeout: ${ARTHAS_SESSION_TIMEOUT:30000}
+  #ip: 0.0.0.0
+ # agent-id: ${ARTHAS_AGENT_ID:hsehdfsfghhwertyfad}
+  app-name: ${spring.application.name}
+  tunnel-server: ${ARTHAS_TUNNEL_SERVER:ws://localhost:7777/ws}

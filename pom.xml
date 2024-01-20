@@ -91,6 +91,7 @@
         <module>springboot-dynamic-aop</module>
         <module>springboot-filter-hot-loading</module>
         <module>springboot-custom-spi</module>
+        <module>springboot-arthas-tunnel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
