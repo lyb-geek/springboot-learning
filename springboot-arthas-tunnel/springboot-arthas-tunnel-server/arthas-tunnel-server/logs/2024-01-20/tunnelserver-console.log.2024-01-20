@@ -1,0 +1,20 @@
+2024-01-20 16:53:56 -Starting ArthasTunnelApplication v3.5.3 on PC-20170209OKJZ with PID 13876 (F:\springboot-learning\springboot-arthas-tunnel\springboot-arthas-tunnel-server\arthas-tunnel-server\target\arthas-tunnel-server.jar started by Administrator in F:\springboot-learning\springboot-arthas-tunnel\springboot-arthas-tunnel-server\arthas-tunnel-server\bin)
+2024-01-20 16:53:56 -No active profile set, falling back to default profiles: default
+2024-01-20 16:54:00 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-01-20 16:54:00 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-01-20 16:54:00 -Finished Spring Data repository scanning in 24ms. Found 0 Redis repository interfaces.
+2024-01-20 16:54:03 -Tomcat initialized with port(s): 8080 (http)
+2024-01-20 16:54:03 -Starting service [Tomcat]
+2024-01-20 16:54:03 -Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-01-20 16:54:03 -Initializing Spring embedded WebApplicationContext
+2024-01-20 16:54:03 -Root WebApplicationContext: initialization completed in 6561 ms
+2024-01-20 16:54:08 -[id: 0x52357811] REGISTERED
+2024-01-20 16:54:08 -[id: 0x52357811] BIND: /0.0.0.0:7777
+2024-01-20 16:54:08 -Tunnel server listen at 0.0.0.0:7777
+2024-01-20 16:54:08 -[id: 0x52357811, L:/0:0:0:0:0:0:0:0:7777] ACTIVE
+2024-01-20 16:54:10 -Initializing ExecutorService 'applicationTaskExecutor'
+2024-01-20 16:54:10 -Adding welcome page: class path resource [static/index.html]
+2024-01-20 16:54:13 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b23c30a, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ae9cfc1, org.springframework.security.web.header.HeaderWriterFilter@7a362b6b, org.springframework.security.web.csrf.CsrfFilter@6cce16f4, org.springframework.security.web.authentication.logout.LogoutFilter@60856961, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3899782c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@130e116b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@38089a5a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@632ceb35, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1458ed9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30e868be, org.springframework.security.web.session.SessionManagementFilter@5a2d131d, org.springframework.security.web.access.ExceptionTranslationFilter@21337f7b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d066c7d]
+2024-01-20 16:54:13 -Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-01-20 16:54:13 -Tomcat started on port(s): 8080 (http) with context path ''
+2024-01-20 16:54:13 -Started ArthasTunnelApplication in 20.487 seconds (JVM running for 21.519)
