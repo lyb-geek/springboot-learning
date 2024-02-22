@@ -1,0 +1,3 @@
+## 本示例主要演示如何利用TestContainers实现通过编程语言去启动Docker容器，进而进行集成测试
+
+注：TestContainers基于Docker，所以使用TestContainers前需要安装Docker环境，其次TestContainers提供的环境不能应用于生产环境、只能用于测试环境等场景

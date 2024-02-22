@@ -94,6 +94,7 @@
         <module>springboot-arthas-tunnel</module>
         <module>springboot-named-context-factory</module>
         <module>springboot-has-features</module>
+        <module>springboot-testcontainers</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
