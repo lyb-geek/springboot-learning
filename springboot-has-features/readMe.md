@@ -1,0 +1,10 @@
+## 本示例主要演示如何利用HasFeatures感知系统所引入的功能特性
+
+HasFeatures分为2种，一种是abstractFeatures，这种是定义接口或抽象类并创建实现的功能。
+主要是用于在spring上下文中查找符合该接口或者抽象类的bean
+
+另一种是namedFeatures，命名功能是没有实现的特定类的功能。该功能需要一个名称和一个bean类型
+
+通过访问/actuator/features 查看功能特性
+
+@see org.springframework.cloud.client.actuator.FeaturesEndpoint

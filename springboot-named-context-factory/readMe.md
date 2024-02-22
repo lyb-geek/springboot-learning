@@ -1,3 +1,3 @@
-## 本实例主要实现如何利用org.springframework.cloud.context.named.NamedContextFactory实现服务隔离
+## 本示例主要实现如何利用org.springframework.cloud.context.named.NamedContextFactory实现服务隔离
 
 核心点：主要是利用NamedContextFactory可以实现子容器。从而使每个服务都拥有自己的 Spring Context和Bean实例（不同服务之间其依赖的Bean都是完全隔离的）

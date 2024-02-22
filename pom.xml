@@ -93,6 +93,7 @@
         <module>springboot-custom-spi</module>
         <module>springboot-arthas-tunnel</module>
         <module>springboot-named-context-factory</module>
+        <module>springboot-has-features</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
