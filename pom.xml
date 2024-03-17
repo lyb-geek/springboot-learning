@@ -95,6 +95,7 @@
         <module>springboot-named-context-factory</module>
         <module>springboot-has-features</module>
         <module>springboot-testcontainers</module>
+        <module>springboot-jmh</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
