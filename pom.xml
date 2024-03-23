@@ -96,6 +96,7 @@
         <module>springboot-has-features</module>
         <module>springboot-testcontainers</module>
         <module>springboot-jmh</module>
+        <module>springboot-config-refresh</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
