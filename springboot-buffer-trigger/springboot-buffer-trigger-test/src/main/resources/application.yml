@@ -1,0 +1,13 @@
+lybgeek:
+  buffer:
+    trigger:
+      consume-queue-trigger-properties:
+        - bufferTriggerBizType: userReisgeter
+          config:
+            batchSize: 100
+            bufferSize: 1000
+            batchConsumeIntervalMills: 1000
+
+
+server:
+  port: 0

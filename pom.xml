@@ -97,6 +97,7 @@
         <module>springboot-testcontainers</module>
         <module>springboot-jmh</module>
         <module>springboot-config-refresh</module>
+        <module>springboot-buffer-trigger</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
