@@ -1,0 +1,10 @@
+#spring:
+#  jackson:
+#    default-property-inclusion: NON_NULL
+
+lybgeek:
+  jsonview:
+    enabled: true
+    ignore-null-property-value: true
+    json-view-factory-map:
+      com.github.lybgeek.jsonview.user.model.User: com.github.lybgeek.jsonview.user.roleview.factory.UserJsonViewFactory

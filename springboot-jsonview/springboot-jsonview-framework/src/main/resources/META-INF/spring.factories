@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.jsonview.autoconfigure.JsonViewAutoConfiguration
+
+org.springframework.context.ApplicationContextInitializer=\
+com.github.lybgeek.jsonview.env.DefaultObjectMapperPropertyChangeContextInitializer
+  
+
+  
+

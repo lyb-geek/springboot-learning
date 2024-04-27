@@ -98,6 +98,7 @@
         <module>springboot-jmh</module>
         <module>springboot-config-refresh</module>
         <module>springboot-buffer-trigger</module>
+        <module>springboot-jsonview</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
