@@ -1,0 +1,9 @@
+server:
+  port: 8081
+
+lybgeek:
+  thirdparty:
+    bean-replace: true
+    replace-beans:
+      - replaceBeanName: thirdpartyRepository
+        replaceBeanClassName: com.github.lybgeek.thirdparty.test.repository.CustomRepository
