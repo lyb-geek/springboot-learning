@@ -100,6 +100,7 @@
         <module>springboot-buffer-trigger</module>
         <module>springboot-jsonview</module>
         <module>springboot-thirdparty-bean-replace</module>
+        <module>springboot-pipeline-valve</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
