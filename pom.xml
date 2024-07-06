@@ -103,6 +103,7 @@
         <module>springboot-pipeline-valve</module>
         <module>springboot-event-condition</module>
         <module>springboot-el</module>
+        <module>springboot-json-render</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

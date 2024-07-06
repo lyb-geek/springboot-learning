@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thymeleaf Example</title>
+    <meta charset="UTF-8"/>
+</head>
+<head>
+    <title>Thymeleaf with Ajax</title>
+    <script src="/js/jquery-3.6.0.js"></script>
+</head>
+<body>
+
+<button id="loadDataButton">Load Data</button>
+<div id="dataDisplay"></div>
+
+<script>
+    $(document).ready(function() {
+    $("#loadDataButton").click(function() {
+        $.ajax({
+            url: "/user/get",
+            type: "GET",
+            data: {},
+            success: function(response) {
+                $("#dataDisplay").html("id: " + response.id + "<br/>name: " + response.name + "<br/>password:  " + response.password + "<br/>status:  " + response.status);
+            },
+            error: function(xhr, status, error) {
+                console.error("Error: " + error);
+            }
+        });
+    });
+});
+</script>
+
+</body>
+
+</html>
