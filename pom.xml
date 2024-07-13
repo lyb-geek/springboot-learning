@@ -104,6 +104,7 @@
         <module>springboot-event-condition</module>
         <module>springboot-el</module>
         <module>springboot-json-render</module>
+        <module>springboot-kafka-forward</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

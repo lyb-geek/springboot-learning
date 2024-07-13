@@ -1,0 +1,39 @@
+spring:
+    kafka:
+        producer:
+            # kafka生产者服务端地址
+            bootstrap-servers: ${KAFKA_PRODUCER_BOOTSTRAP_SERVER:localhost:9092}
+            # 生产者重试的次数
+            retries: ${KAFKA_PRODUCER_RETRIES:0}
+            # 每次批量发送的数据量
+            batch-size: ${KAFKA_PRODUCER_BATCH_SIZE:16384}
+            # 每次批量发送消息的缓冲区大小
+            buffer-memory: ${KAFKA_PRODUCER_BUFFER_MEMOEY:335554432}
+           # 消息体大小(5M)
+            max-request-size: ${KAFKA_PRODUCER_MAX_REQUEST_SIZE:1048576}
+          # 指定消息key和消息体的编码方式
+            key-serializer: ${KAFKA_PRODUCER_KEY_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
+            value-serializer:  ${KAFKA_PRODUCER_KEY_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
+            # acks=1 只要集群的首领节点收到消息，生产者就会收到一个来自服务器成功响应。
+            acks: ${KAFKA_PRODUCER_ACK:1}
+
+        consumer:
+          bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVER:localhost:9092}
+          # 在偏移量无效的情况下，消费者将从起始位置读取分区的记录
+          auto-offset-reset: ${KAFKA_CONSUMER_AUTO_OFFSET_RESET:earliest}
+          #  是否自动提交偏移量，默认值是true,为了避免出现重复数据和数据丢失，可以把它设置为false,然后手动提交偏移量
+          enable-auto-commit: ${KAFKA_CONSUMER_ENABLE_AUTO_COMMIT:false}
+          # 指定消息key和消息体的解码方式
+          key-deserializer: ${KAFKA_CONSUMER_KEY_DESERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+          value-deserializer: ${KAFKA_CONSUMER_VALUE_DESERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+        listener:
+          # 在侦听器容器中运行的线程数。
+          concurrency: ${KAFKA_CONSUMER_CONCURRENCY:1}
+          missing-topics-fatal: ${KAFKA_CONSUMER_MISSING_TOPICS_FATAL:false}
+          ack-mode: ${KAFKA_CONSUMER_ACK_MODE:manual}
+
+lybgeek:
+  consumer:
+    topic: ${KAFKA_CONSUMER_TOPIC:test}
+
+
