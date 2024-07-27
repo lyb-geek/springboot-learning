@@ -1,0 +1,8 @@
+server:
+  port: 8081
+
+spring:
+  messages:
+    # 注意需要创建messages.properties文件来做兜底
+    basename: i18n/messages #代表将国际化文件放在i18n文件夹下，并以messages作为文件名前缀，而不是指国际化文件存放在i18n/messages文件夹。
+    encoding: UTF-8
