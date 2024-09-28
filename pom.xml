@@ -106,6 +106,7 @@
         <module>springboot-json-render</module>
         <module>springboot-kafka-forward</module>
         <module>springboot-validate</module>
+        <module>springboot-fetch-version</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
