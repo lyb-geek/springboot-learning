@@ -1,0 +1,83 @@
+spring:
+    datasource:
+        dynamic:
+            #指定一个主数据源,primary表示是主数据源也可以认为是默认数据源，如果不加注解DS(“数据源名字”)则会去主数据源中查询
+            primary: master
+            strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+            datasource:
+                #master
+                master:
+                    driver-class-name: com.mysql.cj.jdbc.Driver
+                    url: ${DATASOURCE_URL:jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowMultiQueries=true}
+                    username: ${DATASOURCE_USERNAME:root}
+                    password: ${DATASOURCE_PWD:123456}
+                    type: com.alibaba.druid.pool.DruidDataSource
+                    druid:
+                        initial-size: 5 #连接池初始化大小
+                        min-idle: 10 #最小空闲连接数
+                        max-active: 20 #最大连接数
+                        maxWait: 60000 # 配置获取连接等待超时的时间
+                #slave
+                slave:
+                    driver-class-name: com.mysql.cj.jdbc.Driver
+                    url: ${SLAVE_DATASOURCE_URL:jdbc:mysql://localhost:3306/demo_read?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true}
+                    username: ${SLAVE_DATASOURCE_USERNAME:root}
+                    password: ${SLAVE_DATASOURCE_PWD:123456}
+                    type: com.alibaba.druid.pool.DruidDataSource
+                    druid:
+                        initial-size: 5 #连接池初始化大小
+                        min-idle: 10 #最小空闲连接数
+                        max-active: 20 #最大连接数
+                        maxWait: 60000 # 配置获取连接等待超时的时间
+
+        druid:
+            # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+            timeBetweenEvictionRunsMillis: 60000
+            # 配置一个连接在池中最小生存的时间，单位是毫秒
+            minEvictableIdleTimeMillis: 300000
+            # 配置一个连接在池中最大生存的时间，单位是毫秒
+            maxEvictableIdleTimeMillis: 900000
+            # 配置检测连接是否有效
+            validationQuery: SELECT 1 FROM DUAL
+            testWhileIdle: true
+            testOnBorrow: false
+            testOnReturn: false
+            webStatFilter:
+                enabled: true
+            statViewServlet:
+                enabled: true
+                # 设置白名单，不填则允许所有访问
+                allow:
+                url-pattern: /druid/*
+                # 控制台管理用户名和密码
+                login-username:
+                login-password:
+            filter:
+                stat:
+                    enabled: true
+                    # 慢SQL记录
+                    log-slow-sql: true
+                    slow-sql-millis: 1000
+                    merge-sql: true
+                wall:
+                    config:
+                        multi-statement-allow: true
+    autoconfigure:
+        # 排除druid自动装配，否则会优先加载druid自动装配，导致项目启动报错
+      exclude:
+        - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+
+
+
+#mybatis-plus相关配置
+mybatis-plus:
+    mapper-locations: mybatis/*/*.xml
+    configuration:
+        map-underscore-to-camel-case: true
+        cache-enabled: false
+        call-setters-on-nulls: true
+        jdbc-type-for-null: 'null'
+        log-impl: ${SQL_LOG:org.apache.ibatis.logging.stdout.StdOutImpl}
+    global-config:
+        banner: false
+

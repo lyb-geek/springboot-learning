@@ -1,0 +1,13 @@
+{
+  "groups": [],
+  "properties": [
+    {
+      "name": "spring.datasource.dynamic.enabled",
+      "description": "Enable dynamic data sources",
+      "defaultValue": "true",
+      "type": "java.lang.String",
+      "sourceType": ""
+    }
+  ],
+  "hints": []
+}

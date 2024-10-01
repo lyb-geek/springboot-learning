@@ -107,6 +107,7 @@
         <module>springboot-kafka-forward</module>
         <module>springboot-validate</module>
         <module>springboot-fetch-version</module>
+        <module>springboot-db-readwrite-splitting</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
