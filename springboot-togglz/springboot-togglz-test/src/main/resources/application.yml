@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: togglz,jdbc
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+
+
+

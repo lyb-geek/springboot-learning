@@ -1,0 +1,16 @@
+togglz:
+  console:
+    enabled: true
+    path: /togglz
+    secured: true
+
+lybgeek:
+  togglz:
+    state-repository-type: jdbc
+    file-store-location: E:\togglz\features.properties
+    env: prod
+
+
+logging:
+  level:
+    org.togglz: DEBUG

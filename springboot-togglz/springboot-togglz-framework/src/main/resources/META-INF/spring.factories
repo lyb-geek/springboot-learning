@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.togglz.env.autoconfigure.EnvTogglzAutoConfiguration\
+  
+  
+
+  
+

@@ -108,6 +108,7 @@
         <module>springboot-validate</module>
         <module>springboot-fetch-version</module>
         <module>springboot-db-readwrite-splitting</module>
+        <module>springboot-togglz</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
