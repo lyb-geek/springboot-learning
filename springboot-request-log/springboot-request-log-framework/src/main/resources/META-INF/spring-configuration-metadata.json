@@ -1,0 +1,11 @@
+{
+  "properties": [
+    {
+      "name": "lybgeek.request-log.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Record request log enabled.default to true",
+      "defaultValue": true
+    }
+  ],
+  "hints": []
+}
