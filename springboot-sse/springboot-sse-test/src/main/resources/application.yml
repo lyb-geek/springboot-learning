@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+lybgeek:
+  sse:
+    publisher:
+      type: direct

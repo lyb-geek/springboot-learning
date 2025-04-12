@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebFlux SSE Subscribe Example</title>
+</head>
+<body>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Enter message">
+    <button onclick="sendMessage()">Send</button>
+    <script>
+        const eventSource = new EventSource('/sse/subscribe');
+        const messagesDiv = document.getElementById('messages');
+
+        eventSource.onmessage = function (event) {
+            const newMessage = document.createElement('p');
+            newMessage.textContent = `Received: ${event.data}`;
+            messagesDiv.appendChild(newMessage);
+        };
+
+        eventSource.onerror = function (error) {
+            console.error('EventSource failed:', error);
+            eventSource.close();
+        };
+
+        function sendMessage() {
+            const message = document.getElementById('messageInput').value;
+            if (message) {
+                fetch('/sse/publish', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain'
+                    },
+                    body: message
+                }).then(response => {
+                    if (response.ok) {
+                        console.log('Message sent successfully');
+                    } else {
+                        console.error('Failed to send message');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>    

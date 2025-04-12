@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSE Example</title>
+</head>
+<body>
+    <div id="messages"></div>
+    <script>
+        const eventSource = new EventSource('/sse/interval/stream');
+        eventSource.onmessage = function (event) {
+            const messagesDiv = document.getElementById('messages');
+            const newMessage = document.createElement('p');
+            newMessage.textContent = `Received: ${event.data}`;
+            messagesDiv.appendChild(newMessage);
+        };
+        eventSource.onerror = function (error) {
+            console.error('EventSource failed:', error);
+            eventSource.close();
+        };
+    </script>
+</body>
+</html>    
