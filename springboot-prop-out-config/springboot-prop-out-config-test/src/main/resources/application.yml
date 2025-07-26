@@ -1,0 +1,8 @@
+lybgeek:
+  sms:
+    access-key-secret: lybgeek-test
+    access-key-id: lybgeek
+    endpoint: https://dysmsapi.aliyuncs.com
+    region-id: beijing
+    sign-name: test
+    template-code: SMS_123456

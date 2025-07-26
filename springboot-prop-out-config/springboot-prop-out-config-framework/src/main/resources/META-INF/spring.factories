@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.lybgeek.propoutconfig.autoconfigure.SmsAutoConfiguration
+
+
+
+  
+
+  
+
