@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+<!--    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>-->
+    <property name="serviceName" value="springboot-logback-env-isolate"/>
+    <property name="logHome" value="/data/logs/${serviceName}"/>
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+    <property name="LOG_CHARSET" value="UTF-8"/>
+    <contextName>${serviceName}</contextName>
+
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>${LOG_CHARSET}</charset>
+        </encoder>
+    </appender>
+
+    <springProfile name="!prod">
+        <root level="info">
+            <appender-ref ref="console"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="dev">
+        <property name="env" value="dev"/>
+        <property name="logAppendName" value="${env}LogFile"/>
+        <!--按天生成日志-->
+        <appender name="${logAppendName}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <Prudent>true</Prudent>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>
+                    ${logHome}/${env}/%d{yyyy-MM-dd}/%d{yyyy-MM-dd}.log
+                </FileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>${LOG_PATTERN}</pattern>
+            </layout>
+        </appender>
+        <root level="info">
+            <appender-ref ref="${logAppendName}"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="test">
+        <property name="env" value="test"/>
+        <property name="logAppendName" value="${env}LogFile"/>
+        <!--按天生成日志-->
+        <appender name="${logAppendName}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <Prudent>true</Prudent>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>
+                    ${logHome}/${env}/%d{yyyy-MM-dd}/%d{yyyy-MM-dd}.log
+                </FileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>${LOG_PATTERN}</pattern>
+            </layout>
+        </appender>
+        <root level="info">
+            <appender-ref ref="${logAppendName}"/>
+        </root>
+    </springProfile>
+
+
+    <springProfile name="uat">
+        <property name="env" value="uat"/>
+        <property name="logAppendName" value="${env}LogFile"/>
+        <!--按天生成日志-->
+        <appender name="${logAppendName}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <Prudent>true</Prudent>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>
+                    ${logHome}/${env}/%d{yyyy-MM-dd}/%d{yyyy-MM-dd}.log
+                </FileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>${LOG_PATTERN}</pattern>
+            </layout>
+        </appender>
+        <root level="info">
+            <appender-ref ref="${logAppendName}"/>
+        </root>
+    </springProfile>
+
+
+    <springProfile name="prod">
+        <property name="env" value="prod"/>
+        <property name="logAppendName" value="${env}LogFile"/>
+        <!--按天生成日志-->
+        <appender name="${logAppendName}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <Prudent>true</Prudent>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>
+                    ${logHome}/${env}/%d{yyyy-MM-dd}/%d{yyyy-MM-dd}.log
+                </FileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>${LOG_PATTERN}</pattern>
+            </layout>
+        </appender>
+        <root level="info">
+            <appender-ref ref="${logAppendName}"/>
+        </root>
+    </springProfile>
+
+
+
+
+
+
+</configuration>
