@@ -155,7 +155,7 @@
         <swagger.vesion>1.5.21</swagger.vesion>
         <xiaoymin.version>1.9.3</xiaoymin.version>
         <caspar-chen.version>1.1.3</caspar-chen.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <jodconverter.version>4.2.2</jodconverter.version>
         <tika.version>1.22</tika.version>
