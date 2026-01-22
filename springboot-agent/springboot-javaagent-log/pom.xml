@@ -16,7 +16,7 @@
         <byte-buddy.version>1.10.22</byte-buddy.version>
         <spring.version>5.1.17.RELEASE</spring.version>
         <dbutils.version>1.7</dbutils.version>
-        <mysql.version>8.0.18</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
     </properties>
 
     <dependencies>
